@@ -1,0 +1,321 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D75F5B6115F4F586000143D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6015F4F586000143D7 /* UIKit.framework */; };
+		D75F5B6315F4F586000143D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6215F4F586000143D7 /* Foundation.framework */; };
+		D75F5B6515F4F586000143D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6415F4F586000143D7 /* CoreGraphics.framework */; };
+		D75F5B6715F4F586000143D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6615F4F586000143D7 /* CoreData.framework */; };
+		D75F5B6D15F4F586000143D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B6B15F4F586000143D7 /* InfoPlist.strings */; };
+		D75F5B6F15F4F586000143D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B6E15F4F586000143D7 /* main.m */; };
+		D75F5B7315F4F586000143D7 /* IGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7215F4F586000143D7 /* IGAppDelegate.m */; };
+		D75F5B7615F4F586000143D7 /* IGT004.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */; };
+		D75F5B7915F4F586000143D7 /* IGMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7815F4F586000143D7 /* IGMasterViewController.m */; };
+		D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */; };
+		D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */; };
+		D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D75F5B5C15F4F586000143D7 /* IGT004.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGT004.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75F5B6015F4F586000143D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D75F5B6215F4F586000143D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D75F5B6415F4F586000143D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D75F5B6615F4F586000143D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D75F5B6A15F4F586000143D7 /* IGT004-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IGT004-Info.plist"; sourceTree = "<group>"; };
+		D75F5B6C15F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D75F5B6E15F4F586000143D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D75F5B7015F4F586000143D7 /* IGT004-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IGT004-Prefix.pch"; sourceTree = "<group>"; };
+		D75F5B7115F4F586000143D7 /* IGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGAppDelegate.h; sourceTree = "<group>"; };
+		D75F5B7215F4F586000143D7 /* IGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGAppDelegate.m; sourceTree = "<group>"; };
+		D75F5B7515F4F586000143D7 /* IGT004.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = IGT004.xcdatamodel; sourceTree = "<group>"; };
+		D75F5B7715F4F586000143D7 /* IGMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGMasterViewController.h; sourceTree = "<group>"; };
+		D75F5B7815F4F586000143D7 /* IGMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGMasterViewController.m; sourceTree = "<group>"; };
+		D75F5B7A15F4F586000143D7 /* IGDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGDetailViewController.h; sourceTree = "<group>"; };
+		D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGDetailViewController.m; sourceTree = "<group>"; };
+		D75F5B7E15F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGMasterViewController.xib; sourceTree = "<group>"; };
+		D75F5B8115F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGDetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D75F5B5915F4F586000143D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75F5B6115F4F586000143D7 /* UIKit.framework in Frameworks */,
+				D75F5B6315F4F586000143D7 /* Foundation.framework in Frameworks */,
+				D75F5B6515F4F586000143D7 /* CoreGraphics.framework in Frameworks */,
+				D75F5B6715F4F586000143D7 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D75F5B5115F4F586000143D7 = {
+			isa = PBXGroup;
+			children = (
+				D75F5B6815F4F586000143D7 /* IGT004 */,
+				D75F5B5F15F4F586000143D7 /* Frameworks */,
+				D75F5B5D15F4F586000143D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D75F5B5D15F4F586000143D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D75F5B5C15F4F586000143D7 /* IGT004.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D75F5B5F15F4F586000143D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D75F5B6015F4F586000143D7 /* UIKit.framework */,
+				D75F5B6215F4F586000143D7 /* Foundation.framework */,
+				D75F5B6415F4F586000143D7 /* CoreGraphics.framework */,
+				D75F5B6615F4F586000143D7 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D75F5B6815F4F586000143D7 /* IGT004 */ = {
+			isa = PBXGroup;
+			children = (
+				D75F5B7115F4F586000143D7 /* IGAppDelegate.h */,
+				D75F5B7215F4F586000143D7 /* IGAppDelegate.m */,
+				D75F5B7715F4F586000143D7 /* IGMasterViewController.h */,
+				D75F5B7815F4F586000143D7 /* IGMasterViewController.m */,
+				D75F5B7A15F4F586000143D7 /* IGDetailViewController.h */,
+				D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */,
+				D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */,
+				D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */,
+				D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */,
+				D75F5B6915F4F586000143D7 /* Supporting Files */,
+			);
+			path = IGT004;
+			sourceTree = "<group>";
+		};
+		D75F5B6915F4F586000143D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D75F5B6A15F4F586000143D7 /* IGT004-Info.plist */,
+				D75F5B6B15F4F586000143D7 /* InfoPlist.strings */,
+				D75F5B6E15F4F586000143D7 /* main.m */,
+				D75F5B7015F4F586000143D7 /* IGT004-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D75F5B5B15F4F586000143D7 /* IGT004 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D75F5B8515F4F586000143D7 /* Build configuration list for PBXNativeTarget "IGT004" */;
+			buildPhases = (
+				D75F5B5815F4F586000143D7 /* Sources */,
+				D75F5B5915F4F586000143D7 /* Frameworks */,
+				D75F5B5A15F4F586000143D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IGT004;
+			productName = IGT004;
+			productReference = D75F5B5C15F4F586000143D7 /* IGT004.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D75F5B5315F4F586000143D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = IG;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = D75F5B5615F4F586000143D7 /* Build configuration list for PBXProject "IGT004" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D75F5B5115F4F586000143D7;
+			productRefGroup = D75F5B5D15F4F586000143D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D75F5B5B15F4F586000143D7 /* IGT004 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D75F5B5A15F4F586000143D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75F5B6D15F4F586000143D7 /* InfoPlist.strings in Resources */,
+				D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */,
+				D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D75F5B5815F4F586000143D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D75F5B6F15F4F586000143D7 /* main.m in Sources */,
+				D75F5B7315F4F586000143D7 /* IGAppDelegate.m in Sources */,
+				D75F5B7615F4F586000143D7 /* IGT004.xcdatamodeld in Sources */,
+				D75F5B7915F4F586000143D7 /* IGMasterViewController.m in Sources */,
+				D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D75F5B6B15F4F586000143D7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D75F5B6C15F4F586000143D7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D75F5B7E15F4F586000143D7 /* en */,
+			);
+			name = IGMasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D75F5B8115F4F586000143D7 /* en */,
+			);
+			name = IGDetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D75F5B8315F4F586000143D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D75F5B8415F4F586000143D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D75F5B8615F4F586000143D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
+				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D75F5B8715F4F586000143D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
+				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D75F5B5615F4F586000143D7 /* Build configuration list for PBXProject "IGT004" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D75F5B8315F4F586000143D7 /* Debug */,
+				D75F5B8415F4F586000143D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D75F5B8515F4F586000143D7 /* Build configuration list for PBXNativeTarget "IGT004" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D75F5B8615F4F586000143D7 /* Debug */,
+				D75F5B8715F4F586000143D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D75F5B7515F4F586000143D7 /* IGT004.xcdatamodel */,
+			);
+			currentVersion = D75F5B7515F4F586000143D7 /* IGT004.xcdatamodel */;
+			path = IGT004.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D75F5B5315F4F586000143D7 /* Project object */;
+}
