@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "IGA02TableViewCell.h"
+
 @interface IGA02ViewController : UIViewController {
+    //背景view
     UIView *backgroundView;
+    //数据列表显示view
+    UITableView *dataListTableView;
+    //数据列表显示cell
+    IGA02TableViewCell *a02TableViewCell;
 }
 
 @end
