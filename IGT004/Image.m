@@ -14,6 +14,7 @@
 
 @dynamic restaurantId;
 @dynamic imageName;
+@dynamic descriptionMemo;
 @dynamic imageRelationship;
 
 @end

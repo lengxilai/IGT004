@@ -13,14 +13,23 @@
 @interface Restaurant : NSManagedObject
 
 @property (nonatomic, retain) NSNumber * id;
+//饭店名称
 @property (nonatomic, retain) NSString * name;
+//电话
 @property (nonatomic, retain) NSString * tel;
+//地址
 @property (nonatomic, retain) NSString * address;
+//人均消费
 @property (nonatomic, retain) NSNumber * averageCost;
+//坐标
 @property (nonatomic, retain) NSString * latitude;
+//坐标
 @property (nonatomic, retain) NSString * longitude;
+//标志图标
 @property (nonatomic, retain) NSString * iconName;
+//介绍内容
 @property (nonatomic, retain) NSString * descriptionMemo;
+//图片集合
 @property (nonatomic, retain) NSSet *images;
 @end
 

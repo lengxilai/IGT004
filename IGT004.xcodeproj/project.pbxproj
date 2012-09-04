@@ -26,7 +26,7 @@
 		E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */; };
 		E27830B815F5E1A100AEBEB3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E27830B615F5E1A100AEBEB3 /* Model.xcdatamodeld */; };
 		E27830BF15F5ECC200AEBEB3 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830BE15F5ECC200AEBEB3 /* Restaurant.m */; };
-		E27830C215F5ECD400AEBEB3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830C115F5ECD400AEBEB3 /* Image.m */; };
+		E27830C515F5EDBE00AEBEB3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830C415F5EDBE00AEBEB3 /* Image.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,8 @@
 		E27830B715F5E1A100AEBEB3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E27830BD15F5ECC200AEBEB3 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		E27830BE15F5ECC200AEBEB3 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
-		E27830C015F5ECD400AEBEB3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
-		E27830C115F5ECD400AEBEB3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		E27830C315F5EDBE00AEBEB3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		E27830C415F5EDBE00AEBEB3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +157,9 @@
 		E27830B515F5E11100AEBEB3 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				E27830C315F5EDBE00AEBEB3 /* Image.h */,
+				E27830C415F5EDBE00AEBEB3 /* Image.m */,
 				E27830B615F5E1A100AEBEB3 /* Model.xcdatamodeld */,
-				E27830C015F5ECD400AEBEB3 /* Image.h */,
-				E27830C115F5ECD400AEBEB3 /* Image.m */,
 				E27830BD15F5ECC200AEBEB3 /* Restaurant.h */,
 				E27830BE15F5ECC200AEBEB3 /* Restaurant.m */,
 			);
@@ -241,7 +241,7 @@
 				E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */,
 				E27830B815F5E1A100AEBEB3 /* Model.xcdatamodeld in Sources */,
 				E27830BF15F5ECC200AEBEB3 /* Restaurant.m in Sources */,
-				E27830C215F5ECD400AEBEB3 /* Image.m in Sources */,
+				E27830C515F5EDBE00AEBEB3 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
