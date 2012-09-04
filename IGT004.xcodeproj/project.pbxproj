@@ -19,6 +19,9 @@
 		D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */; };
 		D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */; };
 		D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */; };
+
+		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
+
 		E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278309D15F5CA8900AEBEB3 /* MapKit.framework */; };
 		E27830A615F5CEB800AEBEB3 /* IGA01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830A515F5CEB800AEBEB3 /* IGA01ViewController.m */; };
 		E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
@@ -27,6 +30,7 @@
 		E27830B815F5E1A100AEBEB3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E27830B615F5E1A100AEBEB3 /* Model.xcdatamodeld */; };
 		E27830BF15F5ECC200AEBEB3 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830BE15F5ECC200AEBEB3 /* Restaurant.m */; };
 		E27830C515F5EDBE00AEBEB3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830C415F5EDBE00AEBEB3 /* Image.m */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGDetailViewController.m; sourceTree = "<group>"; };
 		D75F5B7E15F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGMasterViewController.xib; sourceTree = "<group>"; };
 		D75F5B8115F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGDetailViewController.xib; sourceTree = "<group>"; };
+
+		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
+		DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA02ViewController.m; sourceTree = "<group>"; };
+
 		E278309D15F5CA8900AEBEB3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E27830A415F5CEB800AEBEB3 /* IGA01ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA01ViewController.h; sourceTree = "<group>"; };
 		E27830A515F5CEB800AEBEB3 /* IGA01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA01ViewController.m; sourceTree = "<group>"; };
@@ -62,6 +70,7 @@
 		E27830BE15F5ECC200AEBEB3 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		E27830C315F5EDBE00AEBEB3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		E27830C415F5EDBE00AEBEB3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,8 +133,18 @@
 				D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */,
 				D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */,
 				D75F5B6915F4F586000143D7 /* Supporting Files */,
+
+
+				DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */,
+				DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */,
+
+				E27830A415F5CEB800AEBEB3 /* IGA01ViewControllerViewController.h */,
+				E27830A515F5CEB800AEBEB3 /* IGA01ViewControllerViewController.m */,
+
+
 				E27830A415F5CEB800AEBEB3 /* IGA01ViewController.h */,
 				E27830A515F5CEB800AEBEB3 /* IGA01ViewController.m */,
+
 			);
 			path = IGT004;
 			sourceTree = "<group>";
@@ -235,13 +254,21 @@
 				D75F5B7615F4F586000143D7 /* IGT004.xcdatamodeld in Sources */,
 				D75F5B7915F4F586000143D7 /* IGMasterViewController.m in Sources */,
 				D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */,
+
+
+				DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */,
+
+				E27830A615F5CEB800AEBEB3 /* IGA01ViewControllerViewController.m in Sources */,
+
 				E27830A615F5CEB800AEBEB3 /* IGA01ViewController.m in Sources */,
+
 				E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */,
 				E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */,
 				E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */,
 				E27830B815F5E1A100AEBEB3 /* Model.xcdatamodeld in Sources */,
 				E27830BF15F5ECC200AEBEB3 /* Restaurant.m in Sources */,
 				E27830C515F5EDBE00AEBEB3 /* Image.m in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
