@@ -22,6 +22,11 @@
 		E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278309D15F5CA8900AEBEB3 /* MapKit.framework */; };
 		E27830A615F5CEB800AEBEB3 /* IGA01ViewControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830A515F5CEB800AEBEB3 /* IGA01ViewControllerViewController.m */; };
 		E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
+		E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */; };
+		E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */; };
+		E27830B815F5E1A100AEBEB3 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E27830B615F5E1A100AEBEB3 /* Model.xcdatamodeld */; };
+		E27830BF15F5ECC200AEBEB3 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830BE15F5ECC200AEBEB3 /* Restaurant.m */; };
+		E27830C215F5ECD400AEBEB3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830C115F5ECD400AEBEB3 /* Image.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +53,15 @@
 		E27830A515F5CEB800AEBEB3 /* IGA01ViewControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA01ViewControllerViewController.m; sourceTree = "<group>"; };
 		E27830AC15F5D20900AEBEB3 /* IGGEOInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGGEOInfo.h; sourceTree = "<group>"; };
 		E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGGEOInfo.m; sourceTree = "<group>"; };
+		E27830AF15F5D6F700AEBEB3 /* IGBasicAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGBasicAnnotation.h; sourceTree = "<group>"; };
+		E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGBasicAnnotation.m; sourceTree = "<group>"; };
+		E27830B215F5DBB300AEBEB3 /* IGMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGMapAnnotationView.h; sourceTree = "<group>"; };
+		E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGMapAnnotationView.m; sourceTree = "<group>"; };
+		E27830B715F5E1A100AEBEB3 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		E27830BD15F5ECC200AEBEB3 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		E27830BE15F5ECC200AEBEB3 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		E27830C015F5ECD400AEBEB3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
+		E27830C115F5ECD400AEBEB3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +112,7 @@
 		D75F5B6815F4F586000143D7 /* IGT004 */ = {
 			isa = PBXGroup;
 			children = (
+				E27830B515F5E11100AEBEB3 /* DB */,
 				E27830A715F5CED500AEBEB3 /* Common */,
 				D75F5B7115F4F586000143D7 /* IGAppDelegate.h */,
 				D75F5B7215F4F586000143D7 /* IGAppDelegate.m */,
@@ -131,8 +146,24 @@
 			children = (
 				E27830AC15F5D20900AEBEB3 /* IGGEOInfo.h */,
 				E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */,
+				E27830AF15F5D6F700AEBEB3 /* IGBasicAnnotation.h */,
+				E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */,
+				E27830B215F5DBB300AEBEB3 /* IGMapAnnotationView.h */,
+				E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		E27830B515F5E11100AEBEB3 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				E27830B615F5E1A100AEBEB3 /* Model.xcdatamodeld */,
+				E27830C015F5ECD400AEBEB3 /* Image.h */,
+				E27830C115F5ECD400AEBEB3 /* Image.m */,
+				E27830BD15F5ECC200AEBEB3 /* Restaurant.h */,
+				E27830BE15F5ECC200AEBEB3 /* Restaurant.m */,
+			);
+			name = DB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +237,11 @@
 				D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */,
 				E27830A615F5CEB800AEBEB3 /* IGA01ViewControllerViewController.m in Sources */,
 				E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */,
+				E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */,
+				E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */,
+				E27830B815F5E1A100AEBEB3 /* Model.xcdatamodeld in Sources */,
+				E27830BF15F5ECC200AEBEB3 /* Restaurant.m in Sources */,
+				E27830C215F5ECD400AEBEB3 /* Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +373,16 @@
 			);
 			currentVersion = D75F5B7515F4F586000143D7 /* IGT004.xcdatamodel */;
 			path = IGT004.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		E27830B615F5E1A100AEBEB3 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E27830B715F5E1A100AEBEB3 /* Model.xcdatamodel */,
+			);
+			currentVersion = E27830B715F5E1A100AEBEB3 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
