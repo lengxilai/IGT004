@@ -6,13 +6,13 @@
 //  Copyright (c) 2012年 ntt. All rights reserved.
 //
 
-#import "IGA01ViewControllerViewController.h"
+#import "IGA01ViewController.h"
 
-@interface IGA01ViewControllerViewController ()
+@interface IGA01ViewController ()
 
 @end
 
-@implementation IGA01ViewControllerViewController
+@implementation IGA01ViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

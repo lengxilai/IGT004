@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "IGBasicAnnotation.h"
-@interface IGA01ViewControllerViewController : UIViewController <MKMapViewDelegate> {
+@interface IGA01ViewController : UIViewController <MKMapViewDelegate> {
     MKMapView *m_mkMapView;
     NSMutableArray *m_geoArray;
 }
