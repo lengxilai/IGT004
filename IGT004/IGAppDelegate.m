@@ -7,7 +7,7 @@
 //
 
 #import "IGAppDelegate.h"
-
+#import "IGA01ViewController.h"
 #import "IGMasterViewController.h"
 
 @implementation IGAppDelegate
@@ -23,9 +23,9 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    IGMasterViewController *masterViewController = [[IGMasterViewController alloc] initWithNibName:@"IGMasterViewController" bundle:nil];
+    IGA01ViewController *masterViewController = [[IGA01ViewController alloc] initWithNibName:@"IGMasterViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
-    masterViewController.managedObjectContext = self.managedObjectContext;
+   // masterViewController.managedObjectContext = self.managedObjectContext;
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
