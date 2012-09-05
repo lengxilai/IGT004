@@ -33,6 +33,7 @@
 		E27830C515F5EDBE00AEBEB3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830C415F5EDBE00AEBEB3 /* Image.m */; };
 		E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA879415F6062E002BF408 /* IGA01ViewController.m */; };
 		E2CA87DA15F640DC002BF408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA87D915F640DC002BF408 /* CoreLocation.framework */; };
+		E2CA880F15F76160002BF408 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2CA880E15F76160002BF408 /* logo.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 		E2CA879315F6062E002BF408 /* IGA01ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA01ViewController.h; sourceTree = "<group>"; };
 		E2CA879415F6062E002BF408 /* IGA01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA01ViewController.m; sourceTree = "<group>"; };
 		E2CA87D915F640DC002BF408 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E2CA880E15F76160002BF408 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +103,6 @@
 		D75F5B5115F4F586000143D7 = {
 			isa = PBXGroup;
 			children = (
-				E2CA87D915F640DC002BF408 /* CoreLocation.framework */,
 				D75F5B6815F4F586000143D7 /* IGT004 */,
 				D75F5B5F15F4F586000143D7 /* Frameworks */,
 				D75F5B5D15F4F586000143D7 /* Products */,
@@ -119,6 +120,7 @@
 		D75F5B5F15F4F586000143D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E2CA87D915F640DC002BF408 /* CoreLocation.framework */,
 				E278309D15F5CA8900AEBEB3 /* MapKit.framework */,
 				D75F5B6015F4F586000143D7 /* UIKit.framework */,
 				D75F5B6215F4F586000143D7 /* Foundation.framework */,
@@ -168,6 +170,7 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E2CA880E15F76160002BF408 /* logo.jpg */,
 				DC7416BF15F60CF0009D8C65 /* bottom_line.png */,
 			);
 			name = Images;
@@ -176,12 +179,12 @@
 		E27830A715F5CED500AEBEB3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E27830B215F5DBB300AEBEB3 /* IGMapAnnotationView.h */,
+				E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */,
 				E27830AC15F5D20900AEBEB3 /* IGGEOInfo.h */,
 				E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */,
 				E27830AF15F5D6F700AEBEB3 /* IGBasicAnnotation.h */,
 				E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */,
-				E27830B215F5DBB300AEBEB3 /* IGMapAnnotationView.h */,
-				E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */,
 				DC7416B415F5F7F1009D8C65 /* UIColor+IGColor.h */,
 				DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */,
 				DC7416BB15F60269009D8C65 /* IGCommonDefine.h */,
@@ -258,6 +261,7 @@
 				D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */,
 				D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */,
 				DC7416C015F60CF0009D8C65 /* bottom_line.png in Resources */,
+				E2CA880F15F76160002BF408 /* logo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
