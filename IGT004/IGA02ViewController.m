@@ -9,6 +9,7 @@
 #import "IGA02ViewController.h"
 #import "UIColor+IGColor.h"
 #import "IGCommonDefine.h"
+#import "IGCoreDataUtil.h"
 
 @interface IGA02ViewController ()
 
@@ -29,16 +30,44 @@
     //
     dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, A02TableViewW, A02TableViewH) style:UITableViewStylePlain];
     
-    UIImageView *cellBackgroundImg = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bottom_line.png"]];
     dataListTableView.rowHeight = A02CellHight;
     dataListTableView.backgroundColor = [UIColor clearColor];
-    [dataListTableView addSubview:cellBackgroundImg];
-//    dataListTableView.backgroundColor = [UIColor bottomLineBackgroundImageColor];
-//    dataListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //[self fetchedResultsController];
+
     [self.view addSubview:dataListTableView];
     
     return self;
 }
+
+
+// 取得section数目
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+// 取得待显示行数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self getRow];
+}
+
+// cell中要显示的内容
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    IGA02TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[IGA02TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.backgroundColor = [UIColor clearColor];
+        cell.contentView.backgroundColor = [UIColor clearColor];
+    }
+    
+    return cell;
+}
+
 
 - (void)viewDidLoad
 {
@@ -56,5 +85,35 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
+
+// 生成列表的datasourse
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (fetchedResultsController != nil) {
+        return self.fetchedResultsController;
+    }
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
+    NSFetchedResultsController *newFetchedResultsController = 
+    [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
+    newFetchedResultsController.delegate = self;
+    fetchedResultsController = newFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![fetchedResultsController performFetch:&error]) {
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    return fetchedResultsController;
+}
+
+// 取得饭店个数个数
+- (NSInteger) getRow {
+    NSInteger row = 0;
+    if ([[fetchedResultsController sections] count] > 0) {
+        row = [[[fetchedResultsController sections] objectAtIndex:0] numberOfObjects];
+    }
+    return row;
+}
+
 
 @end
