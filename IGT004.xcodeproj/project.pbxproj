@@ -24,6 +24,7 @@
 		DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416BC15F60269009D8C65 /* IGCommonDefine.m */; };
 		DC7416C015F60CF0009D8C65 /* bottom_line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7416BF15F60CF0009D8C65 /* bottom_line.png */; };
 		DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */; };
+		DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */; };
 		E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278309D15F5CA8900AEBEB3 /* MapKit.framework */; };
 		E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
 		E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */; };
@@ -63,6 +64,8 @@
 		DC7416BF15F60CF0009D8C65 /* bottom_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_line.png; sourceTree = "<group>"; };
 		DC7416C115F60EF5009D8C65 /* IGA02TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02TableViewCell.h; sourceTree = "<group>"; };
 		DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA02TableViewCell.m; sourceTree = "<group>"; };
+		DC7416CC15F71F22009D8C65 /* IGCoreDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGCoreDataUtil.h; sourceTree = "<group>"; };
+		DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGCoreDataUtil.m; sourceTree = "<group>"; };
 		E278309D15F5CA8900AEBEB3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E27830AC15F5D20900AEBEB3 /* IGGEOInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGGEOInfo.h; sourceTree = "<group>"; };
 		E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGGEOInfo.m; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */,
 				DC7416BB15F60269009D8C65 /* IGCommonDefine.h */,
 				DC7416BC15F60269009D8C65 /* IGCommonDefine.m */,
+				DC7416CC15F71F22009D8C65 /* IGCoreDataUtil.h */,
+				DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -282,6 +287,7 @@
 				DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */,
 				DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */,
 				E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */,
+				DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
