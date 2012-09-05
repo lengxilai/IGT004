@@ -54,4 +54,39 @@ static NSManagedObjectContext *staticManagedObjectContext;
 
 }
 
++(NSArray*)queryForFetchedResultByExpression:(NSString *)entityName method:(NSString*) method selectColumn:(NSString*) column keyName:(NSString*) keyName queryPredicate:(NSPredicate *)predicate
+{
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    // 查询条件设置
+    if (predicate != nil) {
+        [request setPredicate:predicate];
+    }
+    
+    // 查询对象设置
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName 
+                                              inManagedObjectContext:staticManagedObjectContext];
+    [request setEntity:entity];
+    
+    // 求和
+    NSExpression *keyPathExpression = [NSExpression expressionForKeyPath:column];
+    NSExpression *expression = [NSExpression expressionForFunction:method arguments:[NSArray arrayWithObject:keyPathExpression]];
+    NSExpressionDescription *expressionDescription = [[NSExpressionDescription alloc] init];
+    [expressionDescription setName:keyName];
+    [expressionDescription setExpression:expression];
+    [expressionDescription setExpressionResultType:NSDoubleAttributeType];
+    
+    [request setPropertiesToFetch:[NSArray arrayWithObjects:expressionDescription, nil]];
+    
+    [request setResultType:NSDictionaryResultType];
+    
+    NSError *error = nil;
+    NSArray *fetchResult = [staticManagedObjectContext executeFetchRequest:request error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    return fetchResult;
+}
 @end

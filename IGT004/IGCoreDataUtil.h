@@ -21,4 +21,6 @@
                                       queryCondition:(NSString *) queryCondition 
                                      sortDescriptors:(NSArray *)  sortDescriptors;
 
+// 根据查询条件返回结果
++(NSArray*)queryForFetchedResultByExpression:(NSString *)entityName method:(NSString*) method selectColumn:(NSString*) column keyName:(NSString*) keyName queryPredicate:(NSPredicate *)predicate;
 @end

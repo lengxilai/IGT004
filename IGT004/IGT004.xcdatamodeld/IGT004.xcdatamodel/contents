@@ -3,8 +3,6 @@
     <entity name="Image" representedClassName="Image" syncable="YES">
         <attribute name="descriptionMemo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="restaurantId" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
-        <relationship name="imageRelationship" optional="YES" minCount="1" maxCount="1" deletionRule="No Action" destinationEntity="Restaurant" inverseName="images" inverseEntity="Restaurant" syncable="YES"/>
     </entity>
     <entity name="Restaurant" representedClassName="Restaurant" syncable="YES">
         <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,7 +14,7 @@
         <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="images" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Image" inverseName="imageRelationship" inverseEntity="Image" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="No Action" ordered="YES" destinationEntity="Image" syncable="YES"/>
     </entity>
     <elements>
         <element name="Image" positionX="160" positionY="192" width="128" height="105"/>
