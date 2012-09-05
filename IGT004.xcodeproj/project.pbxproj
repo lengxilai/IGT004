@@ -38,7 +38,6 @@
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
 		DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416BC15F60269009D8C65 /* IGCommonDefine.m */; };
-		DC7416C015F60CF0009D8C65 /* bottom_line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC7416BF15F60CF0009D8C65 /* bottom_line.png */; };
 		DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */; };
 		DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */; };
 		E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278309D15F5CA8900AEBEB3 /* MapKit.framework */; };
@@ -107,7 +106,6 @@
 		DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+IGColor.m"; sourceTree = "<group>"; };
 		DC7416BB15F60269009D8C65 /* IGCommonDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGCommonDefine.h; sourceTree = "<group>"; };
 		DC7416BC15F60269009D8C65 /* IGCommonDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGCommonDefine.m; sourceTree = "<group>"; };
-		DC7416BF15F60CF0009D8C65 /* bottom_line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bottom_line.png; sourceTree = "<group>"; };
 		DC7416C115F60EF5009D8C65 /* IGA02TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02TableViewCell.h; sourceTree = "<group>"; };
 		DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA02TableViewCell.m; sourceTree = "<group>"; };
 		DC7416CC15F71F22009D8C65 /* IGCoreDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGCoreDataUtil.h; sourceTree = "<group>"; };
@@ -244,7 +242,6 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				DC7416BF15F60CF0009D8C65 /* bottom_line.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -337,7 +334,6 @@
 				D75F5B6D15F4F586000143D7 /* InfoPlist.strings in Resources */,
 				D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */,
 				D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */,
-				DC7416C015F60CF0009D8C65 /* bottom_line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

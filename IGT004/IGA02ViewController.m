@@ -21,21 +21,26 @@
 - (id)init
 {
     self = [super init];
+    
+    //取得屏幕尺寸
+    CGRect screenSize = [[UIScreen mainScreen] bounds];
+    NSLog(@"%f", screenSize.size.width);
     //设置背景为设备屏幕大小
-    backgroundView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    backgroundView = [[UIView alloc] initWithFrame:screenSize];
     //设置背景颜色为efefef
     backgroundView.backgroundColor = [UIColor colorWithHex:0xefefef alpha:1.0];
     //把背景view放入到self
     [self.view addSubview:backgroundView];
 
     //
-    dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, A02TableViewW, A02TableViewH) style:UITableViewStylePlain];
+    dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, screenSize.size.width, screenSize.size.height) style:UITableViewStylePlain];
     
     dataListTableView.rowHeight = A02CellHight;
     dataListTableView.backgroundColor = [UIColor clearColor];
     
     [dataListTableView setDelegate:self];
     [dataListTableView setDataSource:self];
+    dataListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self fetchedResultsController];
 
