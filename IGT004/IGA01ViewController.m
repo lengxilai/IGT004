@@ -13,7 +13,8 @@
 @end
 
 @implementation IGA01ViewController
-
+#pragma mark -
+#pragma mark Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,33 +31,40 @@
     
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
-    m_mkMapView.showsUserLocation=TRUE;
-    //创建位置管理器
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    //设置代理
-    locationManager.delegate=self;
-    //指定需要的精度级别
-    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-    //设置距离筛选器
-    locationManager.distanceFilter=1000.0f;
-    //启动位置管理器
-    [locationManager startUpdatingLocation]; 
-    MKCoordinateSpan theSpan;
-    //地图的范围 越小越精确
-    theSpan.latitudeDelta=0.05;
-    theSpan.longitudeDelta=0.05; 
-    //MKCoordinateRegion region = {{40.976002, 116.317577}, {0.016, 0.016}};
-    MKCoordinateRegion region;
-    region.center = [[locationManager location] coordinate]; 
-    region.span = theSpan;
-    m_mkMapView.region = region;
+    m_mkMapView.showsUserLocation=YES;
+//    //创建位置管理器
+//    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+//    //设置代理
+//    locationManager.delegate=self;
+//    //指定需要的精度级别
+//    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+//    //设置距离筛选器
+//    locationManager.distanceFilter=1000.0f;
+//    //启动位置管理器
+//    [locationManager startUpdatingLocation]; 
+//    MKCoordinateSpan theSpan;
+//    //地图的范围 越小越精确
+//    theSpan.latitudeDelta=0.05;
+//    theSpan.longitudeDelta=0.05; 
+//    MKCoordinateRegion region;
+//    region.center = [[locationManager location] coordinate]; 
+//    region.span = theSpan;
+//    m_mkMapView.region = region;
     [self.view addSubview: m_mkMapView];
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    
+    [self getRestaurantList];
+    //初始化所有餐厅信息
+    for (IGGEOInfo *geoInfo in m_geoArray){
+        IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
+        
+        [m_mkMapView addAnnotation: basicAnnotation];
+    }
 	// Do any additional setup after loading the view.
+    [super viewDidLoad];
 }
 
 - (void)viewDidUnload
@@ -69,7 +77,8 @@
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
+#pragma mark -
+#pragma mark map 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation: (id <MKAnnotation>)annotation
 {
     NSLog(@"%s %d, annotation = %@", __FUNCTION__, __LINE__, annotation);
@@ -81,12 +90,15 @@
     
     IGBasicAnnotation *basicAnnotation = (IGBasicAnnotation *)annotation;
     MKAnnotationView *mkAnnotationView;
+    IGMapAnnotationView *annotationMapView = [[IGMapAnnotationView alloc] initWithAnnotation:annotation];
+    
+    
     
     MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"annotationView"];
     annotationView.userInteractionEnabled = YES;
     annotationView.alpha = 0.9;
     annotationView.canShowCallout = TRUE;
-    
+    [annotationView addSubview:annotationMapView];
     mkAnnotationView = annotationView;
     
     
@@ -113,30 +125,86 @@
     NSLog(@"%s %d, view = %@, control = %@", __FUNCTION__, __LINE__, view, control);
     
 }
-- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation    fromLocation:(CLLocation *)oldLocation {
-    
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init]; 
-    if ([CLLocationManager locationServicesEnabled]) { 
-        NSLog( @"Starting CLLocationManager" ); 
-        locationManager.delegate = self; 
-        locationManager.distanceFilter = 200; 
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
-        [locationManager startUpdatingLocation]; 
-    } else { 
-        NSLog( @"Cannot Starting CLLocationManager" ); 
-        /*self.locationManager.delegate = self; 
-         self.locationManager.distanceFilter = 200; 
-         locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
-         [self.locationManager startUpdatingLocation];*/ 
-    }
-    MKCoordinateSpan theSpan; 
-    //设置地图的范围，越小越精确 
-    theSpan.latitudeDelta = 0.02; 
-    theSpan.longitudeDelta = 0.02; 
-    MKCoordinateRegion theRegion; 
-    theRegion.center = [[locationManager location] coordinate]; //让地图跳到之前获取到的当前位置checkinLocation 
-    theRegion.span = theSpan;
-    [m_mkMapView setRegion:theRegion];
-}
 
+-(void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    
+    NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
+    
+    NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
+    
+    m_locationLatitude=[lat doubleValue];
+    
+    m_locationLongitude=[lng doubleValue];
+    
+    MKCoordinateSpan span;
+    
+    MKCoordinateRegion region;
+    
+    span.latitudeDelta=0.010;
+    
+    span.longitudeDelta=0.010;
+    
+    region.span=span;
+    
+    region.center=[userLocation coordinate];
+    
+    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
+}
+#pragma mark -
+#pragma mark location
+//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation    fromLocation:(CLLocation *)oldLocation {
+//    
+//    CLLocationManager *locationManager = [[CLLocationManager alloc] init]; 
+//    if ([CLLocationManager locationServicesEnabled]) { 
+//        NSLog( @"Starting CLLocationManager" ); 
+//        locationManager.delegate = self; 
+//        locationManager.distanceFilter = 200; 
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
+//        [locationManager startUpdatingLocation]; 
+//    } else { 
+//        NSLog( @"Cannot Starting CLLocationManager" ); 
+//        /*self.locationManager.delegate = self; 
+//         self.locationManager.distanceFilter = 200; 
+//         locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
+//         [self.locationManager startUpdatingLocation];*/ 
+//    }
+//    MKCoordinateSpan theSpan; 
+//    //设置地图的范围，越小越精确 
+//    theSpan.latitudeDelta = 0.02; 
+//    theSpan.longitudeDelta = 0.02; 
+//    MKCoordinateRegion theRegion; 
+//    theRegion.center = [[locationManager location] coordinate]; //让地图跳到之前获取到的当前位置checkinLocation 
+//    theRegion.span = theSpan;
+//    [m_mkMapView setRegion:theRegion];
+//}
+#pragma mark -
+#pragma mark data
+-(void)getRestaurantList{
+    m_geoArray = [[NSMutableArray alloc] init];
+    
+//    id<PLResultSet> result;
+//	result = [g_plDatabase executeQuery: @"Select ID, Name, Description, ImageName, Latitude, Longitude from GeoInfo"];
+//	
+//	while([result next])
+//    {
+        IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
+        
+        geoInfo.m_id = 1111;
+        geoInfo.m_name = @"test";
+        
+        NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
+        
+        geoInfo.m_description = @"yamede";
+        
+        CLLocationDegrees latitude = m_locationLatitude;
+        CLLocationDegrees longitude = m_locationLongitude;
+        
+        CLLocationCoordinate2D coordinate2D = {latitude, longitude};
+        geoInfo.m_coordinate2D = coordinate2D;
+        
+        [m_geoArray addObject: geoInfo];
+//    }
+    
+//    [result close];
+}
 @end
