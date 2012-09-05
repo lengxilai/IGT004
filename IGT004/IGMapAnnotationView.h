@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "IGGEOInfo.h"
 @interface IGMapAnnotationView : UIView{
 
 }
-
+-(id)initWithAnnotation:(id <MKAnnotation>)annotation;
 @end

@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "IGBasicAnnotation.h"
-@interface IGA01ViewController : UIViewController <MKMapViewDelegate,CLLocationManagerDelegate> {
+#import "IGMapAnnotationView.h"
+@interface IGA01ViewController : UIViewController <MKMapViewDelegate> {
     MKMapView *m_mkMapView;
     NSMutableArray *m_geoArray;
+    double m_locationLatitude;
+    double m_locationLongitude;
 }
 
 @end
