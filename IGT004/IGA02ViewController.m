@@ -10,6 +10,7 @@
 #import "UIColor+IGColor.h"
 #import "IGCommonDefine.h"
 #import "IGCoreDataUtil.h"
+#import "IGCreateDataUtil.h"
 
 @interface IGA02ViewController ()
 
@@ -26,15 +27,20 @@
     backgroundView.backgroundColor = [UIColor colorWithHex:0xefefef alpha:1.0];
     //把背景view放入到self
     [self.view addSubview:backgroundView];
-    
+
     //
     dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, A02TableViewW, A02TableViewH) style:UITableViewStylePlain];
     
     dataListTableView.rowHeight = A02CellHight;
     dataListTableView.backgroundColor = [UIColor clearColor];
-    //[self fetchedResultsController];
+    
+    [dataListTableView setDelegate:self];
+    [dataListTableView setDataSource:self];
+    
+    [self fetchedResultsController];
 
     [self.view addSubview:dataListTableView];
+    //[IGCreateDataUtil createRestaurant];
     
     return self;
 }
@@ -65,6 +71,11 @@
         cell.contentView.backgroundColor = [UIColor clearColor];
     }
     
+    Restaurant *restaurant = (Restaurant *)[fetchedResultsController objectAtIndexPath:indexPath];
+    
+    [self updateContentToCell:cell :restaurant];
+    
+    
     return cell;
 }
 
@@ -72,7 +83,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)viewDidUnload
@@ -113,6 +123,16 @@
         row = [[[fetchedResultsController sections] objectAtIndex:0] numberOfObjects];
     }
     return row;
+}
+
+// 向cell中的填充内容
+-(void)updateContentToCell:(IGA02TableViewCell*) cell :(Restaurant *) newRestaurant{
+    
+    cell.restaurantName.text = newRestaurant.name;
+    cell.restaurantAddress.text = newRestaurant.address;
+    cell.distance.text = @"距离：2.3km";
+    cell.averageCost.text = [NSString stringWithFormat:@"人均消费：%d元", newRestaurant.averageCost.intValue];
+    
 }
 
 

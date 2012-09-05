@@ -18,13 +18,13 @@
     //直线距离
     UILabel *distance;
     //人均消费
-    UILabel *avgExpend;
+    UILabel *averageCost;
 }
 
 @property (nonatomic, retain) UILabel *restaurantName;
 @property (nonatomic, retain) UILabel *restaurantAddress;
 @property (nonatomic, retain) UILabel *distance;
-@property (nonatomic, retain) UILabel *avgExpend;
+@property (nonatomic, retain) UILabel *averageCost;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 @end

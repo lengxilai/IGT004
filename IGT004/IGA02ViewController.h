@@ -18,8 +18,7 @@
     UIView *backgroundView;
     //数据列表显示view
     UITableView *dataListTableView;
-    //数据列表显示cell
-    IGA02TableViewCell *a02TableViewCell;
+
 }
 
 @end
