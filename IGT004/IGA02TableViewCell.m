@@ -9,6 +9,7 @@
 #import "IGA02TableViewCell.h"
 #import "UIColor+IGColor.h"
 #import "IGCommonDefine.h"
+#import "UIColor+IGColor.h"
 
 @implementation IGA02TableViewCell
 
@@ -26,15 +27,19 @@
         //饭店名称显示
         restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(A02RestaurantNameX, A02RestaurantNameY, A02RestaurantNameW, A02RestaurantNameH)];
         restaurantName.adjustsFontSizeToFitWidth = YES;
+        restaurantAddress.textColor = [UIColor colorWithHex:0x333333 alpha:1.0];
         //饭店地址显示
         restaurantAddress = [[UILabel alloc] initWithFrame:CGRectMake(A02RestaurantAddressX, A02RestaurantAddressY, A02RestaurantAddressW, A02RestaurantAddressH)];
         restaurantAddress.adjustsFontSizeToFitWidth = YES;
+        restaurantAddress.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
         //直线距离显示
         distance = [[UILabel alloc] initWithFrame:CGRectMake(A02DistanceX, A02DistanceY, A02DistanceW, A02DistanceH)];
         distance.adjustsFontSizeToFitWidth = YES;
+        distance.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
         //人均消费显示
         averageCost = [[UILabel alloc] initWithFrame:CGRectMake(A02AVGExpandX, A02AVGExpandY, A02AVGExpandW, A02AVGExpandH)];
         averageCost.adjustsFontSizeToFitWidth = YES;
+        averageCost.textColor = [UIColor colorWithHex:0x990000 alpha:1.0];
         
         
         //测试用

@@ -10,7 +10,7 @@
 #import "UIColor+IGColor.h"
 #import "IGCommonDefine.h"
 #import "IGCoreDataUtil.h"
-#import "IGCreateDataUtil.h"
+#import "Restaurant.h"
 
 @interface IGA02ViewController ()
 
@@ -40,7 +40,6 @@
     [self fetchedResultsController];
 
     [self.view addSubview:dataListTableView];
-    //[IGCreateDataUtil createRestaurant];
     
     return self;
 }
