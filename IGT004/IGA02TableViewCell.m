@@ -52,7 +52,11 @@
         [self.contentView addSubview:restaurantAddress];
         [self.contentView addSubview:distance];
         [self.contentView addSubview:averageCost];
-        self.contentView.backgroundColor = [UIColor bottomLineBackgroundImageColor];
+        
+        UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(A02BottomLineX, A02BottomLineY, A02BottomLineW, A02BottomLineH)];
+        bottomView.backgroundColor = [UIColor colorWithHex:0xe0e0e0 alpha:1.0];
+        [self.contentView addSubview:bottomView];
+        //self.contentView.backgroundColor = [UIColor bottomLineBackgroundImageColor];
     }
     return self;
 }
