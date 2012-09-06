@@ -21,9 +21,6 @@
 		D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */; };
 		D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */; };
 		D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */; };
-
-		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
-
 		D77BB36B15F7923200CB4FF3 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35315F7923200CB4FF3 /* NSObject+SBJson.m */; };
 		D77BB36C15F7923200CB4FF3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35615F7923200CB4FF3 /* SBJsonParser.m */; };
 		D77BB36D15F7923200CB4FF3 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35815F7923200CB4FF3 /* SBJsonStreamParser.m */; };
@@ -38,9 +35,10 @@
 		D77BB37615F7923200CB4FF3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36A15F7923200CB4FF3 /* SBJsonWriter.m */; };
 		D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
 		D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
-		D77BB39B15F7B55400CB4FF3 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39A15F7B55400CB4FF3 /* Restaurant.m */; };
 		D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
-
+		DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC162D5515F8924D004FBA2A /* IGA03ViewController.m */; };
+		DC162D7515F8BF06004FBA2A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC162D7415F8BF06004FBA2A /* line.png */; };
+		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
 		DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416BC15F60269009D8C65 /* IGCommonDefine.m */; };
@@ -86,10 +84,6 @@
 		D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGDetailViewController.m; sourceTree = "<group>"; };
 		D75F5B7E15F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGMasterViewController.xib; sourceTree = "<group>"; };
 		D75F5B8115F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGDetailViewController.xib; sourceTree = "<group>"; };
-
-		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
-		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
-
 		D77BB35215F7923200CB4FF3 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		D77BB35315F7923200CB4FF3 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		D77BB35415F7923200CB4FF3 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -121,7 +115,11 @@
 		D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRestaurantUtil.m; sourceTree = "<group>"; };
 		D77BB39C15F7B55500CB4FF3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		D77BB39D15F7B55500CB4FF3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
-
+		DC162D5415F8924C004FBA2A /* IGA03ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA03ViewController.h; sourceTree = "<group>"; };
+		DC162D5515F8924D004FBA2A /* IGA03ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA03ViewController.m; sourceTree = "<group>"; };
+		DC162D7415F8BF06004FBA2A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
+		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
 		DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA02ViewController.m; sourceTree = "<group>"; };
 		DC7416B415F5F7F1009D8C65 /* UIColor+IGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IGColor.h"; sourceTree = "<group>"; };
@@ -224,6 +222,8 @@
 				DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */,
 				DC7416C115F60EF5009D8C65 /* IGA02TableViewCell.h */,
 				DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */,
+				DC162D5415F8924C004FBA2A /* IGA03ViewController.h */,
+				DC162D5515F8924D004FBA2A /* IGA03ViewController.m */,
 			);
 			path = IGT004;
 			sourceTree = "<group>";
@@ -274,6 +274,7 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DC162D7415F8BF06004FBA2A /* line.png */,
 				E255A5AE15F869EF00651C5B /* maplabel_arrow.png */,
 				E255A5AF15F869EF00651C5B /* maplabel_arrow@2x.png */,
 				E255A5B015F869EF00651C5B /* maplabel.png */,
@@ -302,10 +303,8 @@
 				DC7416BC15F60269009D8C65 /* IGCommonDefine.m */,
 				DC7416CC15F71F22009D8C65 /* IGCoreDataUtil.h */,
 				DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */,
-
 				DC5C66A215F7AB33003EACCB /* IGFileUtil.h */,
 				DC5C66A315F7AB34003EACCB /* IGFileUtil.m */,
-
 				D77BB37715F792A700CB4FF3 /* IGJsonUtil.h */,
 				D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */,
 				D77BB38615F7A6EF00CB4FF3 /* IGRestaurantUtil.h */,
@@ -314,7 +313,6 @@
 				1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */,
 				E2CA53AF15F87FA200654E82 /* IGLocationUtil.h */,
 				E2CA53B015F87FA200654E82 /* IGLocationUtil.m */,
-
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -393,6 +391,7 @@
 				E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */,
 				E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */,
 				E255A5B415F869EF00651C5B /* maplabel.png in Resources */,
+				DC162D7515F8BF06004FBA2A /* line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,9 +416,7 @@
 				DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */,
 				E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */,
 				DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */,
-
 				DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */,
-
 				D77BB36B15F7923200CB4FF3 /* NSObject+SBJson.m in Sources */,
 				D77BB36C15F7923200CB4FF3 /* SBJsonParser.m in Sources */,
 				D77BB36D15F7923200CB4FF3 /* SBJsonStreamParser.m in Sources */,
@@ -438,7 +435,7 @@
 				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
 				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
 				E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */,
-
+				DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
