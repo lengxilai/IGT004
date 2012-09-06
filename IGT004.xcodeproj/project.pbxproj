@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */; };
+		1864A3CD15F8803700503C05 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864A3CC15F8803700503C05 /* Restaurant.m */; };
 		D75F5B6115F4F586000143D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6015F4F586000143D7 /* UIKit.framework */; };
 		D75F5B6315F4F586000143D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6215F4F586000143D7 /* Foundation.framework */; };
 		D75F5B6515F4F586000143D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6415F4F586000143D7 /* CoreGraphics.framework */; };
@@ -62,6 +64,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1801AD1B15F877FB0088875D /* IGDistanceUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGDistanceUpdate.h; sourceTree = "<group>"; };
+		1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGDistanceUpdate.m; sourceTree = "<group>"; };
+		1864A3CB15F8803700503C05 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		1864A3CC15F8803700503C05 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		D75F5B5C15F4F586000143D7 /* IGT004.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGT004.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D75F5B6015F4F586000143D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D75F5B6215F4F586000143D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -113,8 +119,6 @@
 		D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGJsonUtil.m; sourceTree = "<group>"; };
 		D77BB38615F7A6EF00CB4FF3 /* IGRestaurantUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRestaurantUtil.h; sourceTree = "<group>"; };
 		D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRestaurantUtil.m; sourceTree = "<group>"; };
-		D77BB39915F7B55400CB4FF3 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
-		D77BB39A15F7B55400CB4FF3 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		D77BB39C15F7B55500CB4FF3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		D77BB39D15F7B55500CB4FF3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 
@@ -213,7 +217,6 @@
 				D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */,
 				D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */,
 				D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */,
-				D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */,
 				D75F5B6915F4F586000143D7 /* Supporting Files */,
 				DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */,
 				E2CA879315F6062E002BF408 /* IGA01ViewController.h */,
@@ -307,6 +310,8 @@
 				D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */,
 				D77BB38615F7A6EF00CB4FF3 /* IGRestaurantUtil.h */,
 				D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */,
+				1801AD1B15F877FB0088875D /* IGDistanceUpdate.h */,
+				1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */,
 				E2CA53AF15F87FA200654E82 /* IGLocationUtil.h */,
 				E2CA53B015F87FA200654E82 /* IGLocationUtil.m */,
 
@@ -317,10 +322,11 @@
 		E27830B515F5E11100AEBEB3 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				1864A3CB15F8803700503C05 /* Restaurant.h */,
+				1864A3CC15F8803700503C05 /* Restaurant.m */,
 				D77BB39C15F7B55500CB4FF3 /* Image.h */,
 				D77BB39D15F7B55500CB4FF3 /* Image.m */,
-				D77BB39915F7B55400CB4FF3 /* Restaurant.h */,
-				D77BB39A15F7B55400CB4FF3 /* Restaurant.m */,
+				D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -428,8 +434,9 @@
 				D77BB37615F7923200CB4FF3 /* SBJsonWriter.m in Sources */,
 				D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */,
 				D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */,
-				D77BB39B15F7B55400CB4FF3 /* Restaurant.m in Sources */,
 				D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */,
+				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
+				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
 				E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */,
 
 			);

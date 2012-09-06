@@ -54,6 +54,37 @@ static NSManagedObjectContext *staticManagedObjectContext;
 
 }
 
++(NSArray*) queryForArray:(NSString *) entityName 
+            queryCondition:(NSString *) queryCondition 
+            sortDescriptors:(NSArray *)  sortDescriptors {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    // 查询对象设置
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName 
+                                              inManagedObjectContext:staticManagedObjectContext];
+    [request setEntity:entity];
+    
+    // 查询条件设置
+    if(queryCondition != nil){
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:queryCondition];
+        [request setPredicate:predicate];
+    }
+    
+    // 排序设置
+    if(sortDescriptors != nil){
+        [request setSortDescriptors:sortDescriptors];
+    }
+    
+    NSError *error = nil;
+    NSArray *fetchResult = [staticManagedObjectContext executeFetchRequest:request error:&error];
+    
+    if (error) {
+        return nil;
+    }
+    return fetchResult;
+}
+
 +(NSArray*)queryForFetchedResultByExpression:(NSString *)entityName method:(NSString*) method selectColumn:(NSString*) column keyName:(NSString*) keyName queryPredicate:(NSPredicate *)predicate
 {
     

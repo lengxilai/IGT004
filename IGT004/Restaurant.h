@@ -2,7 +2,7 @@
 //  Restaurant.h
 //  IGT004
 //
-//  Created by 鹏 李 on 12-9-6.
+//  Created by Ming Liu on 12-9-6.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -13,9 +13,11 @@
 
 @interface Restaurant : NSManagedObject
 
+@property (nonatomic, retain) NSString * abbrName;
 @property (nonatomic, retain) NSString * address;
 @property (nonatomic, retain) NSNumber * averageCost;
 @property (nonatomic, retain) NSString * descriptionMemo;
+@property (nonatomic, retain) NSNumber * distance;
 @property (nonatomic, retain) NSString * iconName;
 @property (nonatomic, retain) NSNumber * id;
 @property (nonatomic, retain) NSString * latitude;
