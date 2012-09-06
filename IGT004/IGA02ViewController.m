@@ -11,6 +11,7 @@
 #import "IGCommonDefine.h"
 #import "IGCoreDataUtil.h"
 #import "Restaurant.h"
+#import "IGFileUtil.h"
 
 @interface IGA02ViewController ()
 
@@ -132,11 +133,24 @@
 // 向cell中的填充内容
 -(void)updateContentToCell:(IGA02TableViewCell*) cell :(Restaurant *) newRestaurant{
     
+//    [cell.iconImageView setImage:[UIImage imageNamed:[IGFileUtil getIconImageByRestaurantId:@"1"]]];
+    UIImage *img = [[UIImage alloc] initWithContentsOfFile: [IGFileUtil getIconImageByRestaurantId:[self toString:newRestaurant.id] forIconName:newRestaurant.iconName]];
+    NSLog(@"%@", [self toString:newRestaurant.id]);
+    NSLog(@"%@", newRestaurant.iconName);
+    NSLog(@"%@", [IGFileUtil getIconImageByRestaurantId:[self toString:newRestaurant.id] forIconName:newRestaurant.iconName]);
+    [cell.iconImageView setImage:img];
+//    [cell.iconImageView setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:[IGFileUtil getIconImageByRestaurantId:@"1"]]]];
     cell.restaurantName.text = newRestaurant.name;
     cell.restaurantAddress.text = newRestaurant.address;
     cell.distance.text = @"距离：2.3km";
     cell.averageCost.text = [NSString stringWithFormat:@"人均消费：%d元", newRestaurant.averageCost.intValue];
     
+}
+
+//NSNumbe to NSString
+-(NSString *) toString:(NSNumber *) number {
+    NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
+    return [numberFormatter stringFromNumber:number];
 }
 
 
