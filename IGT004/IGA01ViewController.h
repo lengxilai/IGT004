@@ -12,14 +12,17 @@
 #import "IGCoreDataUtil.h"
 #import "IGMapAnnotationView.h"
 #import "IGCommonDefine.h"
+#import "IGLocationUtil.h"
 @interface IGA01ViewController : UIViewController <MKMapViewDelegate,NSFetchedResultsControllerDelegate>  {
     MKMapView *m_mkMapView;
     NSMutableArray *m_geoArray;
     double m_locationLatitude;
     double m_locationLongitude;
     UISearchBar *m_searchBar;
+    IGLocationUtil *lu;
     //结果集管理器
     NSFetchedResultsController *fetchedResultsController;
 }
+
 
 @end

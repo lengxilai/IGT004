@@ -17,9 +17,10 @@
 #pragma mark Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        lu  = [IGLocationUtil locationUtil];
     }
     return self;
 }
@@ -146,9 +147,9 @@
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
     
     NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
-    
+    lu.l_locationLatitude = [lat doubleValue];
+    lu.l_locationLongitude = [lng doubleValue];
     m_locationLatitude=[lat doubleValue];
-    
     m_locationLongitude=[lng doubleValue];
     
     MKCoordinateSpan span;
@@ -166,6 +167,9 @@
     [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
 }
 
+-(MKUserLocation*)getUserlocation{
+    
+}
 #pragma mark -
 #pragma mark data
 -(void)getRestaurantList{
