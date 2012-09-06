@@ -10,6 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "IGCoreDataUtil.h"
 #import "Restaurant.h"
+#import "IGLocationUtil.h"
 
 @interface IGDistanceUpdate : NSObject
 +(void)updateDistance;
