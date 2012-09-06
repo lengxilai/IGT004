@@ -32,24 +32,7 @@
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
     m_mkMapView.showsUserLocation=YES;
-    //    //创建位置管理器
-    //    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    //    //设置代理
-    //    locationManager.delegate=self;
-    //    //指定需要的精度级别
-    //    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-    //    //设置距离筛选器
-    //    locationManager.distanceFilter=1000.0f;
-    //    //启动位置管理器
-    //    [locationManager startUpdatingLocation]; 
-    //    MKCoordinateSpan theSpan;
-    //    //地图的范围 越小越精确
-    //    theSpan.latitudeDelta=0.05;
-    //    theSpan.longitudeDelta=0.05; 
-    //    MKCoordinateRegion region;
-    //    region.center = [[locationManager location] coordinate]; 
-    //    region.span = theSpan;
-    //    m_mkMapView.region = region;
+
     [self.view addSubview: m_mkMapView];
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
@@ -131,6 +114,8 @@
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
     //吴嘉宾调用
+    IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
+    Restaurant *res = [annotationMapView restaurant];
     NSLog(@"ddd");
 }
 // mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
@@ -198,7 +183,7 @@
         
         CLLocationCoordinate2D coordinate2D = {latitude, longitude};
         geoInfo.m_coordinate2D = coordinate2D;
-        
+        geoInfo.res = r;
         [m_geoArray addObject: geoInfo];
     }
     

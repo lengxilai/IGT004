@@ -9,6 +9,6 @@
 #import "IGGEOInfo.h"
 
 @implementation IGGEOInfo
-@synthesize m_id, m_name, m_description, m_imageName, m_coordinate2D;
+@synthesize m_id, m_name, m_description, m_imageName, m_coordinate2D,res;
 
 @end

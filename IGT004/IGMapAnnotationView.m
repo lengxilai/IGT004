@@ -42,7 +42,8 @@
         label.numberOfLines = 0;
         [annotationView addSubview:label];
         [self addSubview:annotationView];
-        
+        IGBasicAnnotation *basicAnotation = annotation;
+        res = [basicAnotation restaurant];
     }
     return self;
 }
@@ -50,5 +51,8 @@
     int nameLength = [name length];
     CGSize size = [name sizeWithFont:[UIFont fontWithName:@"Helvetica" size:12] constrainedToSize:CGSizeMake(12*nameLength, MAXFLOAT)];
     return size.width;
+}
+-(Restaurant *)restaurant{
+    return res;
 }
 @end
