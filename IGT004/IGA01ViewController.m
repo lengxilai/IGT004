@@ -62,6 +62,14 @@
     [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
     m_searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
     [self.view addSubview:m_searchBar];
+    
+    //定位按钮
+    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_icon.png"]]; 
+    UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
+    [searchLocationView addSubview:searchMyselfView];
+    UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
+    [searchLocationView addGestureRecognizer:searchMyselfViewTap];
+    [self.view addSubview:searchLocationView];
 }
 
 - (void)viewDidLoad
@@ -241,5 +249,21 @@
 -(void)cancelInput{
     [[self.view viewWithTag:10001] removeFromSuperview];
     [m_searchBar resignFirstResponder];
+}
+-(void)showLocation{
+    
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];//创建位置管理器
+    locationManager.delegate=self;//设置代理
+    locationManager.desiredAccuracy=kCLLocationAccuracyBest;//指定需要的精度级别
+    locationManager.distanceFilter=1000.0f;//设置距离筛选器
+    [locationManager startUpdatingLocation];//启动位置管理器
+    MKCoordinateSpan theSpan;
+    //地图的范围 越小越精确
+    theSpan.latitudeDelta=0.010;
+    theSpan.longitudeDelta=0.010;
+    MKCoordinateRegion theRegion;
+    theRegion.center=[[locationManager location] coordinate];
+    theRegion.span=theSpan;
+    [m_mkMapView setRegion:theRegion];
 }
 @end
