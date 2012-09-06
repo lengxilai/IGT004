@@ -7,12 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <MapKit/MapKit.h>
 @interface IGLocationUtil : NSObject{
-    double l_locationLatitude;
-    double l_locationLongitude;
+    
 }
-@property(nonatomic,assign)double l_locationLatitude;
-@property(nonatomic,assign)double l_locationLongitude;
-+(IGLocationUtil*)locationUtil;
++(void)setUserLocation:(MKUserLocation *)location;
++(MKUserLocation *)getUserLocation;
 @end

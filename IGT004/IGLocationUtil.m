@@ -9,17 +9,11 @@
 #import "IGLocationUtil.h"
 
 @implementation IGLocationUtil
-static IGLocationUtil *staticLocationUtil;
-@synthesize l_locationLatitude;
-@synthesize l_locationLongitude;
-+(IGLocationUtil*)locationUtil
-{
-    if (staticLocationUtil == nil) {
-        staticLocationUtil = [[IGLocationUtil alloc] init];
-        return staticLocationUtil;
-    }else {
-        return staticLocationUtil;
-    }
+static MKUserLocation *l_location;
++(void)setUserLocation:(MKUserLocation *)location{
+    l_location = location;
 }
-
++(MKUserLocation *)getUserLocation{
+    return l_location;
+}
 @end

@@ -19,7 +19,6 @@
     double m_locationLatitude;
     double m_locationLongitude;
     UISearchBar *m_searchBar;
-    IGLocationUtil *lu;
     //结果集管理器
     NSFetchedResultsController *fetchedResultsController;
 }

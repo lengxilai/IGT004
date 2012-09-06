@@ -20,7 +20,6 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        lu  = [IGLocationUtil locationUtil];
     }
     return self;
 }
@@ -147,8 +146,7 @@
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
     
     NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
-    lu.l_locationLatitude = [lat doubleValue];
-    lu.l_locationLongitude = [lng doubleValue];
+    [IGLocationUtil setUserLocation:userLocation];
     m_locationLatitude=[lat doubleValue];
     m_locationLongitude=[lng doubleValue];
     
