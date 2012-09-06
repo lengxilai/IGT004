@@ -17,9 +17,10 @@
 #pragma mark Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        lu  = [IGLocationUtil locationUtil];
     }
     return self;
 }
@@ -56,8 +57,7 @@
     m_searchBar.delegate = self;
     m_searchBar.barStyle = UIBarStyleBlackTranslucent;
     m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    m_searchBar.backgroundColor = [UIColor grayColor];
-    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"40-di.png"]];
+    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchBar_bg.png"]];
     
     [m_searchBar insertSubview:backSearchBarimageView atIndex:1];
     [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
@@ -147,9 +147,9 @@
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
     
     NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
-    
+    lu.l_locationLatitude = [lat doubleValue];
+    lu.l_locationLongitude = [lng doubleValue];
     m_locationLatitude=[lat doubleValue];
-    
     m_locationLongitude=[lng doubleValue];
     
     MKCoordinateSpan span;
@@ -167,6 +167,9 @@
     [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
 }
 
+-(MKUserLocation*)getUserlocation{
+    
+}
 #pragma mark -
 #pragma mark data
 -(void)getRestaurantList{
@@ -180,11 +183,11 @@
     IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
     
     geoInfo.m_id = 1111;
-    //geoInfo.m_name = @"test";
+    geoInfo.m_name = @"这是一个测试";
     
     NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
     
-    // geoInfo.m_description = @"yamede";
+    geoInfo.m_description = @"牟传仁老菜馆";
     
     CLLocationDegrees latitude = 37.7858;
     CLLocationDegrees longitude = -122.406;

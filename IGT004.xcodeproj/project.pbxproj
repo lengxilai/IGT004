@@ -35,6 +35,7 @@
 		D77BB37615F7923200CB4FF3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36A15F7923200CB4FF3 /* SBJsonWriter.m */; };
 		D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
 		D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
+		D77BB39B15F7B55400CB4FF3 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39A15F7B55400CB4FF3 /* Restaurant.m */; };
 		D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
@@ -52,6 +53,7 @@
 		E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
 		E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */; };
 		E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */; };
+		E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA53B015F87FA200654E82 /* IGLocationUtil.m */; };
 		E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA879415F6062E002BF408 /* IGA01ViewController.m */; };
 		E2CA87DA15F640DC002BF408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA87D915F640DC002BF408 /* CoreLocation.framework */; };
 		E2CA880F15F76160002BF408 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2CA880E15F76160002BF408 /* logo.jpg */; };
@@ -136,6 +138,8 @@
 		E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGBasicAnnotation.m; sourceTree = "<group>"; };
 		E27830B215F5DBB300AEBEB3 /* IGMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGMapAnnotationView.h; sourceTree = "<group>"; };
 		E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGMapAnnotationView.m; sourceTree = "<group>"; };
+		E2CA53AF15F87FA200654E82 /* IGLocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGLocationUtil.h; sourceTree = "<group>"; };
+		E2CA53B015F87FA200654E82 /* IGLocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLocationUtil.m; sourceTree = "<group>"; };
 		E2CA879315F6062E002BF408 /* IGA01ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA01ViewController.h; sourceTree = "<group>"; };
 		E2CA879415F6062E002BF408 /* IGA01ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA01ViewController.m; sourceTree = "<group>"; };
 		E2CA87D915F640DC002BF408 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -295,6 +299,8 @@
 				D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */,
 				1801AD1B15F877FB0088875D /* IGDistanceUpdate.h */,
 				1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */,
+				E2CA53AF15F87FA200654E82 /* IGLocationUtil.h */,
+				E2CA53B015F87FA200654E82 /* IGLocationUtil.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 				D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */,
 				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
 				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
+				E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
