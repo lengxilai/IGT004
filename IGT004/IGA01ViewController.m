@@ -51,6 +51,18 @@
     //    region.span = theSpan;
     //    m_mkMapView.region = region;
     [self.view addSubview: m_mkMapView];
+    //搜索框
+    m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
+    m_searchBar.delegate = self;
+    m_searchBar.barStyle = UIBarStyleBlackTranslucent;
+    m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    m_searchBar.backgroundColor = [UIColor grayColor];
+    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"40-di.png"]];
+    
+    [m_searchBar insertSubview:backSearchBarimageView atIndex:1];
+    [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
+    m_searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
+    [self.view addSubview:m_searchBar];
 }
 
 - (void)viewDidLoad
@@ -185,11 +197,35 @@
     
     //    [result close];
 }
+// 生成列表的datasourse
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (fetchedResultsController != nil) {
+        return self.fetchedResultsController;
+    }
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
+    NSFetchedResultsController *newFetchedResultsController = 
+    [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
+    newFetchedResultsController.delegate = self;
+    fetchedResultsController = newFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![fetchedResultsController performFetch:&error]) {
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    return fetchedResultsController;
+}
 #pragma mark -
 #pragma mark 其他计算
 -(double)getdistanceFromLocationWithLongitude:(double)newLongitude withLongitud:(double)newLongitud {
     CLLocation *location = [[CLLocation alloc]initWithLatitude:m_locationLatitude longitude:m_locationLongitude];
     CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:newLongitude longitude:newLongitud];
     return [location distanceFromLocation:newLocation]/1000;
+}
+
+-(UIView *)getHeadView{
+    
+    return nil;
 }
 @end

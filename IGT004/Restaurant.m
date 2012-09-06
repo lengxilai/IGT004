@@ -2,24 +2,25 @@
 //  Restaurant.m
 //  IGT004
 //
-//  Created by wang chong on 12-9-4.
-//  Copyright (c) 2012年 ntt. All rights reserved.
+//  Created by 鹏 李 on 12-9-6.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import "Restaurant.h"
+#import "Image.h"
 
 
 @implementation Restaurant
 
-@dynamic id;
-@dynamic name;
-@dynamic tel;
 @dynamic address;
 @dynamic averageCost;
+@dynamic descriptionMemo;
+@dynamic iconName;
+@dynamic id;
 @dynamic latitude;
 @dynamic longitude;
-@dynamic iconName;
-@dynamic descriptionMemo;
+@dynamic name;
+@dynamic tel;
 @dynamic images;
 
 @end
