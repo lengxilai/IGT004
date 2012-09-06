@@ -107,7 +107,7 @@
         return nil;
     }
     
-    IGBasicAnnotation *basicAnnotation = (IGBasicAnnotation *)annotation;
+//    IGBasicAnnotation *basicAnnotation = (IGBasicAnnotation *)annotation;
     MKAnnotationView *mkAnnotationView;
     IGMapAnnotationView *annotationMapView = [[IGMapAnnotationView alloc] initWithAnnotation:annotation];
     
@@ -122,9 +122,9 @@
     mkAnnotationView = annotationView;
     
     
-    UIButton *addButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
-    addButton.tag = basicAnnotation.m_geoInfo.m_id;
-    [addButton addTarget:self action:@selector(showCompanyDetailInfo:) forControlEvents:UIControlEventTouchUpInside];
+//    UIButton *addButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
+//    addButton.tag = basicAnnotation.m_geoInfo.m_id;
+//    [addButton addTarget:self action:@selector(showCompanyDetailInfo:) forControlEvents:UIControlEventTouchUpInside];
     
     return mkAnnotationView;
     
@@ -154,10 +154,9 @@
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
     
     NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
-    [IGLocationUtil setUserLocation:userLocation];
+    [IGLocationUtil setUserLocation:[userLocation location]];
     m_locationLatitude=[lat doubleValue];
     m_locationLongitude=[lng doubleValue];
-    
     MKCoordinateSpan span;
     
     MKCoordinateRegion region;
@@ -173,9 +172,6 @@
     [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
 }
 
--(MKUserLocation*)getUserlocation{
-    
-}
 #pragma mark -
 #pragma mark data
 -(void)getRestaurantList{
@@ -184,46 +180,28 @@
     //    id<PLResultSet> result;
     //	result = [g_plDatabase executeQuery: @"Select ID, Name, Description, ImageName, Latitude, Longitude from GeoInfo"];
     //	
-    //	while([result next])
-    //    {
-    IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
-    
-    geoInfo.m_id = 1111;
-    geoInfo.m_name = @"这是一个测试";
-    
-    NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
-    
-    geoInfo.m_description = @"牟传仁老菜馆";
-    
-    CLLocationDegrees latitude = 37.7858;
-    CLLocationDegrees longitude = -122.406;
-    
-    CLLocationCoordinate2D coordinate2D = {latitude, longitude};
-    geoInfo.m_coordinate2D = coordinate2D;
-    
-    [m_geoArray addObject: geoInfo];
-    //    }
-    
-    //    [result close];
-}
-// 生成列表的datasourse
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (fetchedResultsController != nil) {
-        return self.fetchedResultsController;
-    }
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
-    NSFetchedResultsController *newFetchedResultsController = 
-    [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
-    newFetchedResultsController.delegate = self;
-    fetchedResultsController = newFetchedResultsController;
+    NSArray *results = [IGCoreDataUtil queryForArray:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
     
-	NSError *error = nil;
-	if (![fetchedResultsController performFetch:&error]) {
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    return fetchedResultsController;
+    for (Restaurant *r in results) {
+        IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
+        
+        geoInfo.m_id = [[r id] doubleValue];
+        geoInfo.m_name = [r name];
+        
+        NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
+        
+        geoInfo.m_description = [r name];
+        
+        CLLocationDegrees latitude = [[r latitude] doubleValue];
+        CLLocationDegrees longitude = [[r longitude] doubleValue];
+        
+        CLLocationCoordinate2D coordinate2D = {latitude, longitude};
+        geoInfo.m_coordinate2D = coordinate2D;
+        
+        [m_geoArray addObject: geoInfo];
+    }
+    
 }
 #pragma mark -
 #pragma mark searchbar delegate
@@ -265,5 +243,6 @@
     theRegion.center=[[locationManager location] coordinate];
     theRegion.span=theSpan;
     [m_mkMapView setRegion:theRegion];
+    [IGLocationUtil setUserLocation:[locationManager location]];
 }
 @end

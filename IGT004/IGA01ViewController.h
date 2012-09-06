@@ -13,6 +13,7 @@
 #import "IGMapAnnotationView.h"
 #import "IGCommonDefine.h"
 #import "IGLocationUtil.h"
+#import "Restaurant.h"
 @interface IGA01ViewController : UIViewController <MKMapViewDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate>  {
     MKMapView *m_mkMapView;
     NSMutableArray *m_geoArray;

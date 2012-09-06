@@ -11,6 +11,6 @@
 @interface IGLocationUtil : NSObject{
     
 }
-+(void)setUserLocation:(MKUserLocation *)location;
-+(MKUserLocation *)getUserLocation;
++(void)setUserLocation:(CLLocation *)location;
++(CLLocation *)getUserLocation;
 @end
