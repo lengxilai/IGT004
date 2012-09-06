@@ -218,15 +218,28 @@
     return fetchedResultsController;
 }
 #pragma mark -
+#pragma mark searchbar delegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, 400)];
+    backgroundView.backgroundColor = [UIColor grayColor];
+    backgroundView.alpha = 0.7;
+    backgroundView.tag = 10001;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelInput)];
+    [backgroundView addGestureRecognizer:singleTap];
+
+    [self.view addSubview:backgroundView];
+    return YES;
+}
+#pragma mark -
 #pragma mark 其他计算
 -(double)getdistanceFromLocationWithLongitude:(double)newLongitude withLongitud:(double)newLongitud {
     CLLocation *location = [[CLLocation alloc]initWithLatitude:m_locationLatitude longitude:m_locationLongitude];
     CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:newLongitude longitude:newLongitud];
     return [location distanceFromLocation:newLocation]/1000;
 }
-
--(UIView *)getHeadView{
-    
-    return nil;
+//取消搜索
+-(void)cancelInput{
+    [[self.view viewWithTag:10001] removeFromSuperview];
+    [m_searchBar resignFirstResponder];
 }
 @end
