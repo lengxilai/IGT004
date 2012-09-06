@@ -19,7 +19,7 @@
 
 //横线背景图片
 + (UIColor*)bottomLineBackgroundImageColor {
-    return [UIColor colorWithPatternImage:[UIImage imageNamed:@"bottom_line.png"]];
+    return [UIColor colorWithPatternImage:[UIImage imageNamed:@"line.png"]];
 }
 
 //

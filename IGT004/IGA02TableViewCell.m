@@ -28,7 +28,7 @@
         //饭店名称显示
         restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(A02RestaurantNameX, A02RestaurantNameY, A02RestaurantNameW, A02RestaurantNameH)];
         restaurantName.adjustsFontSizeToFitWidth = YES;
-        restaurantAddress.textColor = [UIColor colorWithHex:0x333333 alpha:1.0];
+        restaurantName.textColor = [UIColor colorWithHex:0x000000 alpha:1.0];
         //饭店地址显示
         restaurantAddress = [[UILabel alloc] initWithFrame:CGRectMake(A02RestaurantAddressX, A02RestaurantAddressY, A02RestaurantAddressW, A02RestaurantAddressH)];
         restaurantAddress.adjustsFontSizeToFitWidth = YES;
@@ -56,7 +56,7 @@
         [self.contentView addSubview:averageCost];
         
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(A02BottomLineX, A02BottomLineY, A02BottomLineW, A02BottomLineH)];
-        bottomView.backgroundColor = [UIColor colorWithHex:0xe0e0e0 alpha:1.0];
+        bottomView.backgroundColor = [UIColor bottomLineBackgroundImageColor];
         [self.contentView addSubview:bottomView];
         //self.contentView.backgroundColor = [UIColor bottomLineBackgroundImageColor];
     }

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 #import "IGA02TableViewCell.h"
+#import "IGA03ViewController.h"
 
 @interface IGA02ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource> {
     
@@ -20,5 +21,6 @@
     UITableView *dataListTableView;
 
 }
+@property (strong, nonatomic) IGA03ViewController *a03ViewController;
 
 @end
