@@ -114,7 +114,7 @@
     MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"annotationView"];
     annotationView.userInteractionEnabled = YES;
     annotationView.alpha = 0.9;
-    annotationView.canShowCallout = TRUE;
+    annotationView.canShowCallout = NO;
     //annotationView.image = [UIImage imageNamed:@"logo.jpg"];
     //    [annotationView addSubview:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]]];
     
@@ -191,7 +191,7 @@
         
         NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
         
-        geoInfo.m_description = [r name];
+        geoInfo.m_description = [r abbrName];
         
         CLLocationDegrees latitude = [[r latitude] doubleValue];
         CLLocationDegrees longitude = [[r longitude] doubleValue];
