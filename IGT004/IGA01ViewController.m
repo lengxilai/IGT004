@@ -41,9 +41,25 @@
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
     m_mkMapView.showsUserLocation=false;
-    
+    //初始化饭店位置
     MKCoordinateRegion region = {{[[res latitude ] doubleValue], [[res longitude]doubleValue]}, {0.016, 0.016}};
     m_mkMapView.region = region;
+    //显示饭店
+    IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
+    geoInfo.m_id = [[res id] doubleValue];
+    geoInfo.m_name = [res name];
+    
+    NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
+    
+    geoInfo.m_description = [res abbrName];
+    
+    CLLocationDegrees latitude = [[res latitude] doubleValue];
+    CLLocationDegrees longitude = [[res longitude] doubleValue];
+    
+    CLLocationCoordinate2D coordinate2D = {latitude, longitude};
+    geoInfo.m_coordinate2D = coordinate2D;
+    geoInfo.res = res;
+
     return self;
 }
 -(void)loadView{
