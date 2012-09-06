@@ -14,7 +14,7 @@
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
     NSArray *results = [IGCoreDataUtil queryForArray:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
 
-    CLLocation *location = [[CLLocation alloc]initWithLatitude:37.7858 longitude:-122.406];
+    CLLocation *location = [IGLocationUtil getUserLocation];
     if (results != nil) {
         for (Restaurant *r in results) {
             NSString *latitude = r.latitude;

@@ -24,6 +24,7 @@
     restaurant.longitude = [dir objectForKey:@"longitude"];
     restaurant.iconName = [dir objectForKey:@"iconName"];
     restaurant.descriptionMemo = [dir objectForKey:@"descriptionMemo"];
+    restaurant.abbrName = [dir objectForKey:@"abbrname"];
     
     // 取得组图数
     NSInteger imagecount = [[dir objectForKey:@"imagecount"] intValue];
