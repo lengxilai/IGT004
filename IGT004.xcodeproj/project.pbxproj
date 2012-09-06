@@ -1,69 +1,73 @@
-	// !$*UTF8*$!
-	{
-		archiveVersion = 1;
-		classes = {
-		};
-		objectVersion = 46;
-		objects = {
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
 
-	/* Begin PBXBuildFile section */
-			D75F5B6115F4F586000143D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6015F4F586000143D7 /* UIKit.framework */; };
-			D75F5B6315F4F586000143D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6215F4F586000143D7 /* Foundation.framework */; };
-			D75F5B6515F4F586000143D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6415F4F586000143D7 /* CoreGraphics.framework */; };
-			D75F5B6715F4F586000143D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6615F4F586000143D7 /* CoreData.framework */; };
-			D75F5B6D15F4F586000143D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B6B15F4F586000143D7 /* InfoPlist.strings */; };
-			D75F5B6F15F4F586000143D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B6E15F4F586000143D7 /* main.m */; };
-			D75F5B7315F4F586000143D7 /* IGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7215F4F586000143D7 /* IGAppDelegate.m */; };
-			D75F5B7615F4F586000143D7 /* IGT004.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */; };
-			D75F5B7915F4F586000143D7 /* IGMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7815F4F586000143D7 /* IGMasterViewController.m */; };
-			D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */; };
-			D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */; };
-			D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */; };
-			D77BB36B15F7923200CB4FF3 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35315F7923200CB4FF3 /* NSObject+SBJson.m */; };
-			D77BB36C15F7923200CB4FF3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35615F7923200CB4FF3 /* SBJsonParser.m */; };
-			D77BB36D15F7923200CB4FF3 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35815F7923200CB4FF3 /* SBJsonStreamParser.m */; };
-			D77BB36E15F7923200CB4FF3 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35A15F7923200CB4FF3 /* SBJsonStreamParserAccumulator.m */; };
-			D77BB36F15F7923200CB4FF3 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35C15F7923200CB4FF3 /* SBJsonStreamParserAdapter.m */; };
-			D77BB37015F7923200CB4FF3 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35E15F7923200CB4FF3 /* SBJsonStreamParserState.m */; };
-			D77BB37115F7923200CB4FF3 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36015F7923200CB4FF3 /* SBJsonStreamWriter.m */; };
-			D77BB37215F7923200CB4FF3 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36215F7923200CB4FF3 /* SBJsonStreamWriterAccumulator.m */; };
-			D77BB37315F7923200CB4FF3 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36415F7923200CB4FF3 /* SBJsonStreamWriterState.m */; };
-			D77BB37415F7923200CB4FF3 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36615F7923200CB4FF3 /* SBJsonTokeniser.m */; };
-			D77BB37515F7923200CB4FF3 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36815F7923200CB4FF3 /* SBJsonUTF8Stream.m */; };
-			D77BB37615F7923200CB4FF3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36A15F7923200CB4FF3 /* SBJsonWriter.m */; };
-			D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
-			D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
-			D77BB39B15F7B55400CB4FF3 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39A15F7B55400CB4FF3 /* Restaurant.m */; };
-			D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
-			DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
-			DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
-			DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416BC15F60269009D8C65 /* IGCommonDefine.m */; };
-			DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */; };
-			DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */; };
-			E255A5A915F8698500651C5B /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A515F8698500651C5B /* location_icon.png */; };
-			E255A5AA15F8698500651C5B /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A615F8698500651C5B /* location_icon@2x.png */; };
-			E255A5AB15F8698500651C5B /* searchBar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A715F8698500651C5B /* searchBar_bg.png */; };
-			E255A5AC15F8698500651C5B /* searchBar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A815F8698500651C5B /* searchBar_bg@2x.png */; };
-			E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5AE15F869EF00651C5B /* maplabel_arrow.png */; };
-			E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5AF15F869EF00651C5B /* maplabel_arrow@2x.png */; };
-			E255A5B415F869EF00651C5B /* maplabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5B015F869EF00651C5B /* maplabel.png */; };
-			E255A5B515F869EF00651C5B /* maplabelhotel_full@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5B115F869EF00651C5B /* maplabelhotel_full@2x.png */; };
-			E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278309D15F5CA8900AEBEB3 /* MapKit.framework */; };
-			E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
-			E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */; };
-			E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */; };
-			E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA879415F6062E002BF408 /* IGA01ViewController.m */; };
-			E2CA87DA15F640DC002BF408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA87D915F640DC002BF408 /* CoreLocation.framework */; };
-			E2CA880F15F76160002BF408 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2CA880E15F76160002BF408 /* logo.jpg */; };
-	/* End PBXBuildFile section */
+/* Begin PBXBuildFile section */
+		1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */; };
+		1864A3CD15F8803700503C05 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1864A3CC15F8803700503C05 /* Restaurant.m */; };
+		D75F5B6115F4F586000143D7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6015F4F586000143D7 /* UIKit.framework */; };
+		D75F5B6315F4F586000143D7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6215F4F586000143D7 /* Foundation.framework */; };
+		D75F5B6515F4F586000143D7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6415F4F586000143D7 /* CoreGraphics.framework */; };
+		D75F5B6715F4F586000143D7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D75F5B6615F4F586000143D7 /* CoreData.framework */; };
+		D75F5B6D15F4F586000143D7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B6B15F4F586000143D7 /* InfoPlist.strings */; };
+		D75F5B6F15F4F586000143D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B6E15F4F586000143D7 /* main.m */; };
+		D75F5B7315F4F586000143D7 /* IGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7215F4F586000143D7 /* IGAppDelegate.m */; };
+		D75F5B7615F4F586000143D7 /* IGT004.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */; };
+		D75F5B7915F4F586000143D7 /* IGMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7815F4F586000143D7 /* IGMasterViewController.m */; };
+		D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */; };
+		D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */; };
+		D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */; };
+		D77BB36B15F7923200CB4FF3 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35315F7923200CB4FF3 /* NSObject+SBJson.m */; };
+		D77BB36C15F7923200CB4FF3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35615F7923200CB4FF3 /* SBJsonParser.m */; };
+		D77BB36D15F7923200CB4FF3 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35815F7923200CB4FF3 /* SBJsonStreamParser.m */; };
+		D77BB36E15F7923200CB4FF3 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35A15F7923200CB4FF3 /* SBJsonStreamParserAccumulator.m */; };
+		D77BB36F15F7923200CB4FF3 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35C15F7923200CB4FF3 /* SBJsonStreamParserAdapter.m */; };
+		D77BB37015F7923200CB4FF3 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35E15F7923200CB4FF3 /* SBJsonStreamParserState.m */; };
+		D77BB37115F7923200CB4FF3 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36015F7923200CB4FF3 /* SBJsonStreamWriter.m */; };
+		D77BB37215F7923200CB4FF3 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36215F7923200CB4FF3 /* SBJsonStreamWriterAccumulator.m */; };
+		D77BB37315F7923200CB4FF3 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36415F7923200CB4FF3 /* SBJsonStreamWriterState.m */; };
+		D77BB37415F7923200CB4FF3 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36615F7923200CB4FF3 /* SBJsonTokeniser.m */; };
+		D77BB37515F7923200CB4FF3 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36815F7923200CB4FF3 /* SBJsonUTF8Stream.m */; };
+		D77BB37615F7923200CB4FF3 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB36A15F7923200CB4FF3 /* SBJsonWriter.m */; };
+		D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
+		D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
+		D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
+		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
+		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
+		DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416BC15F60269009D8C65 /* IGCommonDefine.m */; };
+		DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */; };
+		DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */; };
+		E255A5A915F8698500651C5B /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A515F8698500651C5B /* location_icon.png */; };
+		E255A5AA15F8698500651C5B /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A615F8698500651C5B /* location_icon@2x.png */; };
+		E255A5AB15F8698500651C5B /* searchBar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A715F8698500651C5B /* searchBar_bg.png */; };
+		E255A5AC15F8698500651C5B /* searchBar_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A815F8698500651C5B /* searchBar_bg@2x.png */; };
+		E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5AE15F869EF00651C5B /* maplabel_arrow.png */; };
+		E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5AF15F869EF00651C5B /* maplabel_arrow@2x.png */; };
+		E255A5B415F869EF00651C5B /* maplabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5B015F869EF00651C5B /* maplabel.png */; };
+		E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278309D15F5CA8900AEBEB3 /* MapKit.framework */; };
+		E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
+		E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */; };
+		E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */; };
+		E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA879415F6062E002BF408 /* IGA01ViewController.m */; };
+		E2CA87DA15F640DC002BF408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA87D915F640DC002BF408 /* CoreLocation.framework */; };
+		E2CA880F15F76160002BF408 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E2CA880E15F76160002BF408 /* logo.jpg */; };
+/* End PBXBuildFile section */
 
-	/* Begin PBXFileReference section */
-			D75F5B5C15F4F586000143D7 /* IGT004.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGT004.app; sourceTree = BUILT_PRODUCTS_DIR; };
-			D75F5B6015F4F586000143D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-			D75F5B6215F4F586000143D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-			D75F5B6415F4F586000143D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-			D75F5B6615F4F586000143D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-			D75F5B6A15F4F586000143D7 /* IGT004-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IGT004-Info.plist"; sourceTree = "<group>"; };
+/* Begin PBXFileReference section */
+		1801AD1B15F877FB0088875D /* IGDistanceUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGDistanceUpdate.h; sourceTree = "<group>"; };
+		1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGDistanceUpdate.m; sourceTree = "<group>"; };
+		1864A3CB15F8803700503C05 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
+		1864A3CC15F8803700503C05 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		D75F5B5C15F4F586000143D7 /* IGT004.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IGT004.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D75F5B6015F4F586000143D7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D75F5B6215F4F586000143D7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D75F5B6415F4F586000143D7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D75F5B6615F4F586000143D7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D75F5B6A15F4F586000143D7 /* IGT004-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IGT004-Info.plist"; sourceTree = "<group>"; };
 		D75F5B6C15F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D75F5B6E15F4F586000143D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D75F5B7015F4F586000143D7 /* IGT004-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IGT004-Prefix.pch"; sourceTree = "<group>"; };
@@ -105,8 +109,6 @@
 		D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGJsonUtil.m; sourceTree = "<group>"; };
 		D77BB38615F7A6EF00CB4FF3 /* IGRestaurantUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGRestaurantUtil.h; sourceTree = "<group>"; };
 		D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRestaurantUtil.m; sourceTree = "<group>"; };
-		D77BB39915F7B55400CB4FF3 /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
-		D77BB39A15F7B55400CB4FF3 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		D77BB39C15F7B55500CB4FF3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		D77BB39D15F7B55500CB4FF3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
@@ -202,7 +204,6 @@
 				D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */,
 				D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */,
 				D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */,
-				D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */,
 				D75F5B6915F4F586000143D7 /* Supporting Files */,
 				DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */,
 				E2CA879315F6062E002BF408 /* IGA01ViewController.h */,
@@ -269,7 +270,6 @@
 				E255A5A715F8698500651C5B /* searchBar_bg.png */,
 				E255A5A815F8698500651C5B /* searchBar_bg@2x.png */,
 				E2CA880E15F76160002BF408 /* logo.jpg */,
-				DC7416BF15F60CF0009D8C65 /* bottom_line.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -293,6 +293,8 @@
 				D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */,
 				D77BB38615F7A6EF00CB4FF3 /* IGRestaurantUtil.h */,
 				D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */,
+				1801AD1B15F877FB0088875D /* IGDistanceUpdate.h */,
+				1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -300,10 +302,11 @@
 		E27830B515F5E11100AEBEB3 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				1864A3CB15F8803700503C05 /* Restaurant.h */,
+				1864A3CC15F8803700503C05 /* Restaurant.m */,
 				D77BB39C15F7B55500CB4FF3 /* Image.h */,
 				D77BB39D15F7B55500CB4FF3 /* Image.m */,
-				D77BB39915F7B55400CB4FF3 /* Restaurant.h */,
-				D77BB39A15F7B55400CB4FF3 /* Restaurant.m */,
+				D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */,
 			);
 			name = DB;
 			sourceTree = "<group>";
@@ -362,7 +365,6 @@
 				D75F5B6D15F4F586000143D7 /* InfoPlist.strings in Resources */,
 				D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */,
 				D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */,
-				DC7416C015F60CF0009D8C65 /* bottom_line.png in Resources */,
 				E2CA880F15F76160002BF408 /* logo.jpg in Resources */,
 				E255A5A915F8698500651C5B /* location_icon.png in Resources */,
 				E255A5AA15F8698500651C5B /* location_icon@2x.png in Resources */,
@@ -371,7 +373,7 @@
 				E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */,
 				E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */,
 				E255A5B415F869EF00651C5B /* maplabel.png in Resources */,
-				E255A5B515F869			);
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
@@ -409,8 +411,9 @@
 				D77BB37615F7923200CB4FF3 /* SBJsonWriter.m in Sources */,
 				D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */,
 				D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */,
-				D77BB39B15F7B55400CB4FF3 /* Restaurant.m in Sources */,
 				D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */,
+				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
+				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
