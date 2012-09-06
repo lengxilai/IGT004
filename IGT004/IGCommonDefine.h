@@ -29,4 +29,7 @@ typedef enum{
     //列表页底部横线位置
     A02BottomLineX = 45,A02BottomLineY = 82,A02BottomLineW =230,A02BottomLineH = 1,
 }A02RectDef;
+typedef enum{
+    A01FontSize = 10,
+}A01RectDef;
 @end

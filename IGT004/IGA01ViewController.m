@@ -17,14 +17,15 @@
 #pragma mark Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        lu  = [IGLocationUtil locationUtil];
     }
     return self;
 }
 -(void)loadView{
-
+    
     self.navigationItem.title = @"舌尖上的大连";
     
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
@@ -32,25 +33,36 @@
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
     m_mkMapView.showsUserLocation=YES;
-//    //创建位置管理器
-//    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-//    //设置代理
-//    locationManager.delegate=self;
-//    //指定需要的精度级别
-//    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-//    //设置距离筛选器
-//    locationManager.distanceFilter=1000.0f;
-//    //启动位置管理器
-//    [locationManager startUpdatingLocation]; 
-//    MKCoordinateSpan theSpan;
-//    //地图的范围 越小越精确
-//    theSpan.latitudeDelta=0.05;
-//    theSpan.longitudeDelta=0.05; 
-//    MKCoordinateRegion region;
-//    region.center = [[locationManager location] coordinate]; 
-//    region.span = theSpan;
-//    m_mkMapView.region = region;
+    //    //创建位置管理器
+    //    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    //    //设置代理
+    //    locationManager.delegate=self;
+    //    //指定需要的精度级别
+    //    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
+    //    //设置距离筛选器
+    //    locationManager.distanceFilter=1000.0f;
+    //    //启动位置管理器
+    //    [locationManager startUpdatingLocation]; 
+    //    MKCoordinateSpan theSpan;
+    //    //地图的范围 越小越精确
+    //    theSpan.latitudeDelta=0.05;
+    //    theSpan.longitudeDelta=0.05; 
+    //    MKCoordinateRegion region;
+    //    region.center = [[locationManager location] coordinate]; 
+    //    region.span = theSpan;
+    //    m_mkMapView.region = region;
     [self.view addSubview: m_mkMapView];
+    //搜索框
+    m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
+    m_searchBar.delegate = self;
+    m_searchBar.barStyle = UIBarStyleBlackTranslucent;
+    m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchBar_bg.png"]];
+    
+    [m_searchBar insertSubview:backSearchBarimageView atIndex:1];
+    [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
+    m_searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
+    [self.view addSubview:m_searchBar];
 }
 
 - (void)viewDidLoad
@@ -92,12 +104,13 @@
     MKAnnotationView *mkAnnotationView;
     IGMapAnnotationView *annotationMapView = [[IGMapAnnotationView alloc] initWithAnnotation:annotation];
     
-    
-    
     MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"annotationView"];
     annotationView.userInteractionEnabled = YES;
     annotationView.alpha = 0.9;
     annotationView.canShowCallout = TRUE;
+    //annotationView.image = [UIImage imageNamed:@"logo.jpg"];
+    //    [annotationView addSubview:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]]];
+    
     [annotationView addSubview:annotationMapView];
     mkAnnotationView = annotationView;
     
@@ -109,7 +122,10 @@
     return mkAnnotationView;
     
 }
-
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
+    //吴嘉宾调用
+    NSLog(@"ddd");
+}
 // mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
 // The delegate can implement this method to animate the adding of the annotations views.
 // Use the current positions of the annotation views as the destinations of the animation.
@@ -131,9 +147,9 @@
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
     
     NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
-    
+    lu.l_locationLatitude = [lat doubleValue];
+    lu.l_locationLongitude = [lng doubleValue];
     m_locationLatitude=[lat doubleValue];
-    
     m_locationLongitude=[lng doubleValue];
     
     MKCoordinateSpan span;
@@ -150,61 +166,69 @@
     
     [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
 }
-#pragma mark -
-#pragma mark location
-//- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation    fromLocation:(CLLocation *)oldLocation {
-//    
-//    CLLocationManager *locationManager = [[CLLocationManager alloc] init]; 
-//    if ([CLLocationManager locationServicesEnabled]) { 
-//        NSLog( @"Starting CLLocationManager" ); 
-//        locationManager.delegate = self; 
-//        locationManager.distanceFilter = 200; 
-//        locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
-//        [locationManager startUpdatingLocation]; 
-//    } else { 
-//        NSLog( @"Cannot Starting CLLocationManager" ); 
-//        /*self.locationManager.delegate = self; 
-//         self.locationManager.distanceFilter = 200; 
-//         locationManager.desiredAccuracy = kCLLocationAccuracyBest; 
-//         [self.locationManager startUpdatingLocation];*/ 
-//    }
-//    MKCoordinateSpan theSpan; 
-//    //设置地图的范围，越小越精确 
-//    theSpan.latitudeDelta = 0.02; 
-//    theSpan.longitudeDelta = 0.02; 
-//    MKCoordinateRegion theRegion; 
-//    theRegion.center = [[locationManager location] coordinate]; //让地图跳到之前获取到的当前位置checkinLocation 
-//    theRegion.span = theSpan;
-//    [m_mkMapView setRegion:theRegion];
-//}
+
+-(MKUserLocation*)getUserlocation{
+    
+}
 #pragma mark -
 #pragma mark data
 -(void)getRestaurantList{
     m_geoArray = [[NSMutableArray alloc] init];
     
-//    id<PLResultSet> result;
-//	result = [g_plDatabase executeQuery: @"Select ID, Name, Description, ImageName, Latitude, Longitude from GeoInfo"];
-//	
-//	while([result next])
-//    {
-        IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
-        
-        geoInfo.m_id = 1111;
-        geoInfo.m_name = @"test";
-        
-        NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
-        
-        geoInfo.m_description = @"yamede";
-        
-        CLLocationDegrees latitude = m_locationLatitude;
-        CLLocationDegrees longitude = m_locationLongitude;
-        
-        CLLocationCoordinate2D coordinate2D = {latitude, longitude};
-        geoInfo.m_coordinate2D = coordinate2D;
-        
-        [m_geoArray addObject: geoInfo];
-//    }
+    //    id<PLResultSet> result;
+    //	result = [g_plDatabase executeQuery: @"Select ID, Name, Description, ImageName, Latitude, Longitude from GeoInfo"];
+    //	
+    //	while([result next])
+    //    {
+    IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
     
-//    [result close];
+    geoInfo.m_id = 1111;
+    geoInfo.m_name = @"这是一个测试";
+    
+    NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
+    
+    geoInfo.m_description = @"牟传仁老菜馆";
+    
+    CLLocationDegrees latitude = 37.7858;
+    CLLocationDegrees longitude = -122.406;
+    
+    CLLocationCoordinate2D coordinate2D = {latitude, longitude};
+    geoInfo.m_coordinate2D = coordinate2D;
+    
+    [m_geoArray addObject: geoInfo];
+    //    }
+    
+    //    [result close];
+}
+// 生成列表的datasourse
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (fetchedResultsController != nil) {
+        return self.fetchedResultsController;
+    }
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
+    NSFetchedResultsController *newFetchedResultsController = 
+    [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
+    newFetchedResultsController.delegate = self;
+    fetchedResultsController = newFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![fetchedResultsController performFetch:&error]) {
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    return fetchedResultsController;
+}
+#pragma mark -
+#pragma mark 其他计算
+-(double)getdistanceFromLocationWithLongitude:(double)newLongitude withLongitud:(double)newLongitud {
+    CLLocation *location = [[CLLocation alloc]initWithLatitude:m_locationLatitude longitude:m_locationLongitude];
+    CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:newLongitude longitude:newLongitud];
+    return [location distanceFromLocation:newLocation]/1000;
+}
+
+-(UIView *)getHeadView{
+    
+    return nil;
 }
 @end

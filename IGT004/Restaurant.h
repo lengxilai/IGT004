@@ -2,42 +2,39 @@
 //  Restaurant.h
 //  IGT004
 //
-//  Created by wang chong on 12-9-4.
-//  Copyright (c) 2012年 ntt. All rights reserved.
+//  Created by 鹏 李 on 12-9-6.
+//  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+@class Image;
 
 @interface Restaurant : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * id;
-//饭店名称
-@property (nonatomic, retain) NSString * name;
-//电话
-@property (nonatomic, retain) NSString * tel;
-//地址
 @property (nonatomic, retain) NSString * address;
-//人均消费
 @property (nonatomic, retain) NSNumber * averageCost;
-//坐标
-@property (nonatomic, retain) NSString * latitude;
-//坐标
-@property (nonatomic, retain) NSString * longitude;
-//标志图标
-@property (nonatomic, retain) NSString * iconName;
-//介绍内容
 @property (nonatomic, retain) NSString * descriptionMemo;
-//图片集合
-@property (nonatomic, retain) NSSet *images;
+@property (nonatomic, retain) NSString * iconName;
+@property (nonatomic, retain) NSNumber * id;
+@property (nonatomic, retain) NSString * latitude;
+@property (nonatomic, retain) NSString * longitude;
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * tel;
+@property (nonatomic, retain) NSOrderedSet *images;
 @end
 
 @interface Restaurant (CoreDataGeneratedAccessors)
 
-- (void)addImagesObject:(NSManagedObject *)value;
-- (void)removeImagesObject:(NSManagedObject *)value;
-- (void)addImages:(NSSet *)values;
-- (void)removeImages:(NSSet *)values;
-
+- (void)insertObject:(Image *)value inImagesAtIndex:(NSUInteger)idx;
+- (void)removeObjectFromImagesAtIndex:(NSUInteger)idx;
+- (void)insertImages:(NSArray *)value atIndexes:(NSIndexSet *)indexes;
+- (void)removeImagesAtIndexes:(NSIndexSet *)indexes;
+- (void)replaceObjectInImagesAtIndex:(NSUInteger)idx withObject:(Image *)value;
+- (void)replaceImagesAtIndexes:(NSIndexSet *)indexes withImages:(NSArray *)values;
+- (void)addImagesObject:(Image *)value;
+- (void)removeImagesObject:(Image *)value;
+- (void)addImages:(NSOrderedSet *)values;
+- (void)removeImages:(NSOrderedSet *)values;
 @end

@@ -9,6 +9,7 @@
 #import "IGAppDelegate.h"
 #import "IGA01ViewController.h"
 #import "IGMasterViewController.h"
+#import "IGJsonUtil.h"
 
 @implementation IGAppDelegate
 
@@ -20,12 +21,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
     IGA01ViewController *masterViewController = [[IGA01ViewController alloc] initWithNibName:@"IGMasterViewController" bundle:nil];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
    // masterViewController.managedObjectContext = self.managedObjectContext;
+    
+    // 数据库文件初始化
+    [IGCoreDataUtil setStaticManagedObjectContext:self.managedObjectContext];
+    // 取得最新数据
+    IGJsonUtil *json = [[IGJsonUtil alloc] init];
+    [json getNewData];
+    
+    while (json.state == json_ing) {
+        // 读取数据中时候，显示个等待之类的
+    }
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
