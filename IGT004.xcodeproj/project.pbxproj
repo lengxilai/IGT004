@@ -38,11 +38,10 @@
 		D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
 		D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
 		D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
-<<<<<<< HEAD
+
 		DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC162D5515F8924D004FBA2A /* IGA03ViewController.m */; };
 		DC162D7515F8BF06004FBA2A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC162D7415F8BF06004FBA2A /* line.png */; };
-=======
->>>>>>> c10d3c96a1a73756b02adea06175e1184e863b37
+
 		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
@@ -122,12 +121,11 @@
 		D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRestaurantUtil.m; sourceTree = "<group>"; };
 		D77BB39C15F7B55500CB4FF3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		D77BB39D15F7B55500CB4FF3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
-<<<<<<< HEAD
+
 		DC162D5415F8924C004FBA2A /* IGA03ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA03ViewController.h; sourceTree = "<group>"; };
 		DC162D5515F8924D004FBA2A /* IGA03ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA03ViewController.m; sourceTree = "<group>"; };
 		DC162D7415F8BF06004FBA2A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
-=======
->>>>>>> c10d3c96a1a73756b02adea06175e1184e863b37
+
 		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
 		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
@@ -403,12 +401,12 @@
 				E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */,
 				E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */,
 				E255A5B415F869EF00651C5B /* maplabel.png in Resources */,
-<<<<<<< HEAD
+
 				DC162D7515F8BF06004FBA2A /* line.png in Resources */,
-=======
+
 				1864A3E515F8A7BB00503C05 /* Icon.png in Resources */,
 				1864A3E615F8A7BB00503C05 /* Icon@2x.png in Resources */,
->>>>>>> c10d3c96a1a73756b02adea06175e1184e863b37
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,10 +450,9 @@
 				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
 				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
 				E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */,
-<<<<<<< HEAD
+
 				DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */,
-=======
->>>>>>> c10d3c96a1a73756b02adea06175e1184e863b37
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
