@@ -9,11 +9,11 @@
 #import "IGLocationUtil.h"
 
 @implementation IGLocationUtil
-static MKUserLocation *l_location;
-+(void)setUserLocation:(MKUserLocation *)location{
+static CLLocation *l_location;
++(void)setUserLocation:(CLLocation *)location{
     l_location = location;
 }
-+(MKUserLocation *)getUserLocation{
++(CLLocation *)getUserLocation{
     return l_location;
 }
 @end

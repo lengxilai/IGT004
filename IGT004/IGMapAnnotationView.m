@@ -36,18 +36,23 @@
         label.textColor = [UIColor whiteColor];  
         label.font = [UIFont fontWithName:@"Helvetica" size:A01FontSize];
         //文字居中显示  
-        label.textAlignment = UITextAlignmentLeft;  
+        label.textAlignment = UITextAlignmentCenter;  
         //自动折行设置  
         label.lineBreakMode = UILineBreakModeWordWrap;  
         label.numberOfLines = 0;
         [annotationView addSubview:label];
         [self addSubview:annotationView];
-        
+        IGBasicAnnotation *basicAnotation = annotation;
+        res = [basicAnotation restaurant];
     }
     return self;
 }
 -(int)getBackGroundWidthByName:(NSString *)name{
     int nameLength = [name length];
-    return A01FontSize * nameLength;
+    CGSize size = [name sizeWithFont:[UIFont fontWithName:@"Helvetica" size:12] constrainedToSize:CGSizeMake(12*nameLength, MAXFLOAT)];
+    return size.width;
+}
+-(Restaurant *)restaurant{
+    return res;
 }
 @end

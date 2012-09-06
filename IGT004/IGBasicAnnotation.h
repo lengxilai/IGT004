@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "IGGeoInfo.h"
+#import "Restaurant.h"
 @interface IGBasicAnnotation : NSObject<MKAnnotation> {
     CLLocationCoordinate2D coordinate;
     IGGEOInfo *m_geoInfo;
+    Restaurant *res;
 }
 
 @property (nonatomic, readonly) CLLocationCoordinate2D coordinate;
@@ -20,6 +22,7 @@
 -(id)initWithGeoInfo:(IGGEOInfo *) geoInfo;
 - (NSString *)subtitle;
 - (NSString *)title;
+-(Restaurant *)restaurant;
 
 
 @end
