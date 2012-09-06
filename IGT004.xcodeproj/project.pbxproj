@@ -19,6 +19,7 @@
 		D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */; };
 		D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */; };
 		D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */; };
+		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
 		DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416BC15F60269009D8C65 /* IGCommonDefine.m */; };
@@ -53,6 +54,8 @@
 		D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGDetailViewController.m; sourceTree = "<group>"; };
 		D75F5B7E15F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGMasterViewController.xib; sourceTree = "<group>"; };
 		D75F5B8115F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGDetailViewController.xib; sourceTree = "<group>"; };
+		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
+		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
 		DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA02ViewController.m; sourceTree = "<group>"; };
 		DC7416B415F5F7F1009D8C65 /* UIColor+IGColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+IGColor.h"; sourceTree = "<group>"; };
@@ -185,6 +188,8 @@
 				DC7416BC15F60269009D8C65 /* IGCommonDefine.m */,
 				DC7416CC15F71F22009D8C65 /* IGCoreDataUtil.h */,
 				DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */,
+				DC5C66A215F7AB33003EACCB /* IGFileUtil.h */,
+				DC5C66A315F7AB34003EACCB /* IGFileUtil.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -280,6 +285,7 @@
 				DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */,
 				E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */,
 				DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */,
+				DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
