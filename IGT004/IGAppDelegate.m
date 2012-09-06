@@ -36,7 +36,6 @@
     IGJsonUtil *json = [[IGJsonUtil alloc] init];
     [json getNewData];
     
-    [IGDistanceUpdate updateDistance];
     while (json.state == json_ing) {
         // 读取数据中时候，显示个等待之类的
     }
