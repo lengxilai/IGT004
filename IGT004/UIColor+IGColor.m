@@ -21,4 +21,6 @@
 + (UIColor*)bottomLineBackgroundImageColor {
     return [UIColor colorWithPatternImage:[UIImage imageNamed:@"bottom_line.png"]];
 }
+
+//
 @end

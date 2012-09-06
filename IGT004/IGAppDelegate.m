@@ -10,6 +10,7 @@
 #import "IGA01ViewController.h"
 #import "IGMasterViewController.h"
 #import "IGJsonUtil.h"
+#import "IGDistanceUpdate.h"
 
 @implementation IGAppDelegate
 

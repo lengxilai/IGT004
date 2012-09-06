@@ -10,7 +10,7 @@
 
 @interface IGA02TableViewCell : UITableViewCell {
     //饭店标志图标
-    NSString *iconName;
+    UIImageView *iconImageView;
     //饭店名称
     UILabel *restaurantName;
     //饭店地址
@@ -21,6 +21,7 @@
     UILabel *averageCost;
 }
 
+@property (nonatomic, retain) UIImageView *iconImageView;
 @property (nonatomic, retain) UILabel *restaurantName;
 @property (nonatomic, retain) UILabel *restaurantAddress;
 @property (nonatomic, retain) UILabel *distance;

@@ -16,6 +16,8 @@ typedef enum{
     A02CellHight=82,
     // A02页面中tableview位置
     A02TableViewX = 0,A02TableViewY = 0,A02TableViewW = 301,A02TableViewH = 390,
+    //标志图片显示位置
+    A02IconImageViewX = 13,A02IconImageViewY = 7,A02IconImageViewW = 75,A02IconImageViewH = 70,
     //饭店名称显示位置
     A02RestaurantNameX = 100,A02RestaurantNameY = 10,A02RestaurantNameW = 180,A02RestaurantNameH = 20,
     //饭店地址显示位置

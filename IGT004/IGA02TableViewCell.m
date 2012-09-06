@@ -13,6 +13,7 @@
 
 @implementation IGA02TableViewCell
 
+@synthesize iconImageView;
 @synthesize restaurantName;
 @synthesize restaurantAddress;
 @synthesize distance;
@@ -23,7 +24,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         //标志图片显示
-        
+        iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(A02IconImageViewX, A02IconImageViewY, A02IconImageViewW, A02IconImageViewH)];
         //饭店名称显示
         restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(A02RestaurantNameX, A02RestaurantNameY, A02RestaurantNameW, A02RestaurantNameH)];
         restaurantName.adjustsFontSizeToFitWidth = YES;
@@ -48,6 +49,7 @@
         distance.backgroundColor = [UIColor clearColor];
         averageCost.backgroundColor = [UIColor clearColor];
         
+        [self.contentView addSubview:iconImageView];
         [self.contentView addSubview:restaurantName];
         [self.contentView addSubview:restaurantAddress];
         [self.contentView addSubview:distance];
