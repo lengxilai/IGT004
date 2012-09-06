@@ -20,7 +20,30 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
+        m_mkMapView.delegate = self;
+        m_mkMapView.showsUserLocation=YES;
+        
+        [self getRestaurantList];
+        //初始化所有餐厅信息
+        for (IGGEOInfo *geoInfo in m_geoArray){
+            IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
+            
+            [m_mkMapView addAnnotation: basicAnnotation];
+        }
+
     }
+    return self;
+}
+-(id)initWithRestautant:(Restaurant *)res{
+    self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
+    
+    m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
+    m_mkMapView.delegate = self;
+    m_mkMapView.showsUserLocation=false;
+    
+    MKCoordinateRegion region = {{[[res latitude ] doubleValue], [[res longitude]doubleValue]}, {0.016, 0.016}};
+    m_mkMapView.region = region;
     return self;
 }
 -(void)loadView{
@@ -29,10 +52,6 @@
     
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     
-    m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
-    m_mkMapView.delegate = self;
-    m_mkMapView.showsUserLocation=YES;
-
     [self.view addSubview: m_mkMapView];
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
@@ -58,14 +77,7 @@
 - (void)viewDidLoad
 {
     
-    [self getRestaurantList];
-    //初始化所有餐厅信息
-    for (IGGEOInfo *geoInfo in m_geoArray){
-        IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
-        
-        [m_mkMapView addAnnotation: basicAnnotation];
-    }
-	// Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     [super viewDidLoad];
 }
 
