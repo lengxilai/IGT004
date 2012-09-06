@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "IGGEOInfo.h"
+#import "IGCommonDefine.h"
 @interface IGMapAnnotationView : UIView{
 
 }

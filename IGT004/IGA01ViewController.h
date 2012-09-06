@@ -11,6 +11,7 @@
 #import "IGBasicAnnotation.h"
 #import "IGCoreDataUtil.h"
 #import "IGMapAnnotationView.h"
+#import "IGCommonDefine.h"
 @interface IGA01ViewController : UIViewController <MKMapViewDelegate,NSFetchedResultsControllerDelegate>  {
     MKMapView *m_mkMapView;
     NSMutableArray *m_geoArray;

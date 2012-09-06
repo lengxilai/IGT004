@@ -56,8 +56,7 @@
     m_searchBar.delegate = self;
     m_searchBar.barStyle = UIBarStyleBlackTranslucent;
     m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    m_searchBar.backgroundColor = [UIColor grayColor];
-    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"40-di.png"]];
+    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchBar_bg.png"]];
     
     [m_searchBar insertSubview:backSearchBarimageView atIndex:1];
     [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
@@ -180,11 +179,11 @@
     IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
     
     geoInfo.m_id = 1111;
-    //geoInfo.m_name = @"test";
+    geoInfo.m_name = @"这是一个测试";
     
     NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
     
-    // geoInfo.m_description = @"yamede";
+    geoInfo.m_description = @"牟传仁老菜馆";
     
     CLLocationDegrees latitude = 37.7858;
     CLLocationDegrees longitude = -122.406;
