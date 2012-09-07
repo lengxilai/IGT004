@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SBJson.h"
 #import "IGRestaurantUtil.h"
+#import "IGFileDownloadUtil.h"
 
 typedef enum {
     json_start,
@@ -22,6 +23,7 @@ typedef enum {
     NSURLConnection *theConnection;
     SBJsonStreamParser *parser;
     SBJsonStreamParserAdapter *adapter;
+    IGFileDownloadUtil *fileDownLoad;
 }
 
 // 处理状态

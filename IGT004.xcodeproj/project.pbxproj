@@ -38,6 +38,10 @@
 		D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
 		D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
 		D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
+		D77F230015F8D4DB0056735C /* IGFileDownloadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F22FF15F8D4DA0056735C /* IGFileDownloadUtil.m */; };
+		D77F232115F8D9610056735C /* MultiTaskDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F231C15F8D9610056735C /* MultiTaskDownloader.m */; };
+		D77F232215F8D9610056735C /* MultiThreadDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F231E15F8D9610056735C /* MultiThreadDownloader.m */; };
+		D77F232315F8D9610056735C /* OperationThread.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F232015F8D9610056735C /* OperationThread.m */; };
 		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
@@ -117,6 +121,14 @@
 		D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRestaurantUtil.m; sourceTree = "<group>"; };
 		D77BB39C15F7B55500CB4FF3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		D77BB39D15F7B55500CB4FF3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+		D77F22FE15F8D4DA0056735C /* IGFileDownloadUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileDownloadUtil.h; sourceTree = "<group>"; };
+		D77F22FF15F8D4DA0056735C /* IGFileDownloadUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileDownloadUtil.m; sourceTree = "<group>"; };
+		D77F231B15F8D9610056735C /* MultiTaskDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTaskDownloader.h; sourceTree = "<group>"; };
+		D77F231C15F8D9610056735C /* MultiTaskDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiTaskDownloader.m; sourceTree = "<group>"; };
+		D77F231D15F8D9610056735C /* MultiThreadDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiThreadDownloader.h; sourceTree = "<group>"; };
+		D77F231E15F8D9610056735C /* MultiThreadDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiThreadDownloader.m; sourceTree = "<group>"; };
+		D77F231F15F8D9610056735C /* OperationThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationThread.h; sourceTree = "<group>"; };
+		D77F232015F8D9610056735C /* OperationThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationThread.m; sourceTree = "<group>"; };
 		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
 		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
@@ -202,6 +214,7 @@
 		D75F5B6815F4F586000143D7 /* IGT004 */ = {
 			isa = PBXGroup;
 			children = (
+				D77F231A15F8D88B0056735C /* Download */,
 				1864A3E315F8A7BB00503C05 /* Icon.png */,
 				1864A3E415F8A7BB00503C05 /* Icon@2x.png */,
 				D77BB35015F7916A00CB4FF3 /* JSON */,
@@ -270,6 +283,19 @@
 			name = JSON;
 			sourceTree = "<group>";
 		};
+		D77F231A15F8D88B0056735C /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				D77F231B15F8D9610056735C /* MultiTaskDownloader.h */,
+				D77F231C15F8D9610056735C /* MultiTaskDownloader.m */,
+				D77F231D15F8D9610056735C /* MultiThreadDownloader.h */,
+				D77F231E15F8D9610056735C /* MultiThreadDownloader.m */,
+				D77F231F15F8D9610056735C /* OperationThread.h */,
+				D77F232015F8D9610056735C /* OperationThread.m */,
+			);
+			name = Download;
+			sourceTree = "<group>";
+		};
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +337,8 @@
 				1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */,
 				E2CA53AF15F87FA200654E82 /* IGLocationUtil.h */,
 				E2CA53B015F87FA200654E82 /* IGLocationUtil.m */,
+				D77F22FE15F8D4DA0056735C /* IGFileDownloadUtil.h */,
+				D77F22FF15F8D4DA0056735C /* IGFileDownloadUtil.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -434,6 +462,10 @@
 				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
 				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
 				E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */,
+				D77F230015F8D4DB0056735C /* IGFileDownloadUtil.m in Sources */,
+				D77F232115F8D9610056735C /* MultiTaskDownloader.m in Sources */,
+				D77F232215F8D9610056735C /* MultiThreadDownloader.m in Sources */,
+				D77F232315F8D9610056735C /* OperationThread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
