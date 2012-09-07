@@ -57,7 +57,7 @@
          
         
         // 数据库登陆
-        //[IGRestaurantUtil addRestaurant:[array objectAtIndex:i]];
+        [IGRestaurantUtil addRestaurant:[array objectAtIndex:i]];
     }
 }
 
