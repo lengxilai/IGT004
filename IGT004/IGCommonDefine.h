@@ -60,6 +60,8 @@ typedef enum{
 
     // 导航栏左边按钮
     A03BarButtonLeftX=0,A03BarButtonLeftY=0,A03BarButtonLeftW=54,A03BarButtonLeftH=30,
+    // 导航栏右边按钮
+    A03BarButtonRightX=266,A03BarButtonRightY=0,A03BarButtonRightW=54,A03BarButtonRightH=30,
 }A03RectDef;
 
 typedef enum{

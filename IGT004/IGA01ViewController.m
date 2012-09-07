@@ -82,7 +82,7 @@
     [self.view addSubview:m_searchBar];
     
     //导航条
-    UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"列表" target:self selector:@selector(goToA02) frame:CGRectMake(266, 0, 54, 30)];
+    UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"列表" target:self selector:@selector(goToA02) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     self.navigationController.navigationBar.backItem.hidesBackButton = YES;
     //定位按钮
