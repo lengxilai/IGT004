@@ -38,10 +38,17 @@
 		D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
 		D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
 		D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
+<<<<<<< HEAD
 		D77F230015F8D4DB0056735C /* IGFileDownloadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F22FF15F8D4DA0056735C /* IGFileDownloadUtil.m */; };
 		D77F232115F8D9610056735C /* MultiTaskDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F231C15F8D9610056735C /* MultiTaskDownloader.m */; };
 		D77F232215F8D9610056735C /* MultiThreadDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F231E15F8D9610056735C /* MultiThreadDownloader.m */; };
 		D77F232315F8D9610056735C /* OperationThread.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F232015F8D9610056735C /* OperationThread.m */; };
+=======
+
+		DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC162D5515F8924D004FBA2A /* IGA03ViewController.m */; };
+		DC162D7515F8BF06004FBA2A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC162D7415F8BF06004FBA2A /* line.png */; };
+
+>>>>>>> 08ee7b7c74f7a15d9dffb23d8ecfc18f5a402ce4
 		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
@@ -121,6 +128,7 @@
 		D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRestaurantUtil.m; sourceTree = "<group>"; };
 		D77BB39C15F7B55500CB4FF3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		D77BB39D15F7B55500CB4FF3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		D77F22FE15F8D4DA0056735C /* IGFileDownloadUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileDownloadUtil.h; sourceTree = "<group>"; };
 		D77F22FF15F8D4DA0056735C /* IGFileDownloadUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileDownloadUtil.m; sourceTree = "<group>"; };
 		D77F231B15F8D9610056735C /* MultiTaskDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiTaskDownloader.h; sourceTree = "<group>"; };
@@ -129,6 +137,13 @@
 		D77F231E15F8D9610056735C /* MultiThreadDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiThreadDownloader.m; sourceTree = "<group>"; };
 		D77F231F15F8D9610056735C /* OperationThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationThread.h; sourceTree = "<group>"; };
 		D77F232015F8D9610056735C /* OperationThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationThread.m; sourceTree = "<group>"; };
+=======
+
+		DC162D5415F8924C004FBA2A /* IGA03ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA03ViewController.h; sourceTree = "<group>"; };
+		DC162D5515F8924D004FBA2A /* IGA03ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA03ViewController.m; sourceTree = "<group>"; };
+		DC162D7415F8BF06004FBA2A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+
+>>>>>>> 08ee7b7c74f7a15d9dffb23d8ecfc18f5a402ce4
 		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
 		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
@@ -236,6 +251,8 @@
 				DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */,
 				DC7416C115F60EF5009D8C65 /* IGA02TableViewCell.h */,
 				DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */,
+				DC162D5415F8924C004FBA2A /* IGA03ViewController.h */,
+				DC162D5515F8924D004FBA2A /* IGA03ViewController.m */,
 			);
 			path = IGT004;
 			sourceTree = "<group>";
@@ -299,6 +316,7 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DC162D7415F8BF06004FBA2A /* line.png */,
 				E255A5AE15F869EF00651C5B /* maplabel_arrow.png */,
 				E255A5AF15F869EF00651C5B /* maplabel_arrow@2x.png */,
 				E255A5B015F869EF00651C5B /* maplabel.png */,
@@ -417,8 +435,12 @@
 				E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */,
 				E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */,
 				E255A5B415F869EF00651C5B /* maplabel.png in Resources */,
+
+				DC162D7515F8BF06004FBA2A /* line.png in Resources */,
+
 				1864A3E515F8A7BB00503C05 /* Icon.png in Resources */,
 				1864A3E615F8A7BB00503C05 /* Icon@2x.png in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,10 +484,16 @@
 				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
 				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
 				E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */,
+<<<<<<< HEAD
 				D77F230015F8D4DB0056735C /* IGFileDownloadUtil.m in Sources */,
 				D77F232115F8D9610056735C /* MultiTaskDownloader.m in Sources */,
 				D77F232215F8D9610056735C /* MultiThreadDownloader.m in Sources */,
 				D77F232315F8D9610056735C /* OperationThread.m in Sources */,
+=======
+
+				DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */,
+
+>>>>>>> 08ee7b7c74f7a15d9dffb23d8ecfc18f5a402ce4
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
