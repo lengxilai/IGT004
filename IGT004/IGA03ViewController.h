@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Restaurant.h"
+#import "UIColor+IGColor.h"
+#import "IGCommonDefine.h"
+#import "IGFileUtil.h"
+#import "IGUIButton.h"
 
 @interface IGA03ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource> {
     //背景view
@@ -43,4 +47,8 @@
 
 
 - (id)initByRestaurant:(Restaurant *) restaurant;
+// 点击返回按钮
+- (void)goBack;
+//NSNumbe to NSString
+-(NSString *) toString:(NSNumber *) number;
 @end

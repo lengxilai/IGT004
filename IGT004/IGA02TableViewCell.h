@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIColor+IGColor.h"
+#import "IGCommonDefine.h"
+#import "UIColor+IGColor.h"
 
 @interface IGA02TableViewCell : UITableViewCell {
     //饭店标志图标

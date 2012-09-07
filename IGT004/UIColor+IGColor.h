@@ -13,4 +13,6 @@
 + (UIColor*)colorWithHex:(NSInteger)hexValue alpha:(CGFloat)alphaValue;
 //横线背景图片
 + (UIColor*)bottomLineBackgroundImageColor;
+//navigationBar背景图片
++ (UIColor*)navigationBarImageColor;
 @end

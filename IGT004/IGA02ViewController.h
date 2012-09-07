@@ -7,9 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "IGA01ViewController.h"
 #import "IGA02TableViewCell.h"
 #import "IGA03ViewController.h"
+#import "UIColor+IGColor.h"
+#import "IGCommonDefine.h"
+#import "IGCoreDataUtil.h"
+#import "Restaurant.h"
+#import "IGFileUtil.h"
+#import "IGUIButton.h"
+
 
 @interface IGA02ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource> {
     
@@ -21,6 +28,5 @@
     UITableView *dataListTableView;
 
 }
-@property (strong, nonatomic) IGA03ViewController *a03ViewController;
 
 @end

@@ -78,6 +78,10 @@
     m_searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
     [self.view addSubview:m_searchBar];
     
+    //导航条
+    UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"列表" target:self selector:@selector(goToA02) frame:CGRectMake(266, 0, 54, 30)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    self.navigationController.navigationBar.backItem.hidesBackButton = YES;
     //定位按钮
     UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_icon.png"]]; 
     UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
@@ -142,9 +146,9 @@
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
     Restaurant *res = [annotationMapView restaurant];
     
-    NSString *namee=@"中国,陕西,西安,高新区,唐兴路";
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@",[namee stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
     NSLog(@"ddd");
+    IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
+    [self.navigationController pushViewController:a03ViewController animated:YES];
 }
 // mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
 // The delegate can implement this method to animate the adding of the annotations views.
@@ -264,5 +268,11 @@
     [IGLocationUtil setUserLocation:[locationManager location]];
     
     [IGDistanceUpdate updateDistance];
+}
+
+//去列表页面
+-(void)goToA02 {
+    IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] init];
+    [self.navigationController pushViewController:a02ViewController animated:YES];
 }
 @end

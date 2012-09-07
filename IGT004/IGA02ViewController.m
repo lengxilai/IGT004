@@ -7,19 +7,12 @@
 //
 
 #import "IGA02ViewController.h"
-#import "UIColor+IGColor.h"
-#import "IGCommonDefine.h"
-#import "IGCoreDataUtil.h"
-#import "Restaurant.h"
-#import "IGFileUtil.h"
 
 @interface IGA02ViewController ()
 
 @end
 
 @implementation IGA02ViewController
-
-@synthesize a03ViewController;
 
 #pragma mark -
 #pragma mark 初始化方法
@@ -50,6 +43,8 @@
 
     [self.view addSubview:dataListTableView];
     
+    UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:@"地图" target:self selector:@selector(goToA01) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     return self;
 }
 
@@ -91,8 +86,8 @@
 //点cell进入详细画面
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Restaurant *restaurant = (Restaurant *)[fetchedResultsController objectAtIndexPath:indexPath];
-    self.a03ViewController = [[IGA03ViewController alloc] initByRestaurant:restaurant];
-    [self.navigationController pushViewController:self.a03ViewController animated:YES];
+    IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:restaurant];
+    [self.navigationController pushViewController:a03ViewController animated:YES];
 }
 
 #pragma mark -
@@ -164,5 +159,9 @@
     return [numberFormatter stringFromNumber:number];
 }
 
+//去地图页面
+-(void)goToA01 {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 @end

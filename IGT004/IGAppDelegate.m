@@ -11,6 +11,7 @@
 #import "IGMasterViewController.h"
 #import "IGJsonUtil.h"
 #import "IGDistanceUpdate.h"
+#import "IGUINavigationController.h"
 
 @implementation IGAppDelegate
 
@@ -28,7 +29,7 @@
     // 数据库文件初始化
     [IGCoreDataUtil setStaticManagedObjectContext:self.managedObjectContext];
     IGA01ViewController *masterViewController = [[IGA01ViewController alloc] initWithNibName:@"IGMasterViewController" bundle:nil];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    self.navigationController = [[IGUINavigationController alloc] initWithRootViewController:masterViewController];
    // masterViewController.managedObjectContext = self.managedObjectContext;
     
    

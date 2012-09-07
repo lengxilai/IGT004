@@ -21,6 +21,10 @@
 + (UIColor*)bottomLineBackgroundImageColor {
     return [UIColor colorWithPatternImage:[UIImage imageNamed:@"line.png"]];
 }
+//navigationBar背景图片
++ (UIColor*)navigationBarImageColor {
+    return [UIColor colorWithPatternImage:[UIImage imageNamed:@"navi_l_btn.png"]];
+}
 
 //
 @end

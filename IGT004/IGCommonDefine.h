@@ -57,6 +57,9 @@ typedef enum{
     A03TelX = 15,A03TelY = 60,A03TelW = 260,A03TelH = 15,
     // 简介显示位置
     A03MemoX = 15,A03MemoY = 90,A03MemoW = 260,A03MemoH = 15,
+
+    // 导航栏左边按钮
+    A03BarButtonLeftX=0,A03BarButtonLeftY=0,A03BarButtonLeftW=54,A03BarButtonLeftH=30,
 }A03RectDef;
 
 typedef enum{

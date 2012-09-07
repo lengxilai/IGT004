@@ -14,6 +14,8 @@
 #import "IGCommonDefine.h"
 #import "IGLocationUtil.h"
 #import "Restaurant.h"
+#import "IGUIButton.h"
+#import "IGA02ViewController.h"
 @interface IGA01ViewController : UIViewController <MKMapViewDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate>  {
     MKMapView *m_mkMapView;
     NSMutableArray *m_geoArray;
@@ -23,6 +25,5 @@
     //结果集管理器
     NSFetchedResultsController *fetchedResultsController;
 }
-
 
 @end
