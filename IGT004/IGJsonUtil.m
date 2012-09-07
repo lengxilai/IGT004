@@ -21,7 +21,6 @@
         state = json_start;
         adapter = [[SBJsonStreamParserAdapter alloc] init];
         adapter.delegate = self;
-        
         parser = [[SBJsonStreamParser alloc] init];
         parser.delegate = adapter;
         parser.supportMultipleDocuments = YES;
@@ -46,9 +45,19 @@
     state = json_ing;
     
     for (int i = 0; i < [array count]; i++) {
-        // 数据库登陆
-        [IGRestaurantUtil addRestaurant:[array objectAtIndex:i]];
         // 图片取得
+        NSInteger framId = [[[array objectAtIndex:i] objectForKey:@"id"] intValue];
+        NSString *iconName = [[array objectAtIndex:i] objectForKey:@"iconName"];
+        NSInteger imagecount = [[[array objectAtIndex:i] objectForKey:@"imagecount"] intValue];
+        
+        IGFileDownloadUtil *util = [[IGFileDownloadUtil alloc] init];
+        [util addIconImage:framId iconName:iconName];
+        [util addImages:framId count:imagecount];
+        [util startDownload];
+         
+        
+        // 数据库登陆
+        //[IGRestaurantUtil addRestaurant:[array objectAtIndex:i]];
     }
 }
 
