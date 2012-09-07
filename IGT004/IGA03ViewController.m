@@ -106,7 +106,7 @@
 //        bottomView.backgroundColor = [UIColor redColor];
         [self.view addSubview:bottomView];
      
-        UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+        UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
     self.title = NSLocalizedString(@"详细", @"详细");
