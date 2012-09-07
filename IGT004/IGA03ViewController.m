@@ -10,6 +10,7 @@
 #import "UIColor+IGColor.h"
 #import "IGCommonDefine.h"
 #import "IGFileUtil.h"
+#import "IGUIButton.h"
 
 @interface IGA03ViewController ()
 
@@ -104,7 +105,11 @@
         
 //        bottomView.backgroundColor = [UIColor redColor];
         [self.view addSubview:bottomView];
+     
+        UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
+    self.title = NSLocalizedString(@"详细", @"详细");
         
     }
     return self;
@@ -125,6 +130,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+// 点击返回按钮
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 //NSNumbe to NSString

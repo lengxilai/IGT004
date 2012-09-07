@@ -50,6 +50,7 @@
 
     [self.view addSubview:dataListTableView];
     
+    self.title = NSLocalizedString(@"列表", @"列表");
     return self;
 }
 

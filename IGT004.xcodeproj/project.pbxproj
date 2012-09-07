@@ -38,16 +38,20 @@
 		D77BB37915F792A700CB4FF3 /* IGJsonUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB37815F792A700CB4FF3 /* IGJsonUtil.m */; };
 		D77BB38815F7A6F000CB4FF3 /* IGRestaurantUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */; };
 		D77BB39E15F7B55500CB4FF3 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB39D15F7B55500CB4FF3 /* Image.m */; };
-
 		DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC162D5515F8924D004FBA2A /* IGA03ViewController.m */; };
 		DC162D7515F8BF06004FBA2A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC162D7415F8BF06004FBA2A /* line.png */; };
-
 		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
 		DC7416BD15F60269009D8C65 /* IGCommonDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416BC15F60269009D8C65 /* IGCommonDefine.m */; };
 		DC7416C315F60EF6009D8C65 /* IGA02TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */; };
 		DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */; };
+		DCF6328215F9C69D00162BD7 /* navi_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328015F9C69D00162BD7 /* navi_bag.png */; };
+		DCF6328315F9C69D00162BD7 /* navi_bag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328115F9C69D00162BD7 /* navi_bag@2x.png */; };
+		DCF6328715F9C92B00162BD7 /* IGUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6328615F9C92B00162BD7 /* IGUINavigationController.m */; };
+		DCF6328A15F9CCDF00162BD7 /* nav_l_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328815F9CCDE00162BD7 /* nav_l_btn.png */; };
+		DCF6328B15F9CCDF00162BD7 /* nav_l_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328915F9CCDF00162BD7 /* nav_l_btn@2x.png */; };
+		DCF6328E15F9D11E00162BD7 /* IGUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6328D15F9D11E00162BD7 /* IGUIButton.m */; };
 		E255A5A915F8698500651C5B /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A515F8698500651C5B /* location_icon.png */; };
 		E255A5AA15F8698500651C5B /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A615F8698500651C5B /* location_icon@2x.png */; };
 		E255A5AB15F8698500651C5B /* searchBar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A715F8698500651C5B /* searchBar_bg.png */; };
@@ -121,11 +125,9 @@
 		D77BB38715F7A6F000CB4FF3 /* IGRestaurantUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGRestaurantUtil.m; sourceTree = "<group>"; };
 		D77BB39C15F7B55500CB4FF3 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		D77BB39D15F7B55500CB4FF3 /* Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Image.m; sourceTree = "<group>"; };
-
 		DC162D5415F8924C004FBA2A /* IGA03ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA03ViewController.h; sourceTree = "<group>"; };
 		DC162D5515F8924D004FBA2A /* IGA03ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA03ViewController.m; sourceTree = "<group>"; };
 		DC162D7415F8BF06004FBA2A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
-
 		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
 		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 		DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA02TableViewCell.m; sourceTree = "<group>"; };
 		DC7416CC15F71F22009D8C65 /* IGCoreDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGCoreDataUtil.h; sourceTree = "<group>"; };
 		DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGCoreDataUtil.m; sourceTree = "<group>"; };
+		DCF6328015F9C69D00162BD7 /* navi_bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_bag.png; sourceTree = "<group>"; };
+		DCF6328115F9C69D00162BD7 /* navi_bag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_bag@2x.png"; sourceTree = "<group>"; };
+		DCF6328515F9C92A00162BD7 /* IGUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGUINavigationController.h; sourceTree = "<group>"; };
+		DCF6328615F9C92B00162BD7 /* IGUINavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGUINavigationController.m; sourceTree = "<group>"; };
+		DCF6328815F9CCDE00162BD7 /* nav_l_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_l_btn.png; sourceTree = "<group>"; };
+		DCF6328915F9CCDF00162BD7 /* nav_l_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_l_btn@2x.png"; sourceTree = "<group>"; };
+		DCF6328C15F9D11E00162BD7 /* IGUIButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGUIButton.h; sourceTree = "<group>"; };
+		DCF6328D15F9D11E00162BD7 /* IGUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGUIButton.m; sourceTree = "<group>"; };
 		E255A5A515F8698500651C5B /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
 		E255A5A615F8698500651C5B /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
 		E255A5A715F8698500651C5B /* searchBar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBar_bg.png; sourceTree = "<group>"; };
@@ -234,6 +244,8 @@
 				DC7416C215F60EF5009D8C65 /* IGA02TableViewCell.m */,
 				DC162D5415F8924C004FBA2A /* IGA03ViewController.h */,
 				DC162D5515F8924D004FBA2A /* IGA03ViewController.m */,
+				DCF6328515F9C92A00162BD7 /* IGUINavigationController.h */,
+				DCF6328615F9C92B00162BD7 /* IGUINavigationController.m */,
 			);
 			path = IGT004;
 			sourceTree = "<group>";
@@ -284,6 +296,10 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DCF6328815F9CCDE00162BD7 /* nav_l_btn.png */,
+				DCF6328915F9CCDF00162BD7 /* nav_l_btn@2x.png */,
+				DCF6328015F9C69D00162BD7 /* navi_bag.png */,
+				DCF6328115F9C69D00162BD7 /* navi_bag@2x.png */,
 				DC162D7415F8BF06004FBA2A /* line.png */,
 				E255A5AE15F869EF00651C5B /* maplabel_arrow.png */,
 				E255A5AF15F869EF00651C5B /* maplabel_arrow@2x.png */,
@@ -323,6 +339,8 @@
 				1801AD1C15F877FB0088875D /* IGDistanceUpdate.m */,
 				E2CA53AF15F87FA200654E82 /* IGLocationUtil.h */,
 				E2CA53B015F87FA200654E82 /* IGLocationUtil.m */,
+				DCF6328C15F9D11E00162BD7 /* IGUIButton.h */,
+				DCF6328D15F9D11E00162BD7 /* IGUIButton.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -401,12 +419,13 @@
 				E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */,
 				E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */,
 				E255A5B415F869EF00651C5B /* maplabel.png in Resources */,
-
 				DC162D7515F8BF06004FBA2A /* line.png in Resources */,
-
 				1864A3E515F8A7BB00503C05 /* Icon.png in Resources */,
 				1864A3E615F8A7BB00503C05 /* Icon@2x.png in Resources */,
-
+				DCF6328215F9C69D00162BD7 /* navi_bag.png in Resources */,
+				DCF6328315F9C69D00162BD7 /* navi_bag@2x.png in Resources */,
+				DCF6328A15F9CCDF00162BD7 /* nav_l_btn.png in Resources */,
+				DCF6328B15F9CCDF00162BD7 /* nav_l_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,9 +469,9 @@
 				1801AD1D15F877FB0088875D /* IGDistanceUpdate.m in Sources */,
 				1864A3CD15F8803700503C05 /* Restaurant.m in Sources */,
 				E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */,
-
 				DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */,
-
+				DCF6328715F9C92B00162BD7 /* IGUINavigationController.m in Sources */,
+				DCF6328E15F9D11E00162BD7 /* IGUIButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
