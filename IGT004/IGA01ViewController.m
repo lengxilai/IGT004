@@ -148,7 +148,8 @@
     //吴嘉宾调用
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
     Restaurant *res = [annotationMapView restaurant];
-    NSLog(@"ddd");
+    IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
+    [self.navigationController pushViewController:a03ViewController animated:YES];
 }
 // mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
 // The delegate can implement this method to animate the adding of the annotations views.
