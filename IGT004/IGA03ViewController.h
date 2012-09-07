@@ -12,6 +12,7 @@
 #import "IGCommonDefine.h"
 #import "IGFileUtil.h"
 #import "IGUIButton.h"
+#import "IGPhotoViewController.h"
 
 @interface IGA03ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource> {
     //背景view
@@ -31,7 +32,7 @@
     UIView *line1View;
     
     //下半部分UIView
-    UIView *bottomView;
+    UIScrollView *bottomView;
     //地址
     UILabel *addressLabel;
     //电话
@@ -41,7 +42,10 @@
     //横线2
     UIView *line2View;
     //横线3
-    UIView *line3View;    
+    UIView *line3View;
+    
+    
+    UIScrollView *photoView;
     
 }
 

@@ -67,7 +67,9 @@
         
         
         //下半部分显示内容
-        bottomView = [[UIView alloc] initWithFrame:CGRectMake(A03BottomTableViewX, A03BottomTableViewY, A03BottomTableViewW, A03BottomTableViewH)];
+        bottomView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03BottomTableViewX, A03BottomTableViewY, A03BottomTableViewW, A03BottomTableViewH)];
+        bottomView.contentSize = CGSizeMake(320, 500);
+
         //地址
         addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03AddressX, A03AddressY, A03AddressW, A03AddressH)];
         addressLabel.text = [NSString stringWithFormat:@"%@%@", @"地址:", restaurant.address];
@@ -101,13 +103,17 @@
         [bottomView addSubview:memoLabel];
         
 //        bottomView.backgroundColor = [UIColor redColor];
-        [self.view addSubview:bottomView];
+
      
         UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
-    self.title = NSLocalizedString(@"详细", @"详细");
+        //图集view
+        photoView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 330, 320, 280)];
+        photoView.backgroundColor = [UIColor blueColor];
+        [bottomView addSubview:photoView];
         
+        [self.view addSubview:bottomView];
     }
     return self;
 }

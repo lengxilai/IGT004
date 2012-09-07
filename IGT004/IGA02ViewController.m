@@ -40,7 +40,6 @@
     dataListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     [self fetchedResultsController];
-
     [self.view addSubview:dataListTableView];
     
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:@"地图" target:self selector:@selector(goToA01) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
@@ -139,6 +138,8 @@
     cell.restaurantAddress.text = newRestaurant.address;
     cell.distance.text = [NSString stringWithFormat:@"%@%@",@"距离: ", [self toString:newRestaurant.distance]];
     cell.averageCost.text = [NSString stringWithFormat:@"人均消费：%d元", newRestaurant.averageCost.intValue];
+    
+    NSLog(@"111111%@", newRestaurant.iconName);
     
 }
 

@@ -50,13 +50,13 @@ typedef enum{
     A03BottomLine3X = 0,A03BottomLine3Y = 83,A03BottomLine3W =320,A03BottomLine3H = 1,
     
     // 下半部分tableview显示位置
-    A03BottomTableViewX = 5,A03BottomTableViewY = 90,A03BottomTableViewW = 310,A03BottomTableViewH = 310,
+    A03BottomTableViewX = 0,A03BottomTableViewY = 90,A03BottomTableViewW = 320,A03BottomTableViewH = 310,
     // 地址显示位置
-    A03AddressX = 15,A03AddressY = 20,A03AddressW = 260,A03AddressH = 15,
+    A03AddressX = 20,A03AddressY = 20,A03AddressW = 260,A03AddressH = 15,
     // 电话显示位置
-    A03TelX = 15,A03TelY = 60,A03TelW = 260,A03TelH = 15,
+    A03TelX = 20,A03TelY = 60,A03TelW = 260,A03TelH = 15,
     // 简介显示位置
-    A03MemoX = 15,A03MemoY = 90,A03MemoW = 260,A03MemoH = 15,
+    A03MemoX = 20,A03MemoY = 90,A03MemoW = 260,A03MemoH = 15,
 
     // 导航栏左边按钮
     A03BarButtonLeftX=0,A03BarButtonLeftY=0,A03BarButtonLeftW=54,A03BarButtonLeftH=30,
