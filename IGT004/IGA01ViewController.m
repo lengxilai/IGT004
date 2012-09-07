@@ -7,7 +7,7 @@
 //
 
 #import "IGA01ViewController.h"
-
+#import "IGDistanceUpdate.h"
 @interface IGA01ViewController ()
 
 @end
@@ -20,9 +20,6 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
-        m_mkMapView.delegate = self;
-        m_mkMapView.showsUserLocation=YES;
         
         [self getRestaurantList];
         //初始化所有餐厅信息
@@ -38,9 +35,7 @@
 -(id)initWithRestautant:(Restaurant *)res{
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     
-    m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
-    m_mkMapView.delegate = self;
-    m_mkMapView.showsUserLocation=false;
+    
     //初始化饭店位置
     MKCoordinateRegion region = {{[[res latitude ] doubleValue], [[res longitude]doubleValue]}, {0.016, 0.016}};
     m_mkMapView.region = region;
@@ -67,7 +62,9 @@
     self.navigationItem.title = @"舌尖上的大连";
     
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
-    
+    m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
+    m_mkMapView.delegate = self;
+    m_mkMapView.showsUserLocation=YES;
     [self.view addSubview: m_mkMapView];
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
@@ -75,7 +72,7 @@
     m_searchBar.barStyle = UIBarStyleBlackTranslucent;
     m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
     UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchBar_bg.png"]];
-    
+    backSearchBarimageView.alpha = 0.7;
     [m_searchBar insertSubview:backSearchBarimageView atIndex:1];
     [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
     m_searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
@@ -144,6 +141,9 @@
     //吴嘉宾调用
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
     Restaurant *res = [annotationMapView restaurant];
+    
+    NSString *namee=@"中国,陕西,西安,高新区,唐兴路";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@",[namee stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]]];
     NSLog(@"ddd");
 }
 // mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
@@ -229,7 +229,12 @@
     [self.view addSubview:backgroundView];
     return YES;
 }
-#pragma mark -
+//点击搜索
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    NSString *searchText = [searchBar text];
+    //吴嘉宾调用
+}
+#pragma mark -3
 #pragma mark 其他计算
 -(double)getdistanceFromLocationWithLongitude:(double)newLongitude withLongitud:(double)newLongitud {
     CLLocation *location = [[CLLocation alloc]initWithLatitude:m_locationLatitude longitude:m_locationLongitude];
@@ -257,5 +262,7 @@
     theRegion.span=theSpan;
     [m_mkMapView setRegion:theRegion];
     [IGLocationUtil setUserLocation:[locationManager location]];
+    
+    [IGDistanceUpdate updateDistance];
 }
 @end
