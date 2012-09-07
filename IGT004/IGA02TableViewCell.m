@@ -7,9 +7,7 @@
 //
 
 #import "IGA02TableViewCell.h"
-#import "UIColor+IGColor.h"
-#import "IGCommonDefine.h"
-#import "UIColor+IGColor.h"
+
 
 @implementation IGA02TableViewCell
 

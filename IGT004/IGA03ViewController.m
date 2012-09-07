@@ -7,10 +7,7 @@
 //
 
 #import "IGA03ViewController.h"
-#import "UIColor+IGColor.h"
-#import "IGCommonDefine.h"
-#import "IGFileUtil.h"
-#import "IGUIButton.h"
+
 
 @interface IGA03ViewController ()
 

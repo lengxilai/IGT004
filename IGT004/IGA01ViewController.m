@@ -13,7 +13,6 @@
 @end
 
 @implementation IGA01ViewController
-@synthesize a02ViewController;
 #pragma mark -
 #pragma mark Initialization
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,6 +84,7 @@
     //导航条
     UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"列表" target:self selector:@selector(goToA02) frame:CGRectMake(266, 0, 54, 30)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
+    self.navigationController.navigationBar.backItem.hidesBackButton = YES;
     //定位按钮
     UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_icon.png"]]; 
     UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
@@ -265,7 +265,7 @@
 
 //去列表页面
 -(void)goToA02 {
-    self.a02ViewController = [[IGA02ViewController alloc] init];
-    [self.navigationController pushViewController:self.a02ViewController animated:YES];
+    IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] init];
+    [self.navigationController pushViewController:a02ViewController animated:YES];
 }
 @end

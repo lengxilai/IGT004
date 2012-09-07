@@ -26,5 +26,4 @@
     NSFetchedResultsController *fetchedResultsController;
 }
 
-@property (strong, nonatomic) IGA02ViewController *a02ViewController;
 @end
