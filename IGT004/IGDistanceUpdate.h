@@ -13,5 +13,5 @@
 #import "IGLocationUtil.h"
 
 @interface IGDistanceUpdate : NSObject
-+(void)updateDistance;
++(void)updateDistanceForResults:(NSArray*)results;
 @end

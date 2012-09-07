@@ -16,7 +16,7 @@
 
 #pragma mark -
 #pragma mark 初始化方法
-- (id)init
+- (id)initWithResult:(NSArray*)rs
 {
     self = [super init];
     
@@ -39,7 +39,8 @@
     [dataListTableView setDataSource:self];
     dataListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
-    [self fetchedResultsController];
+    // 设定数据
+    results = rs;
     [self.view addSubview:dataListTableView];
     
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:@"地图" target:self selector:@selector(goToA01) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
@@ -74,7 +75,7 @@
         cell.contentView.backgroundColor = [UIColor clearColor];
     }
     
-    Restaurant *restaurant = (Restaurant *)[fetchedResultsController objectAtIndexPath:indexPath];
+    Restaurant *restaurant = (Restaurant *)[results objectAtIndex:indexPath.row];
     
     [self updateContentToCell:cell :restaurant];
     
@@ -84,7 +85,7 @@
 
 //点cell进入详细画面
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    Restaurant *restaurant = (Restaurant *)[fetchedResultsController objectAtIndexPath:indexPath];
+    Restaurant *restaurant = (Restaurant *)[results objectAtIndex:indexPath.row];
     IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:restaurant];
     [self.navigationController pushViewController:a03ViewController animated:YES];
 }
@@ -109,26 +110,6 @@
 #pragma mark -
 #pragma mark datasource做成
 
-// 生成列表的datasourse
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (fetchedResultsController != nil) {
-        return self.fetchedResultsController;
-    }
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
-    NSFetchedResultsController *newFetchedResultsController = 
-    [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
-    newFetchedResultsController.delegate = self;
-    fetchedResultsController = newFetchedResultsController;
-    
-	NSError *error = nil;
-	if (![fetchedResultsController performFetch:&error]) {
-	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-	    abort();
-	}
-    return fetchedResultsController;
-}
-
 // 向cell中的填充内容
 -(void)updateContentToCell:(IGA02TableViewCell*) cell :(Restaurant *) newRestaurant{
 
@@ -147,11 +128,7 @@
 #pragma mark 其它工具方法
 // 取得饭店个数个数
 - (NSInteger) getRow {
-    NSInteger row = 0;
-    if ([[fetchedResultsController sections] count] > 0) {
-        row = [[[fetchedResultsController sections] objectAtIndex:0] numberOfObjects];
-    }
-    return row;
+    return [results count];
 }
 
 //NSNumbe to NSString

@@ -28,7 +28,7 @@
             
             [m_mkMapView addAnnotation: basicAnnotation];
         }
-
+        
     }
     return self;
 }
@@ -54,7 +54,7 @@
     CLLocationCoordinate2D coordinate2D = {latitude, longitude};
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
-
+    
     return self;
 }
 -(void)loadView{
@@ -89,6 +89,9 @@
     UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
     [searchLocationView addGestureRecognizer:searchMyselfViewTap];
     [self.view addSubview:searchLocationView];
+    
+    // 页面读完了更新距离
+    [self showLocation];
 }
 
 - (void)viewDidLoad
@@ -119,7 +122,7 @@
         return nil;
     }
     
-//    IGBasicAnnotation *basicAnnotation = (IGBasicAnnotation *)annotation;
+    //    IGBasicAnnotation *basicAnnotation = (IGBasicAnnotation *)annotation;
     MKAnnotationView *mkAnnotationView;
     IGMapAnnotationView *annotationMapView = [[IGMapAnnotationView alloc] initWithAnnotation:annotation];
     
@@ -134,9 +137,9 @@
     mkAnnotationView = annotationView;
     
     
-//    UIButton *addButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
-//    addButton.tag = basicAnnotation.m_geoInfo.m_id;
-//    [addButton addTarget:self action:@selector(showCompanyDetailInfo:) forControlEvents:UIControlEventTouchUpInside];
+    //    UIButton *addButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
+    //    addButton.tag = basicAnnotation.m_geoInfo.m_id;
+    //    [addButton addTarget:self action:@selector(showCompanyDetailInfo:) forControlEvents:UIControlEventTouchUpInside];
     
     return mkAnnotationView;
     
@@ -186,7 +189,7 @@
     
     region.center=[userLocation coordinate];
     
-    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
+//    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
 }
 
 #pragma mark -
@@ -197,8 +200,9 @@
     //    id<PLResultSet> result;
     //	result = [g_plDatabase executeQuery: @"Select ID, Name, Description, ImageName, Latitude, Longitude from GeoInfo"];
     //	
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
-    NSArray *results = [IGCoreDataUtil queryForArray:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
+    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sd,nil];
+    results = [IGCoreDataUtil queryForArray:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
     
     for (Restaurant *r in results) {
         IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
@@ -229,7 +233,7 @@
     backgroundView.tag = 10001;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelInput)];
     [backgroundView addGestureRecognizer:singleTap];
-
+    
     [self.view addSubview:backgroundView];
     return YES;
 }
@@ -267,12 +271,12 @@
     [m_mkMapView setRegion:theRegion];
     [IGLocationUtil setUserLocation:[locationManager location]];
     
-    [IGDistanceUpdate updateDistance];
+    [IGDistanceUpdate updateDistanceForResults:results];
 }
 
 //去列表页面
 -(void)goToA02 {
-    IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] init];
+    IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] initWithResult:results];
     [self.navigationController pushViewController:a02ViewController animated:YES];
 }
 @end

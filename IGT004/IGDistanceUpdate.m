@@ -9,11 +9,8 @@
 #import "IGDistanceUpdate.h"
 
 @implementation IGDistanceUpdate
-+(void)updateDistance
++(void)updateDistanceForResults:(NSArray*)results
 {
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:nil];
-    NSArray *results = [IGCoreDataUtil queryForArray:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
-
     CLLocation *location = [IGLocationUtil getUserLocation];
     if (results != nil) {
         for (Restaurant *r in results) {
