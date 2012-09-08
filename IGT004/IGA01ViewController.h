@@ -24,6 +24,7 @@
     UISearchBar *m_searchBar;
     //结果集管理器
     NSFetchedResultsController *fetchedResultsController;
+    NSArray *results;
 }
 
 @end

@@ -26,7 +26,7 @@
     UIView *backgroundView;
     //数据列表显示view
     UITableView *dataListTableView;
-
+    NSArray *results;
 }
-
+- (id)initWithResult:(NSArray*)rs;
 @end
