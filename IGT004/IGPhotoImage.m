@@ -59,7 +59,7 @@ if (imageBackView==nil) {
     {     
         frameRect = CGRectMake(0, 0, parentview.frame.size.width, parentview.frame.size.height+20);  
     }  
-    imageBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.image.size.width+20, self.image.size.height+60)];  
+    imageBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self getDisplaySize:self.image].width+20, [self getDisplaySize:self.image].height+60)];  
     imageBackView.backgroundColor = [UIColor grayColor];  
 
     imageBackView.layer.cornerRadius = 5.0; //根据需要调整  
@@ -74,12 +74,12 @@ if (imageBackView==nil) {
     maskView.alpha=0.7;  
     
     UIImage *imagepic = self.image;  
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30, self.image.size.width, self.image.size.height)];  
+    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30, [self getDisplaySize:self.image].width, [self getDisplaySize:self.image].height)];  
     [view setImage:imagepic];  
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];  
     
     UIImage *closeimg = [UIImage imageNamed:@"closeImage.png"];  
-    btn.frame = CGRectMake(self.image.size.width-10,0, closeimg.size.width,closeimg.size.height);  
+    btn.frame = CGRectMake([self getDisplaySize:self.image].width-20,0, closeimg.size.width,closeimg.size.height);  
     [btn setBackgroundImage:closeimg forState:UIControlStateNormal];  
     [btn addTarget:self action:@selector(closeImage:) forControlEvents:UIControlEventTouchUpInside];  
     
@@ -135,7 +135,26 @@ imageBackView.alpha = 0;
 imageBackView=nil;  
 [maskView removeFromSuperview];  
 maskView=nil;  
-}  
+}
 
+-(CGSize) getDisplaySize:(UIImage *) image {
+// 计算照片的宽度和高度，最大宽度320,最大高度450
+CGSize size = image.size;
+CGFloat ratio = 0;
+if (size.width > size.height) {
+    ratio = 320 / size.width; 
+    if (ratio * size.height > 450) {
+        ratio = ratio * 450 / (size.height * ratio);
+    } 
+}
+else {
+    ratio = 450 / size.height;
+    if (ratio * size.width > 320) {
+        ratio = ratio * 320 / (size.width * ratio);
+    }
+}
+CGSize displaySize = CGSizeMake(ratio * size.width, ratio * size.height);
+return displaySize;
+}
 
 @end
