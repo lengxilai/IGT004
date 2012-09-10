@@ -79,6 +79,7 @@
     //定位按钮
     UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_icon.png"]]; 
     UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
+    searchLocationView.tag = A01SearchLocationTag;
     [searchLocationView addSubview:searchMyselfView];
     UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
     [searchLocationView addGestureRecognizer:searchMyselfViewTap];
@@ -177,7 +178,12 @@
     NSLog(@"%s %d, view = %@, control = %@", __FUNCTION__, __LINE__, view, control);
     
 }
-
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    UIView *searchLocationView = [self.view viewWithTag:A01SearchLocationTag];
+    UIImageView *searchMyselfView = [[searchLocationView subviews] objectAtIndex:0];
+    [searchMyselfView setImage:[UIImage imageNamed:@"location_iconH.png"] ];
+    
+}
 -(void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
@@ -239,7 +245,7 @@
     UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, 400)];
     backgroundView.backgroundColor = [UIColor grayColor];
     backgroundView.alpha = 0.7;
-    backgroundView.tag = 10001;
+    backgroundView.tag = A01BackgroundViewTag;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelInput)];
     [backgroundView addGestureRecognizer:singleTap];
     
@@ -281,6 +287,10 @@
     [IGLocationUtil setUserLocation:[locationManager location]];
     
     [IGDistanceUpdate updateDistanceForResults:results];
+    
+    UIView *searchLocationView = [self.view viewWithTag:A01SearchLocationTag];
+    UIImageView *searchMyselfView = [[searchLocationView subviews] objectAtIndex:0];
+    [searchMyselfView setImage:[UIImage imageNamed:@"location_icon.png"] ];
 }
 
 //去列表页面
