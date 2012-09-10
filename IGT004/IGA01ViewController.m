@@ -91,7 +91,8 @@
     [self.view addSubview:searchLocationView];
     
     // 页面读完了更新距离
-    [self showLocation];
+    //[self showLocation];
+    [IGDistanceUpdate updateDistanceForResults:results];
 }
 
 - (void)viewDidLoad
@@ -146,12 +147,17 @@
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
     //吴嘉宾调用
+    if ([[[view subviews] objectAtIndex:0] isKindOfClass:[MKAnnotationView class]]==NO) { 
+        return;
+    }
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
-    Restaurant *res = [annotationMapView restaurant];
-    
-    NSLog(@"ddd");
-    IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
-    [self.navigationController pushViewController:a03ViewController animated:YES];
+    if(annotationMapView){
+        Restaurant *res = [annotationMapView restaurant];
+
+        NSLog(@"ddd");
+        IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
+        [self.navigationController pushViewController:a03ViewController animated:YES];
+    }
 }
 // mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
 // The delegate can implement this method to animate the adding of the annotations views.
@@ -189,7 +195,7 @@
     
     region.center=[userLocation coordinate];
     
-//    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
+    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
 }
 
 #pragma mark -
