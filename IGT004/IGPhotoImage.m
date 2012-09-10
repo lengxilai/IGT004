@@ -33,7 +33,7 @@
     self.userInteractionEnabled=YES;  
 
     UITapGestureRecognizer *doubleTapRecognize = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleDoubleTap:)];  
-    doubleTapRecognize.numberOfTapsRequired = 2;  
+    doubleTapRecognize.numberOfTapsRequired = 1;  
     [doubleTapRecognize setEnabled :YES];  
     [doubleTapRecognize delaysTouchesBegan];  
     [doubleTapRecognize cancelsTouchesInView];  
@@ -79,7 +79,7 @@ if (imageBackView==nil) {
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];  
     
     UIImage *closeimg = [UIImage imageNamed:@"closeImage.png"];  
-    btn.frame = CGRectMake([self getDisplaySize:self.image].width-20,0, closeimg.size.width,closeimg.size.height);  
+    btn.frame = CGRectMake([self getDisplaySize:self.image].width-17,2, closeimg.size.width,closeimg.size.height);  
     [btn setBackgroundImage:closeimg forState:UIControlStateNormal];  
     [btn addTarget:self action:@selector(closeImage:) forControlEvents:UIControlEventTouchUpInside];  
     
@@ -138,23 +138,30 @@ maskView=nil;
 }
 
 -(CGSize) getDisplaySize:(UIImage *) image {
-// 计算照片的宽度和高度，最大宽度320,最大高度450
-CGSize size = image.size;
-CGFloat ratio = 0;
-if (size.width > size.height) {
-    ratio = 320 / size.width; 
-    if (ratio * size.height > 450) {
-        ratio = ratio * 450 / (size.height * ratio);
-    } 
-}
-else {
-    ratio = 450 / size.height;
-    if (ratio * size.width > 320) {
-        ratio = ratio * 320 / (size.width * ratio);
+CGRect screenSize = [[UIScreen mainScreen] bounds];
+
+if (image.size.width>screenSize.size.width || image.size.height > screenSize.size.height) {
+    
+    // 计算照片的宽度和高度，最大宽度320,最大高度450
+    CGSize size = image.size;
+    CGFloat ratio = 0;
+    if (size.width > size.height) {
+        ratio = 320 / size.width; 
+        if (ratio * size.height > 450) {
+            ratio = ratio * 450 / (size.height * ratio);
+        } 
     }
+    else {
+        ratio = 450 / size.height;
+        if (ratio * size.width > 320) {
+            ratio = ratio * 320 / (size.width * ratio);
+        }
+    }
+    CGSize displaySize = CGSizeMake(ratio * size.width, ratio * size.height);
+    return displaySize;
+} else {
+    return CGSizeMake(image.size.width, image.size.height);
 }
-CGSize displaySize = CGSizeMake(ratio * size.width, ratio * size.height);
-return displaySize;
 }
 
 @end
