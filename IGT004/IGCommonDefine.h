@@ -73,5 +73,6 @@ typedef enum{
 
 typedef enum{
     A01FontSize = 10,
+    A01BackgroundViewTag = 10001,A01SearchLocationTag = 10002
 }A01RectDef;
 @end

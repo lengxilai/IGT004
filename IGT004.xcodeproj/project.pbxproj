@@ -60,6 +60,14 @@
 		DCF6328E15F9D11E00162BD7 /* IGUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6328D15F9D11E00162BD7 /* IGUIButton.m */; };
 		DCF6329915F9EBD000162BD7 /* navi_r_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6329715F9EBD000162BD7 /* navi_r_btn.png */; };
 		DCF6329A15F9EBD000162BD7 /* navi_r_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6329815F9EBD000162BD7 /* navi_r_btn@2x.png */; };
+		E232C31F15FDC9C500C45C08 /* location_iconH.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C31D15FDC9C500C45C08 /* location_iconH.png */; };
+		E232C32015FDC9C500C45C08 /* location_iconH@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C31E15FDC9C500C45C08 /* location_iconH@2x.png */; };
+		E232C33015FDDDD900C45C08 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E232C32F15FDDDD900C45C08 /* MessageUI.framework */; };
+		E232C33C15FDE41C00C45C08 /* IGA04ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E232C33B15FDE41C00C45C08 /* IGA04ViewController.m */; };
+		E232C33F15FDF02000C45C08 /* tenyeardiaryicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C33D15FDF02000C45C08 /* tenyeardiaryicon.png */; };
+		E232C34015FDF02000C45C08 /* tenyeardiaryicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C33E15FDF02000C45C08 /* tenyeardiaryicon@2x.png */; };
+		E232C34315FDF02A00C45C08 /* tripcheckericon.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C34115FDF02A00C45C08 /* tripcheckericon.png */; };
+		E232C34415FDF02A00C45C08 /* tripcheckericon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C34215FDF02A00C45C08 /* tripcheckericon@2x.png */; };
 		E255A5A915F8698500651C5B /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A515F8698500651C5B /* location_icon.png */; };
 		E255A5AA15F8698500651C5B /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A615F8698500651C5B /* location_icon@2x.png */; };
 		E255A5AB15F8698500651C5B /* searchBar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A715F8698500651C5B /* searchBar_bg.png */; };
@@ -169,6 +177,15 @@
 		DCF6328D15F9D11E00162BD7 /* IGUIButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGUIButton.m; sourceTree = "<group>"; };
 		DCF6329715F9EBD000162BD7 /* navi_r_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_r_btn.png; sourceTree = "<group>"; };
 		DCF6329815F9EBD000162BD7 /* navi_r_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_r_btn@2x.png"; sourceTree = "<group>"; };
+		E232C31D15FDC9C500C45C08 /* location_iconH.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_iconH.png; sourceTree = "<group>"; };
+		E232C31E15FDC9C500C45C08 /* location_iconH@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_iconH@2x.png"; sourceTree = "<group>"; };
+		E232C32F15FDDDD900C45C08 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E232C33A15FDE41C00C45C08 /* IGA04ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA04ViewController.h; sourceTree = "<group>"; };
+		E232C33B15FDE41C00C45C08 /* IGA04ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA04ViewController.m; sourceTree = "<group>"; };
+		E232C33D15FDF02000C45C08 /* tenyeardiaryicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tenyeardiaryicon.png; sourceTree = "<group>"; };
+		E232C33E15FDF02000C45C08 /* tenyeardiaryicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tenyeardiaryicon@2x.png"; sourceTree = "<group>"; };
+		E232C34115FDF02A00C45C08 /* tripcheckericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tripcheckericon.png; sourceTree = "<group>"; };
+		E232C34215FDF02A00C45C08 /* tripcheckericon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tripcheckericon@2x.png"; sourceTree = "<group>"; };
 		E255A5A515F8698500651C5B /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
 		E255A5A615F8698500651C5B /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
 		E255A5A715F8698500651C5B /* searchBar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBar_bg.png; sourceTree = "<group>"; };
@@ -197,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E232C33015FDDDD900C45C08 /* MessageUI.framework in Frameworks */,
 				E2CA87DA15F640DC002BF408 /* CoreLocation.framework in Frameworks */,
 				E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */,
 				D75F5B6115F4F586000143D7 /* UIKit.framework in Frameworks */,
@@ -229,6 +247,7 @@
 		D75F5B5F15F4F586000143D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E232C32F15FDDDD900C45C08 /* MessageUI.framework */,
 				E2CA87D915F640DC002BF408 /* CoreLocation.framework */,
 				E278309D15F5CA8900AEBEB3 /* MapKit.framework */,
 				D75F5B6015F4F586000143D7 /* UIKit.framework */,
@@ -268,6 +287,8 @@
 				DC162D5515F8924D004FBA2A /* IGA03ViewController.m */,
 				DCF6328515F9C92A00162BD7 /* IGUINavigationController.h */,
 				DCF6328615F9C92B00162BD7 /* IGUINavigationController.m */,
+				E232C33A15FDE41C00C45C08 /* IGA04ViewController.h */,
+				E232C33B15FDE41C00C45C08 /* IGA04ViewController.m */,
 			);
 			path = IGT004;
 			sourceTree = "<group>";
@@ -331,7 +352,16 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+
 				DC54EA4915FDF35800B314BC /* closeImage.png */,
+
+				E232C34115FDF02A00C45C08 /* tripcheckericon.png */,
+				E232C34215FDF02A00C45C08 /* tripcheckericon@2x.png */,
+				E232C33D15FDF02000C45C08 /* tenyeardiaryicon.png */,
+				E232C33E15FDF02000C45C08 /* tenyeardiaryicon@2x.png */,
+				E232C31D15FDC9C500C45C08 /* location_iconH.png */,
+				E232C31E15FDC9C500C45C08 /* location_iconH@2x.png */,
+
 				DCF6329715F9EBD000162BD7 /* navi_r_btn.png */,
 				DCF6329815F9EBD000162BD7 /* navi_r_btn@2x.png */,
 				DCF6328815F9CCDE00162BD7 /* nav_l_btn.png */,
@@ -471,6 +501,13 @@
 				DCF6329915F9EBD000162BD7 /* navi_r_btn.png in Resources */,
 				DCF6329A15F9EBD000162BD7 /* navi_r_btn@2x.png in Resources */,
 				DC54EA4A15FDF35800B314BC /* closeImage.png in Resources */,
+				E232C31F15FDC9C500C45C08 /* location_iconH.png in Resources */,
+				E232C32015FDC9C500C45C08 /* location_iconH@2x.png in Resources */,
+				E232C33F15FDF02000C45C08 /* tenyeardiaryicon.png in Resources */,
+				E232C34015FDF02000C45C08 /* tenyeardiaryicon@2x.png in Resources */,
+				E232C34315FDF02A00C45C08 /* tripcheckericon.png in Resources */,
+				E232C34415FDF02A00C45C08 /* tripcheckericon@2x.png in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +558,11 @@
 				DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */,
 				DCF6328715F9C92B00162BD7 /* IGUINavigationController.m in Sources */,
 				DCF6328E15F9D11E00162BD7 /* IGUIButton.m in Sources */,
+
 				DC54EA4815FDEB3C00B314BC /* IGPhotoImage.m in Sources */,
+
+				E232C33C15FDE41C00C45C08 /* IGA04ViewController.m in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

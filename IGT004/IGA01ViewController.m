@@ -20,15 +20,7 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         [self getRestaurantList];
-        //初始化所有餐厅信息
-        for (IGGEOInfo *geoInfo in m_geoArray){
-            IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
-            
-            [m_mkMapView addAnnotation: basicAnnotation];
-        }
-        
     }
     return self;
 }
@@ -54,6 +46,8 @@
     CLLocationCoordinate2D coordinate2D = {latitude, longitude};
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
+    
+    [m_geoArray addObject:geoInfo];
     
     return self;
 }
@@ -85,13 +79,15 @@
     //定位按钮
     UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_icon.png"]]; 
     UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
+    searchLocationView.tag = A01SearchLocationTag;
     [searchLocationView addSubview:searchMyselfView];
     UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
     [searchLocationView addGestureRecognizer:searchMyselfViewTap];
     [self.view addSubview:searchLocationView];
     
     // 页面读完了更新距离
-    [self showLocation];
+    //[self showLocation];
+    [IGDistanceUpdate updateDistanceForResults:results];
 }
 
 - (void)viewDidLoad
@@ -99,6 +95,15 @@
     
     // Do any additional setup after loading the view.
     [super viewDidLoad];
+    //初始化所有餐厅信息
+    for (IGGEOInfo *geoInfo in m_geoArray){
+        IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
+        
+        [m_mkMapView addAnnotation: basicAnnotation];
+    }
+    
+    // 页面读完了更新距离
+    [self showLocation];
 }
 
 - (void)viewDidUnload
@@ -146,12 +151,17 @@
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
     //吴嘉宾调用
+    if ([[[view subviews] objectAtIndex:0] isKindOfClass:[MKAnnotationView class]]==NO) { 
+        return;
+    }
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
-    Restaurant *res = [annotationMapView restaurant];
-    
-    NSLog(@"ddd");
-    IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
-    [self.navigationController pushViewController:a03ViewController animated:YES];
+    if(annotationMapView){
+        Restaurant *res = [annotationMapView restaurant];
+
+        NSLog(@"ddd");
+        IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
+        [self.navigationController pushViewController:a03ViewController animated:YES];
+    }
 }
 // mapView:didAddAnnotationViews: is called after the annotation views have been added and positioned in the map.
 // The delegate can implement this method to animate the adding of the annotations views.
@@ -168,7 +178,12 @@
     NSLog(@"%s %d, view = %@, control = %@", __FUNCTION__, __LINE__, view, control);
     
 }
-
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    UIView *searchLocationView = [self.view viewWithTag:A01SearchLocationTag];
+    UIImageView *searchMyselfView = [[searchLocationView subviews] objectAtIndex:0];
+    [searchMyselfView setImage:[UIImage imageNamed:@"location_iconH.png"] ];
+    
+}
 -(void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
@@ -189,7 +204,7 @@
     
     region.center=[userLocation coordinate];
     
-//    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
+    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
 }
 
 #pragma mark -
@@ -230,7 +245,7 @@
     UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, 400)];
     backgroundView.backgroundColor = [UIColor grayColor];
     backgroundView.alpha = 0.7;
-    backgroundView.tag = 10001;
+    backgroundView.tag = A01BackgroundViewTag;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelInput)];
     [backgroundView addGestureRecognizer:singleTap];
     
@@ -272,6 +287,10 @@
     [IGLocationUtil setUserLocation:[locationManager location]];
     
     [IGDistanceUpdate updateDistanceForResults:results];
+    
+    UIView *searchLocationView = [self.view viewWithTag:A01SearchLocationTag];
+    UIImageView *searchMyselfView = [[searchLocationView subviews] objectAtIndex:0];
+    [searchMyselfView setImage:[UIImage imageNamed:@"location_icon.png"] ];
 }
 
 //去列表页面
