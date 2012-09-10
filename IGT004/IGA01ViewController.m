@@ -21,13 +21,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        [self getRestaurantList];
-        //初始化所有餐厅信息
-        for (IGGEOInfo *geoInfo in m_geoArray){
-            IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
-            
-            [m_mkMapView addAnnotation: basicAnnotation];
-        }
+
         
     }
     return self;
@@ -89,9 +83,7 @@
     UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
     [searchLocationView addGestureRecognizer:searchMyselfViewTap];
     [self.view addSubview:searchLocationView];
-    
-    // 页面读完了更新距离
-    [self showLocation];
+
 }
 
 - (void)viewDidLoad
@@ -99,6 +91,16 @@
     
     // Do any additional setup after loading the view.
     [super viewDidLoad];
+    [self getRestaurantList];
+    //初始化所有餐厅信息
+    for (IGGEOInfo *geoInfo in m_geoArray){
+        IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
+        
+        [m_mkMapView addAnnotation: basicAnnotation];
+    }
+    
+    // 页面读完了更新距离
+    [self showLocation];
 }
 
 - (void)viewDidUnload
