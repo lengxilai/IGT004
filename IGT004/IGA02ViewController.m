@@ -28,6 +28,19 @@
     backgroundView.backgroundColor = [UIColor colorWithHex:0xefefef alpha:1.0];
     //把背景view放入到self
     [self.view addSubview:backgroundView];
+    
+    //搜索框
+    searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
+    searchBar.delegate = self;
+    searchBar.barStyle = UIBarStyleBlackTranslucent;
+    searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchBar_bg.png"]];
+    backSearchBarimageView.alpha = 0.7;
+    [searchBar insertSubview:backSearchBarimageView atIndex:1];
+    [[searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
+    searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
+    [self.view addSubview:searchBar];
+    
 
     //内容设置
     dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, screenSize.size.width, screenSize.size.height) style:UITableViewStylePlain];
@@ -46,6 +59,11 @@
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:@"地图" target:self selector:@selector(goToA01) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark -
@@ -102,10 +120,20 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+#pragma mark -
+#pragma mark searchbar delegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, 400)];
+    bgView.backgroundColor = [UIColor grayColor];
+    bgView.alpha = 0.7;
+    bgView.tag = 10001;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelInput)];
+    [bgView addGestureRecognizer:singleTap];
+    
+    [self.view addSubview:bgView];
+    return YES;
 }
+
 
 #pragma mark -
 #pragma mark datasource做成

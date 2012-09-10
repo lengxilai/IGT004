@@ -15,7 +15,7 @@ typedef enum{
     //A02中cell行高
     A02CellHight=82,
     // A02页面中tableview位置
-    A02TableViewX = 0,A02TableViewY = 0,A02TableViewW = 301,A02TableViewH = 390,
+    A02TableViewX = 0,A02TableViewY = 42,A02TableViewW = 301,A02TableViewH = 432,
     //标志图片显示位置
     A02IconImageViewX = 13,A02IconImageViewY = 7,A02IconImageViewW = 75,A02IconImageViewH = 70,
     //饭店名称显示位置
@@ -62,6 +62,13 @@ typedef enum{
     A03BarButtonLeftX=0,A03BarButtonLeftY=0,A03BarButtonLeftW=54,A03BarButtonLeftH=30,
     // 导航栏右边按钮
     A03BarButtonRightX=266,A03BarButtonRightY=0,A03BarButtonRightW=54,A03BarButtonRightH=30,
+    
+    //滚动图集scrollView位置
+    A03ScrollViewX=0,A03ScrollViewW=320,A03ScrollViewH=100,
+    
+    //滚动图集image位置
+    A03ScrollImageY=9,A03ScrollImageW=80,A03ScrollImageH=80,
+    
 }A03RectDef;
 
 typedef enum{

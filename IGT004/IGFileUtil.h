@@ -16,5 +16,7 @@
 +(NSString *) getPathByRestaurantId:(NSString *) restaurantId;
 //根据饭店id和icon名称获得标志图片
 +(NSString *) getIconImageByRestaurantId:(NSString *) restaurantId forIconName:(NSString *) iconName;
+//根据饭店id获得图集
++(NSArray *) getPhotosByRestaurantId:(NSString *) restaurantId;
 
 @end

@@ -30,7 +30,6 @@
         
         //上半部分显示内容
         topUIView = [[UIView alloc] initWithFrame:CGRectMake(A03TopViewX, A03TopViewY, A03TopViewW, A03TopViewH)];
-//        topUIView.backgroundColor = [UIColor grayColor];
         //标志图片
         UIImage *iconImg = [[UIImage alloc] initWithContentsOfFile: [IGFileUtil getIconImageByRestaurantId:[self toString:restaurant.id] forIconName:restaurant.iconName]];
         iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(A03IconImageViewX, A03IconImageViewY, A03IconImageViewW, A03IconImageViewH)];
@@ -68,7 +67,7 @@
         
         //下半部分显示内容
         bottomView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03BottomTableViewX, A03BottomTableViewY, A03BottomTableViewW, A03BottomTableViewH)];
-        bottomView.contentSize = CGSizeMake(320, 500);
+
 
         //地址
         addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03AddressX, A03AddressY, A03AddressW, A03AddressH)];
@@ -101,18 +100,16 @@
         [memoLabel sizeToFit];
         memoLabel.backgroundColor = [UIColor clearColor];
         [bottomView addSubview:memoLabel];
-        
-//        bottomView.backgroundColor = [UIColor redColor];
 
-     
+        //导航设定
         UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
-        //图集view
-        photoView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 330, 320, 280)];
-        photoView.backgroundColor = [UIColor blueColor];
-        [bottomView addSubview:photoView];
+        //图集scrollView
+        photoView = [self setPhotoView:restaurant];
         
+        [bottomView addSubview:photoView];
+        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoLabel]+320);
         [self.view addSubview:bottomView];
     }
     return self;
@@ -140,6 +137,81 @@
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+//获取UILabel的高度
+-(double) getUILabelHeight:(UILabel *) label {
+    CGSize size = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(label.frame.size.width, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+    return size.height;
+}
+
+//设定滚动图集的图片和位置
+-(UIScrollView*) setPhotoView:(Restaurant*) restaurant {
+    // 滚动图集的Y轴大小＝简介高度＋电话＋地址＋常量
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, [self getUILabelHeight:memoLabel]+120, A03ScrollViewW, A03ScrollViewH)];
+    scrollView.backgroundColor = [UIColor grayColor];
+    
+    //取出饭店id下的所有图片
+    NSArray *fileList = [IGFileUtil getPhotosByRestaurantId:[self toString:restaurant.id]];
+    //要从数组中删除标志图片，所以需要用NSMutableArray
+    NSMutableArray *photosArray = [NSMutableArray arrayWithArray:fileList];
+    //除去标志图片
+    [photosArray removeObject:restaurant.iconName];
+    //算出ScrollView的宽度（减去标志图片）
+    NSInteger maxWidth = (photosArray.count)*90;
+    scrollView.contentSize = CGSizeMake(maxWidth, A03ScrollViewH);
+    
+    //循环向ScrollView中添加图片
+    for (int i=0;i<photosArray.count;i++) {
+        NSString *photoName = [photosArray objectAtIndex:i];
+        UIImage *photoImg = [[UIImage alloc] initWithContentsOfFile: [IGFileUtil getIconImageByRestaurantId:[self toString:restaurant.id] forIconName:photoName]];
+        CGSize photoSize =[photoImg size];
+        NSLog(@"宽%f", photoSize.width);
+        NSLog(@"高%f", photoSize.height);
+        //每个图片的位置
+        UIImageView *photoImgView = [[IGPhotoImage alloc] initWithFrame:CGRectMake(i*90+5, A03ScrollImageY, A03ScrollImageW, A03ScrollImageH)];
+        [photoImgView setImage:photoImg];
+
+        [photoImgView setTag: (7000 + i)];
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoClicked:)];
+        [photoImgView addGestureRecognizer:singleTap];
+        //什么意思？
+        [photoImgView setUserInteractionEnabled:YES];
+        [photoImgView setMultipleTouchEnabled:YES];
+        
+        [scrollView addSubview:photoImgView];
+    }
+    [scrollView setDelegate:self];
+    return scrollView;
+}
+
+// 点击照片后，显示大照片
+-(void)photoClicked:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSLog(@"%@", @"na ni na ni na ni");
+    
+    
+
+    IGPhotoImage *touchedImage = (IGPhotoImage*)gestureRecognizer.view;
+    [touchedImage setDoubleTap:self.view];
+    
+//    [[IGPhotoImage alloc] setDoubleTap:touchedImage];
+//
+//    UIScrollView *touchedImageController = [[UIScrollView alloc] initWithFrame:CGRectMake(30, 30, 200, 200)];
+//    [touchedImage setFrame:CGRectMake(0, 0, 200, 200)];
+//    touchedImageController.backgroundColor = [UIColor redColor];
+//    [touchedImageController addSubview:touchedImage];
+//    [self.view addSubview:touchedImageController];
+//    [touchedImageController showPhoto:touchedImage.image];
+//    UIImageView *touchedImage = [[UIImageView alloc] init];
+//    touchedImage = (UIImageView *)gestureRecognizer.view;
+//    CGRect newRect = CGRectInset([touchedImage frame], 0, 0);    
+//
+//    [touchedImage setFrame:newRect];
+//    
+//    [self.view addSubview:touchedImage];
+    NSLog(@"%@", @"ok");
+}
+
 
 //NSNumbe to NSString
 -(NSString *) toString:(NSNumber *) number {

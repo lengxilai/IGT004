@@ -18,7 +18,7 @@
 #import "IGUIButton.h"
 
 
-@interface IGA02ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource> {
+@interface IGA02ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate,UITableViewDataSource> {
     
     //结果集管理器
     NSFetchedResultsController *fetchedResultsController;
@@ -26,6 +26,8 @@
     UIView *backgroundView;
     //数据列表显示view
     UITableView *dataListTableView;
+    //搜说框
+    UISearchBar *searchBar;
     NSArray *results;
 }
 - (id)initWithResult:(NSArray*)rs;

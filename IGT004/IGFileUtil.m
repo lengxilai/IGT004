@@ -29,4 +29,15 @@
     return [[self getPathByRestaurantId:restaurantId] stringByAppendingFormat:@"%@%@",@"/",iconName];
 }
 
+//根据饭店id获得图集
++(NSArray *) getPhotosByRestaurantId:(NSString *) restaurantId {
+    // 创建文件管理器  
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *fileList = [[NSArray alloc] init];  
+    NSError *error = nil;
+    //fileList便是包含有该文件夹下所有文件的文件名及文件夹名的数组
+    fileList = [fileManager contentsOfDirectoryAtPath:[self getPathByRestaurantId:restaurantId] error:&error];
+    return fileList;
+}
+
 @end
