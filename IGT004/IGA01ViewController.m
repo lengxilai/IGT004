@@ -20,15 +20,7 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         [self getRestaurantList];
-        //初始化所有餐厅信息
-        for (IGGEOInfo *geoInfo in m_geoArray){
-            IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
-            
-            [m_mkMapView addAnnotation: basicAnnotation];
-        }
-        
     }
     return self;
 }
@@ -54,6 +46,8 @@
     CLLocationCoordinate2D coordinate2D = {latitude, longitude};
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
+    
+    [m_geoArray addObject:geoInfo];
     
     return self;
 }
@@ -100,6 +94,15 @@
     
     // Do any additional setup after loading the view.
     [super viewDidLoad];
+    //初始化所有餐厅信息
+    for (IGGEOInfo *geoInfo in m_geoArray){
+        IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
+        
+        [m_mkMapView addAnnotation: basicAnnotation];
+    }
+    
+    // 页面读完了更新距离
+    [self showLocation];
 }
 
 - (void)viewDidUnload
@@ -195,7 +198,7 @@
     
     region.center=[userLocation coordinate];
     
-    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:YES];
+    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
 }
 
 #pragma mark -
