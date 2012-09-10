@@ -20,9 +20,7 @@
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
-
-        
+        [self getRestaurantList];
     }
     return self;
 }
@@ -48,6 +46,8 @@
     CLLocationCoordinate2D coordinate2D = {latitude, longitude};
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
+    
+    [m_geoArray addObject:geoInfo];
     
     return self;
 }
@@ -91,7 +91,6 @@
     
     // Do any additional setup after loading the view.
     [super viewDidLoad];
-    [self getRestaurantList];
     //初始化所有餐厅信息
     for (IGGEOInfo *geoInfo in m_geoArray){
         IGBasicAnnotation *basicAnnotation = [[IGBasicAnnotation alloc] initWithGeoInfo:geoInfo];
