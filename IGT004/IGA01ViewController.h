@@ -26,5 +26,6 @@
     NSFetchedResultsController *fetchedResultsController;
     NSArray *results;
 }
+-(id)initWithRestautant:(Restaurant *)res;
 
 @end

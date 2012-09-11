@@ -27,7 +27,7 @@
     //数据列表显示view
     UITableView *dataListTableView;
     //搜说框
-    UISearchBar *searchBar;
+    UISearchBar *m_searchBar;
     NSArray *results;
 }
 - (id)initWithResult:(NSArray*)rs;

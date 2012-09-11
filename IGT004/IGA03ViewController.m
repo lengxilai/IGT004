@@ -19,6 +19,7 @@
 {
     self = [super init];
     if (self) {
+        result = restaurant;
         //取得屏幕尺寸
         CGRect screenSize = [[UIScreen mainScreen] bounds];
         //设置背景为设备屏幕大小
@@ -70,11 +71,29 @@
 
 
         //地址
-        addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03AddressX, A03AddressY, A03AddressW, A03AddressH)];
+        //地址view
+        addressView = [[UIView alloc] initWithFrame:CGRectMake(A03AddressX, A03AddressY, A03AddressW, A03AddressH)];
+//        addressView.backgroundColor = [UIColor grayColor];
+        addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 12, 240, 25)];
         addressLabel.text = [NSString stringWithFormat:@"%@%@", @"地址:", restaurant.address];
         addressLabel.adjustsFontSizeToFitWidth = YES;
+        addressView.userInteractionEnabled=YES;
         addressLabel.backgroundColor = [UIColor clearColor];
-        [bottomView addSubview:addressLabel];
+        
+        //地址右箭头图片view
+        addressImgView = [[UIView alloc] initWithFrame:CGRectMake(270, 20, 10, 14)];
+        addressImgView.backgroundColor = [UIColor moreImageBackgroundImageColor];
+        
+        UITapGestureRecognizer *touchAddress = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoA01:)];
+        touchAddress.numberOfTapsRequired = 1;  
+        [touchAddress setEnabled :YES];  
+        [touchAddress delaysTouchesBegan];  
+        [touchAddress cancelsTouchesInView];
+        [addressView addGestureRecognizer:touchAddress];
+        [addressView addSubview:addressImgView];
+        [addressView addSubview:addressLabel];
+
+        [bottomView addSubview:addressView];
         
         //中间横线2
         line2View = [[UIView alloc] initWithFrame:CGRectMake(A03BottomLine2X, A03BottomLine2Y, A03BottomLine2W, A03BottomLine2H)];
@@ -82,11 +101,28 @@
         [bottomView addSubview:line2View];
         
         //电话
-        telLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03TelX, A03TelY, A03TelW, A03TelH)];
+        telView = [[UIView alloc] initWithFrame:CGRectMake(A03TelX, A03TelY, A03TelW, A03TelH)];
+        telView.userInteractionEnabled = YES;
+//        telView.backgroundColor = [UIColor grayColor];
+        telLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 240, 14)];
         telLabel.text = [NSString stringWithFormat:@"%@%@", @"电话:", restaurant.tel];
         telLabel.adjustsFontSizeToFitWidth = YES;
         telLabel.backgroundColor = [UIColor clearColor];
-        [bottomView addSubview:telLabel];
+        
+        telImageView = [[UIView alloc] initWithFrame:CGRectMake(270, 20, 10, 14)];
+        telImageView.backgroundColor = [UIColor moreImageBackgroundImageColor];
+        
+        
+        UITapGestureRecognizer *touchTel = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(callTel:)];
+        touchTel.numberOfTapsRequired = 1;  
+        [touchTel setEnabled :YES];  
+        [touchTel delaysTouchesBegan];  
+        [touchTel cancelsTouchesInView];
+        [telView addGestureRecognizer:touchTel];
+        
+        [telView addSubview:telLabel];
+        [telView addSubview:telImageView];
+        [bottomView addSubview:telView];
         
         //中间横线3
         line3View = [[UIView alloc] initWithFrame:CGRectMake(A03BottomLine3X, A03BottomLine3Y, A03BottomLine3W, A03BottomLine3H)];
@@ -164,9 +200,6 @@
     for (int i=0;i<photosArray.count;i++) {
         NSString *photoName = [photosArray objectAtIndex:i];
         UIImage *photoImg = [[UIImage alloc] initWithContentsOfFile: [IGFileUtil getIconImageByRestaurantId:[self toString:restaurant.id] forIconName:photoName]];
-        CGSize photoSize =[photoImg size];
-        NSLog(@"宽%f", photoSize.width);
-        NSLog(@"高%f", photoSize.height);
         //每个图片的位置
         UIImageView *photoImgView = [[IGPhotoImage alloc] initWithFrame:CGRectMake(i*90+5, A03ScrollImageY, A03ScrollImageW, A03ScrollImageH)];
         [photoImgView setImage:photoImg];
@@ -217,5 +250,14 @@
 -(NSString *) toString:(NSNumber *) number {
     NSNumberFormatter* numberFormatter = [[NSNumberFormatter alloc] init];
     return [numberFormatter stringFromNumber:number];
+}
+
+-(void) gotoA01:(UITapGestureRecognizer *)recognizer {
+    IGA01ViewController *a01ViewController = [[IGA01ViewController alloc] initWithRestautant:result];
+    [self.navigationController pushViewController:a01ViewController animated:YES];
+}
+-(void) callTel:(UITapGestureRecognizer *)recognizer {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://8004664411"]];
+
 }
 @end

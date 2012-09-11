@@ -52,9 +52,9 @@ typedef enum{
     // 下半部分tableview显示位置
     A03BottomTableViewX = 0,A03BottomTableViewY = 90,A03BottomTableViewW = 320,A03BottomTableViewH = 310,
     // 地址显示位置
-    A03AddressX = 20,A03AddressY = 20,A03AddressW = 260,A03AddressH = 15,
+    A03AddressX = 0,A03AddressY = 5,A03AddressW = 320,A03AddressH = 37,
     // 电话显示位置
-    A03TelX = 20,A03TelY = 60,A03TelW = 260,A03TelH = 15,
+    A03TelX = 0,A03TelY = 45,A03TelW = 320,A03TelH = 37,
     // 简介显示位置
     A03MemoX = 20,A03MemoY = 90,A03MemoW = 260,A03MemoH = 15,
 

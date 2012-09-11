@@ -120,4 +120,36 @@ static NSManagedObjectContext *staticManagedObjectContext;
     }
     return fetchResult;
 }
+
+//根据表名、输入条件、排序规则、
++(NSArray*)queryForFetchedResult:(NSString *)entityName 
+                              queryPredicate:(NSPredicate *)predicate 
+                              sortDescriptors:(NSArray*) sortDescriptors 
+{
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    // 查询对象设置
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName 
+                                              inManagedObjectContext:staticManagedObjectContext];
+    [request setEntity:entity];
+    
+    // 查询条件设置
+    if (predicate != nil) {
+        [request setPredicate:predicate];
+    }
+    
+    // 排序设置
+    if(sortDescriptors != nil){
+        [request setSortDescriptors:sortDescriptors];
+    }
+    
+    NSError *error = nil;
+    NSArray *fetchResult = [staticManagedObjectContext executeFetchRequest:request error:&error];
+
+    return fetchResult;
+}
+
+
+
 @end

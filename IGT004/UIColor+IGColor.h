@@ -15,4 +15,6 @@
 + (UIColor*)bottomLineBackgroundImageColor;
 //navigationBar背景图片
 + (UIColor*)navigationBarImageColor;
+//more图片背景
++ (UIColor*)moreImageBackgroundImageColor;
 @end

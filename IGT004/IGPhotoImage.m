@@ -32,7 +32,7 @@
     parentview.userInteractionEnabled=YES;  
     self.userInteractionEnabled=YES;  
 
-    UITapGestureRecognizer *doubleTapRecognize = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleDoubleTap:)];  
+    UITapGestureRecognizer *doubleTapRecognize = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(handleDoubleTap:)];
     doubleTapRecognize.numberOfTapsRequired = 1;  
     [doubleTapRecognize setEnabled :YES];  
     [doubleTapRecognize delaysTouchesBegan];  
@@ -62,7 +62,7 @@ if (imageBackView==nil) {
     imageBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self getDisplaySize:self.image].width+20, [self getDisplaySize:self.image].height+60)];  
     imageBackView.backgroundColor = [UIColor grayColor];  
 
-    imageBackView.layer.cornerRadius = 5.0; //根据需要调整  
+    imageBackView.layer.cornerRadius = 10.0; //根据需要调整  
     
     [[imageBackView layer] setShadowOffset:CGSizeMake(10, 10)];  
     [[imageBackView layer] setShadowRadius:5];  
