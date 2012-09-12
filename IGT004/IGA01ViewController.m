@@ -15,23 +15,27 @@
 @implementation IGA01ViewController
 #pragma mark -
 #pragma mark Initialization
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
     
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
     if (self) {
+        from = 1;
         [self getRestaurantList];
     }
     return self;
 }
 -(id)initWithRestautant:(Restaurant *)res{
-    self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
+    self = [super init];
+    from = 2;
+    //self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     
     
     //初始化饭店位置
-    MKCoordinateRegion region = {{[[res latitude ] doubleValue], [[res longitude]doubleValue]}, {0.016, 0.016}};
-    m_mkMapView.region = region;
+//    MKCoordinateRegion region = {{[[res latitude ] doubleValue], [[res longitude]doubleValue]}, {0.016, 0.016}};
+//    m_mkMapView.region = region;
     //显示饭店
+    m_geoArray = [[NSMutableArray alloc] init];
     IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
     geoInfo.m_id = [[res id] doubleValue];
     geoInfo.m_name = [res name];
@@ -48,7 +52,10 @@
     geoInfo.res = res;
     
     [m_geoArray addObject:geoInfo];
-    
+       
+    float zoomLevel = 0.01;  
+    MKCoordinateRegion region2 = MKCoordinateRegionMake(coordinate2D, MKCoordinateSpanMake(zoomLevel, zoomLevel));  
+    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region2] animated:YES];  
     return self;
 }
 -(void)loadView{
@@ -103,7 +110,8 @@
     }
     
     // 页面读完了更新距离
-    [self showLocation];
+    if(from == 1)
+        [self showLocation];
 }
 
 - (void)viewDidUnload
@@ -203,6 +211,7 @@
     region.span=span;
     
     region.center=[userLocation coordinate];
+    
     
     [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
 }
