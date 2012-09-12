@@ -63,7 +63,7 @@
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
-    //m_mkMapView.showsUserLocation=YES;
+    m_mkMapView.showsUserLocation=YES;
     [self.view addSubview: m_mkMapView];
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
@@ -210,7 +210,7 @@
     region.center=[userLocation coordinate];
     
     
-    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
+    //[m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
 }
 
 #pragma mark -
