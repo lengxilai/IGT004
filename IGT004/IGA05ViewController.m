@@ -1,46 +1,36 @@
 //
-//  IGA01ViewControllerViewController.m
+//  IGA05ViewController.m
 //  IGT004
 //
-//  Created by wang chong on 12-9-4.
+//  Created by wang chong on 12-9-12.
 //  Copyright (c) 2012年 ntt. All rights reserved.
 //
 
-#import "IGA01ViewController.h"
-#import "IGDistanceUpdate.h"
-@interface IGA01ViewController ()
+#import "IGA05ViewController.h"
+
+@interface IGA05ViewController ()
 
 @end
 
-@implementation IGA01ViewController
-#pragma mark -
-#pragma mark Initialization
+@implementation IGA05ViewController
+
 - (id)init
 {
     
     self = [super init];
-    if (self) {
-        
-    }
     return self;
 }
 -(id)initWithRestautant:(Restaurant *)res{
     self = [super init];
-    //self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
-    
-    
-    //初始化饭店位置
-//    MKCoordinateRegion region = {{[[res latitude ] doubleValue], [[res longitude]doubleValue]}, {0.016, 0.016}};
-//    m_mkMapView.region = region;
     //显示饭店
     m_geoArray = [[NSMutableArray alloc] init];
     IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
     geoInfo.m_id = [[res id] doubleValue];
-    geoInfo.m_name = [res name];
+    geoInfo.m_name = [res address];
     
     NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
     
-    geoInfo.m_description = [res abbrName];
+    geoInfo.m_description = [res name];
     
     CLLocationDegrees latitude = [[res latitude] doubleValue];
     CLLocationDegrees longitude = [[res longitude] doubleValue];
@@ -48,23 +38,22 @@
     CLLocationCoordinate2D coordinate2D = {latitude, longitude};
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
-    
+    restaurant = res;
+    NSLog(@"latitude:%@,longitude:%@",restaurant.latitude,restaurant.longitude);
     [m_geoArray addObject:geoInfo];
-       
-    float zoomLevel = 0.01;  
-    MKCoordinateRegion region2 = MKCoordinateRegionMake(coordinate2D, MKCoordinateSpanMake(zoomLevel, zoomLevel));  
-    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region2] animated:YES];  
+
     return self;
 }
 -(void)loadView{
-    [self getRestaurantList];
     self.navigationItem.title = @"舌尖上的大连";
     
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
-    m_mkMapView.showsUserLocation=YES;
+    MKCoordinateRegion region = {{[restaurant.latitude doubleValue], [restaurant.longitude doubleValue]}, {0.01, 0.01}};
+    m_mkMapView.region = region;
     [self.view addSubview: m_mkMapView];
+    
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
     m_searchBar.delegate = self;
@@ -78,11 +67,12 @@
     [self.view addSubview:m_searchBar];
     
     //导航条
-    UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"列表" target:self selector:@selector(goToA02) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+    UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"路线" target:self selector:@selector(findAddress) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
-    self.navigationController.navigationBar.backItem.hidesBackButton = YES;
+    UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     //定位按钮
-    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_icon.png"]]; 
+    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_iconH.png"]]; 
     UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
     searchLocationView.tag = A01SearchLocationTag;
     [searchLocationView addSubview:searchMyselfView];
@@ -108,7 +98,7 @@
     }
     
     // 页面读完了更新距离
-    [self showLocation];
+    //[self showLocation];
 }
 
 - (void)viewDidUnload
@@ -132,26 +122,13 @@
         return nil;
     }
     
-    //    IGBasicAnnotation *basicAnnotation = (IGBasicAnnotation *)annotation;
-    MKAnnotationView *mkAnnotationView;
-    IGMapAnnotationView *annotationMapView = [[IGMapAnnotationView alloc] initWithAnnotation:annotation];
     
-    MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"annotationView"];
-    annotationView.userInteractionEnabled = YES;
-    annotationView.alpha = 0.9;
-    annotationView.canShowCallout = NO;
-    //annotationView.image = [UIImage imageNamed:@"logo.jpg"];
-    //    [annotationView addSubview:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]]];
+    MKPinAnnotationView *newAnnotation = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation1"];
+	newAnnotation.pinColor = MKPinAnnotationColorGreen;
+	newAnnotation.animatesDrop = YES; 
+	newAnnotation.canShowCallout=YES;
     
-    [annotationView addSubview:annotationMapView];
-    mkAnnotationView = annotationView;
-    
-    
-    //    UIButton *addButton = [UIButton buttonWithType: UIButtonTypeDetailDisclosure];
-    //    addButton.tag = basicAnnotation.m_geoInfo.m_id;
-    //    [addButton addTarget:self action:@selector(showCompanyDetailInfo:) forControlEvents:UIControlEventTouchUpInside];
-    
-    return mkAnnotationView;
+    return newAnnotation;
     
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
@@ -162,7 +139,7 @@
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
     if(annotationMapView){
         Restaurant *res = [annotationMapView restaurant];
-
+        
         NSLog(@"ddd");
         IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
         [self.navigationController pushViewController:a03ViewController animated:YES];
@@ -191,26 +168,26 @@
 }
 -(void) mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
     
-    NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
-    
-    NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
-    [IGLocationUtil setUserLocation:[userLocation location]];
-    m_locationLatitude=[lat doubleValue];
-    m_locationLongitude=[lng doubleValue];
-    MKCoordinateSpan span;
-    
-    MKCoordinateRegion region;
-    
-    span.latitudeDelta=0.010;
-    
-    span.longitudeDelta=0.010;
-    
-    region.span=span;
-    
-    region.center=[userLocation coordinate];
-    
-    
-    //[m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
+//    NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
+//    
+//    NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
+//    [IGLocationUtil setUserLocation:[userLocation location]];
+//    m_locationLatitude=[lat doubleValue];
+//    m_locationLongitude=[lng doubleValue];
+//    MKCoordinateSpan span;
+//    
+//    MKCoordinateRegion region;
+//    
+//    span.latitudeDelta=0.010;
+//    
+//    span.longitudeDelta=0.010;
+//    
+//    region.span=span;
+//    
+//    region.center=[userLocation coordinate];
+//    
+//    
+//    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
 }
 
 #pragma mark -
@@ -229,11 +206,10 @@
         IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
         
         geoInfo.m_id = [[r id] doubleValue];
-        geoInfo.m_name = [r name];
+        geoInfo.m_name = [r address];
         
-        NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
         
-        geoInfo.m_description = [r abbrName];
+        geoInfo.m_description = [r name];
         
         CLLocationDegrees latitude = [[r latitude] doubleValue];
         CLLocationDegrees longitude = [[r longitude] doubleValue];
@@ -292,16 +268,23 @@
     [m_mkMapView setRegion:theRegion];
     [IGLocationUtil setUserLocation:[locationManager location]];
     
-    [IGDistanceUpdate updateDistanceForResults:results];
+    //[IGDistanceUpdate updateDistanceForResults:results];
     
     UIView *searchLocationView = [self.view viewWithTag:A01SearchLocationTag];
     UIImageView *searchMyselfView = [[searchLocationView subviews] objectAtIndex:0];
     [searchMyselfView setImage:[UIImage imageNamed:@"location_icon.png"] ];
 }
 
-//去列表页面
--(void)goToA02 {
-    IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] initWithResult:results];
-    [self.navigationController pushViewController:a02ViewController animated:YES];
+-(void)findAddress{
+    NSString *theString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=Current Location&daddr=%@,%@",restaurant.latitude, restaurant.longitude];
+    theString =  [theString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
+    NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
+    NSURL *url = [[NSURL alloc] initWithString:theString];
+    [[UIApplication sharedApplication] openURL:url];
+}
+// 点击返回按钮
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

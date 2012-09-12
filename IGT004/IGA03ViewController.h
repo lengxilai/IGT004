@@ -14,7 +14,7 @@
 #import "IGUIButton.h"
 #import "IGPhotoImage.h"
 #import "IGA01ViewController.h"
-
+#import "IGA05ViewController.h"
 @interface IGA03ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource,UIScrollViewDelegate> {
     //背景view
     UIView *backgroundView;

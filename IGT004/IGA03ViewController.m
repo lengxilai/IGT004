@@ -94,7 +94,7 @@
         addressImgView = [[UIView alloc] initWithFrame:CGRectMake(270, 10, 10, 14)];
         addressImgView.backgroundColor = [UIColor moreImageBackgroundImageColor];
         
-        UITapGestureRecognizer *touchAddress = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoA01:)];
+        UITapGestureRecognizer *touchAddress = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoA05:)];
         touchAddress.numberOfTapsRequired = 1;  
         [touchAddress setEnabled :YES];  
         [touchAddress delaysTouchesBegan];  
@@ -287,8 +287,8 @@
     return [numberFormatter stringFromNumber:number];
 }
 
--(void) gotoA01:(UITapGestureRecognizer *)recognizer {
-    IGA01ViewController *a01ViewController = [[IGA01ViewController alloc] initWithRestautant:result];
+-(void) gotoA05:(UITapGestureRecognizer *)recognizer {
+    IGA05ViewController *a01ViewController = [[IGA05ViewController alloc] initWithRestautant:result];
     [self.navigationController pushViewController:a01ViewController animated:YES];
 }
 -(void) callTel:(UITapGestureRecognizer *)recognizer {
