@@ -19,6 +19,7 @@
 {
     self = [super init];
     if (self) {
+        self.title = @"详细";
         result = restaurant;
         //取得屏幕尺寸
         CGRect screenSize = [[UIScreen mainScreen] bounds];
@@ -38,6 +39,7 @@
         [topUIView addSubview:iconImageView];
         //饭店名称
         restaurantNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03RestaurantNameX, A03RestaurantNameY, A03RestaurantNameW, A03RestaurantNameH)];
+        restaurantNameLabel.font = [UIFont fontWithName:@"Arial" size:20];
         restaurantNameLabel.backgroundColor = [UIColor clearColor];
         restaurantNameLabel.adjustsFontSizeToFitWidth = YES;
         restaurantNameLabel.textColor = [UIColor colorWithHex:0x000000 alpha:1.0];
@@ -48,14 +50,14 @@
         distanceLabel.backgroundColor = [UIColor clearColor];
         distanceLabel.adjustsFontSizeToFitWidth = YES;
         distanceLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
-        distanceLabel.text = [NSString stringWithFormat:@"%@%@", @"距离: ", [self toString:restaurant.distance]];
+        distanceLabel.text = [NSString stringWithFormat:@"%@%@", @"距离:", [self getDistance:restaurant.distance]];
         [topUIView addSubview:distanceLabel];
         //人均消费
         averageCostLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03AVGExpandX, A03AVGExpandY, A03AVGExpandW, A03AVGExpandH)];
         averageCostLabel.backgroundColor = [UIColor clearColor];
         averageCostLabel.adjustsFontSizeToFitWidth = YES;
         averageCostLabel.textColor = [UIColor colorWithHex:0x990000 alpha:1.0];
-        averageCostLabel.text = [NSString stringWithFormat:@"%@%@", @"人均消费:", restaurant.averageCost];
+        averageCostLabel.text = [NSString stringWithFormat:@"%@%@%@", @"人均消费: ", restaurant.averageCost, @"元"];
         [topUIView addSubview:averageCostLabel];
         //中间横线1
         line1View = [[UIView alloc] initWithFrame:CGRectMake(A03BottomLine1X, A03BottomLine1Y, A03BottomLine1W, A03BottomLine1H)];
@@ -73,15 +75,23 @@
         //地址
         //地址view
         addressView = [[UIView alloc] initWithFrame:CGRectMake(A03AddressX, A03AddressY, A03AddressW, A03AddressH)];
-//        addressView.backgroundColor = [UIColor grayColor];
-        addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 12, 240, 25)];
-        addressLabel.text = [NSString stringWithFormat:@"%@%@", @"地址:", restaurant.address];
-        addressLabel.adjustsFontSizeToFitWidth = YES;
+        
+        addressTitelLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 5, 40, 25)];
+        addressTitelLabel.text = @"地址:";
+        addressTitelLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
+        addressTitelLabel.backgroundColor = [UIColor clearColor];
+        [addressView addSubview:addressTitelLabel];
+        addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 0, 200, 7)];
+        addressLabel.font = [UIFont fontWithName:@"Arial" size:14];
+        addressLabel.text = restaurant.address;
+        addressLabel.numberOfLines = 0;
+        [addressLabel sizeToFit];
+//        addressLabel.adjustsFontSizeToFitWidth = YES;
         addressView.userInteractionEnabled=YES;
         addressLabel.backgroundColor = [UIColor clearColor];
         
         //地址右箭头图片view
-        addressImgView = [[UIView alloc] initWithFrame:CGRectMake(270, 20, 10, 14)];
+        addressImgView = [[UIView alloc] initWithFrame:CGRectMake(270, 10, 10, 14)];
         addressImgView.backgroundColor = [UIColor moreImageBackgroundImageColor];
         
         UITapGestureRecognizer *touchAddress = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(gotoA05:)];
@@ -104,12 +114,18 @@
         telView = [[UIView alloc] initWithFrame:CGRectMake(A03TelX, A03TelY, A03TelW, A03TelH)];
         telView.userInteractionEnabled = YES;
 //        telView.backgroundColor = [UIColor grayColor];
-        telLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 240, 14)];
-        telLabel.text = [NSString stringWithFormat:@"%@%@", @"电话:", restaurant.tel];
+        telTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 12, 40, 14)];
+        telTitleLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
+        telTitleLabel.backgroundColor = [UIColor clearColor];
+        telTitleLabel.text = @"电话:";
+        [telView addSubview:telTitleLabel];
+        telLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 13, 240, 14)];
+        telLabel.text = restaurant.tel;
+        telLabel.font = [UIFont fontWithName:@"Arial" size:14];
         telLabel.adjustsFontSizeToFitWidth = YES;
         telLabel.backgroundColor = [UIColor clearColor];
         
-        telImageView = [[UIView alloc] initWithFrame:CGRectMake(270, 20, 10, 14)];
+        telImageView = [[UIView alloc] initWithFrame:CGRectMake(270, 13, 10, 14)];
         telImageView.backgroundColor = [UIColor moreImageBackgroundImageColor];
         
         
@@ -130,10 +146,16 @@
         [bottomView addSubview:line3View];
         
         //简介
+        memoTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03MemoTitleX, A03MemoTitleY, A03MemoTitleW, A03MemoTitleH)];
+        memoTitleLabel.text = @"介绍:";
+        memoTitleLabel.backgroundColor = [UIColor clearColor];
+        memoTitleLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
+        [bottomView addSubview:memoTitleLabel];
         memoLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, A03MemoH)];
-        memoLabel.text = [NSString stringWithFormat:@"%@%@", @"简介:", restaurant.descriptionMemo];
+        memoLabel.text = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
         memoLabel.numberOfLines = 0;
         [memoLabel sizeToFit];
+        memoLabel.font = [UIFont fontWithName:@"Arial" size:14];
         memoLabel.backgroundColor = [UIColor clearColor];
         [bottomView addSubview:memoLabel];
 
@@ -145,7 +167,7 @@
         photoView = [self setPhotoView:restaurant];
         
         [bottomView addSubview:photoView];
-        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoLabel]+320);
+        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoLabel]+340);
         [self.view addSubview:bottomView];
     }
     return self;
@@ -183,7 +205,7 @@
 //设定滚动图集的图片和位置
 -(UIScrollView*) setPhotoView:(Restaurant*) restaurant {
     // 滚动图集的Y轴大小＝简介高度＋电话＋地址＋常量
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, [self getUILabelHeight:memoLabel]+120, A03ScrollViewW, A03ScrollViewH)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, [self getUILabelHeight:memoLabel]+160, A03ScrollViewW, A03ScrollViewH)];
     scrollView.backgroundColor = [UIColor grayColor];
     
     //取出饭店id下的所有图片
@@ -244,6 +266,19 @@
 //    [self.view addSubview:touchedImage];
     NSLog(@"%@", @"ok");
 }
+//距离换算 
+-(NSString *) getDistance:(NSNumber *) distance {
+    float newDistance;
+    NSString *distanceStr;
+    if (distance.intValue > 1000) {
+        newDistance = distance.floatValue / 1000;
+        distanceStr = [NSString stringWithFormat:@"%.1f%@", newDistance, @"公里"];
+    } else {
+        newDistance = distance.floatValue;
+        distanceStr = [NSString stringWithFormat:@"%.f%@", newDistance, @"米"];
+    }
+    return distanceStr;
+}
 
 
 //NSNumbe to NSString
@@ -257,7 +292,8 @@
     [self.navigationController pushViewController:a01ViewController animated:YES];
 }
 -(void) callTel:(UITapGestureRecognizer *)recognizer {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://8004664411"]];
+    NSString *tel = result.tel;
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@" @"tel://", tel]]];
 
 }
 @end

@@ -40,11 +40,11 @@ typedef enum{
     //标志图片显示位置
     A03IconImageViewX = 13,A03IconImageViewY = 7,A03IconImageViewW = 75,A03IconImageViewH = 70,
     //饭店名称显示位置
-    A03RestaurantNameX = 100,A03RestaurantNameY = 10,A03RestaurantNameW = 180,A03RestaurantNameH = 25,
+    A03RestaurantNameX = 100,A03RestaurantNameY = 10,A03RestaurantNameW = 200,A03RestaurantNameH = 30,
     //直线距离显示位置
-    A03DistanceX = 100,A03DistanceY = 50,A03DistanceW = 80,A03DistanceH = 15,
+    A03DistanceX = 100,A03DistanceY = 50,A03DistanceW = 90,A03DistanceH = 17,
     //人均消费显示位置
-    A03AVGExpandX = 200,A03AVGExpandY = 50,A03AVGExpandW = 120,A03AVGExpandH = 15,
+    A03AVGExpandX = 205,A03AVGExpandY = 50,A03AVGExpandW = 90,A03AVGExpandH = 17,
     //横线1位置
     A03BottomLine1X = 0,A03BottomLine1Y = 85,A03BottomLine1W =320,A03BottomLine1H = 1,
     //横线2位置
@@ -58,9 +58,11 @@ typedef enum{
     A03AddressX = 0,A03AddressY = 5,A03AddressW = 320,A03AddressH = 37,
     // 电话显示位置
     A03TelX = 0,A03TelY = 45,A03TelW = 320,A03TelH = 37,
+    // 简介title显示位置
+    A03MemoTitleX = 20,A03MemoTitleY = 100,A03MemoTitleW = 40,A03MemoTitleH = 14,
     // 简介显示位置
-    A03MemoX = 20,A03MemoY = 90,A03MemoW = 260,A03MemoH = 15,
-
+    A03MemoX = 20,A03MemoY = 90,A03MemoW = 270,A03MemoH = 12,
+    
     // 导航栏左边按钮
     A03BarButtonLeftX=0,A03BarButtonLeftY=0,A03BarButtonLeftW=54,A03BarButtonLeftH=30,
     // 导航栏右边按钮

@@ -37,12 +37,15 @@
     //地址显示用
     UIView *addressView;
     UIView *addressImgView;
+    UILabel *addressTitelLabel;
     UILabel *addressLabel;
     //电话
     UIView *telView;
     UIView *telImageView;
+    UILabel *telTitleLabel;
     UILabel *telLabel;
     //简介
+    UILabel *memoTitleLabel;
     UILabel *memoLabel;
     //横线2
     UIView *line2View;
