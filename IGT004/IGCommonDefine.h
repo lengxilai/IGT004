@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface IGCommonDefine : NSObject
+typedef enum{
+    TRIP_APP_ID=529403333,TOMATO_APP_ID=533655318,DAIRY_APP_ID=508014699,APPID=1234,
+}CommonTag;
 
 //A02列表页面定数
 typedef enum{
