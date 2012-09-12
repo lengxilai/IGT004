@@ -19,6 +19,9 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self) {
         [self.view setBackgroundColor:[UIColor colorWithHex:0xefefef alpha:1.0]];
+        UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+        leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     }
     return self;
 }
@@ -340,5 +343,10 @@
     NSString *str = [NSString stringWithFormat: 
                      @"http://e.weibo.com/iguorvip"];  
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+}
+// 点击返回按钮
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
