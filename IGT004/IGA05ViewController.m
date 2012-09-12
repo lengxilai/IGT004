@@ -26,11 +26,11 @@
     m_geoArray = [[NSMutableArray alloc] init];
     IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
     geoInfo.m_id = [[res id] doubleValue];
-    geoInfo.m_name = [res name];
+    geoInfo.m_name = [res address];
     
     NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
     
-    geoInfo.m_description = [res abbrName];
+    geoInfo.m_description = [res name];
     
     CLLocationDegrees latitude = [[res latitude] doubleValue];
     CLLocationDegrees longitude = [[res longitude] doubleValue];
@@ -208,7 +208,6 @@
         geoInfo.m_id = [[r id] doubleValue];
         geoInfo.m_name = [r address];
         
-        NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
         
         geoInfo.m_description = [r name];
         
