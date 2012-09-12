@@ -69,7 +69,8 @@
     //导航条
     UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"路线" target:self selector:@selector(findAddress) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
-    //self.navigationController.navigationBar.backItem.hidesBackButton = YES;
+    UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     //定位按钮
     UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_iconH.png"]]; 
     UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
@@ -281,5 +282,10 @@
     NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
     NSURL *url = [[NSURL alloc] initWithString:theString];
     [[UIApplication sharedApplication] openURL:url];
+}
+// 点击返回按钮
+- (void)goBack
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end
