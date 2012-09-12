@@ -20,7 +20,7 @@
     
     self = [super init];
     if (self) {
-        [self getRestaurantList];
+        
     }
     return self;
 }
@@ -57,7 +57,7 @@
     return self;
 }
 -(void)loadView{
-    
+    [self getRestaurantList];
     self.navigationItem.title = @"舌尖上的大连";
     
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
