@@ -65,7 +65,7 @@
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
-    m_mkMapView.showsUserLocation=YES;
+    //m_mkMapView.showsUserLocation=YES;
     [self.view addSubview: m_mkMapView];
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
@@ -93,8 +93,8 @@
     [self.view addSubview:searchLocationView];
     
     // 页面读完了更新距离
-    //[self showLocation];
-    [IGDistanceUpdate updateDistanceForResults:results];
+    [self showLocation];
+    //[IGDistanceUpdate updateDistanceForResults:results];
 }
 
 - (void)viewDidLoad
