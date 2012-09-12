@@ -12,7 +12,6 @@
 #import "IGA03ViewController.h"
 #import "UIColor+IGColor.h"
 #import "IGCommonDefine.h"
-#import "IGCoreDataUtil.h"
 #import "Restaurant.h"
 #import "IGFileUtil.h"
 #import "IGUIButton.h"
@@ -29,6 +28,7 @@
     //搜说框
     UISearchBar *m_searchBar;
     NSArray *results;
+    NSArray *tempResults;
 }
 - (id)initWithResult:(NSArray*)rs;
 @end

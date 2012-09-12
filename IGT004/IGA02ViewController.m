@@ -19,7 +19,7 @@
 - (id)initWithResult:(NSArray*)rs
 {
     self = [super init];
-    
+    self.title = @"列表";
     //取得屏幕尺寸
     CGRect screenSize = [[UIScreen mainScreen] bounds];
     //设置背景为设备屏幕大小
@@ -43,7 +43,7 @@
     
 
     //内容设置
-    dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, screenSize.size.width, screenSize.size.height) style:UITableViewStylePlain];
+    dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, screenSize.size.width, screenSize.size.height+441) style:UITableViewStylePlain];
     
     dataListTableView.rowHeight = A02CellHight;
     dataListTableView.backgroundColor = [UIColor clearColor];
@@ -54,6 +54,7 @@
     
     // 设定数据
     results = rs;
+    tempResults = rs;
     [self.view addSubview:dataListTableView];
     
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:@"地图" target:self selector:@selector(goToA01) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
@@ -87,12 +88,14 @@
     
     IGA02TableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[IGA02TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell = [[IGA02TableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier];
+        //cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.backgroundColor = [UIColor clearColor];
         cell.contentView.backgroundColor = [UIColor clearColor];
     }
     
+    cell.selectedBackgroundView.backgroundColor = [UIColor colorWithHex:0x990000 alpha:1.0];
+
     Restaurant *restaurant = (Restaurant *)[results objectAtIndex:indexPath.row];
     
     [self updateContentToCell:cell :restaurant];
@@ -136,9 +139,7 @@
 
 //取消搜索
 -(void)cancelInput{
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    results = [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryPredicate:nil sortDescriptors:sortDescriptors];
+    results = tempResults;
     [[self.view viewWithTag:10001] removeFromSuperview];
     [m_searchBar resignFirstResponder];
     [dataListTableView reloadData];
@@ -156,26 +157,30 @@
  *点搜索按钮 
  */  
 -(void)doSearch:(NSString *)searchText{  
-    NSString *key = [NSString stringWithFormat:@"*%@*",searchText];
-    // 查询条件做成
-    NSPredicate *predicate = nil;
-    if (searchText.length>0) {
-        predicate = [NSPredicate predicateWithFormat:@" ( name like %@ ) ", key];
-    } else {
-        predicate = nil;
+    //搜索关键字
+    NSString *key = [NSString stringWithFormat:@"%@",searchText];
+    //搜索结果集
+    NSMutableArray *rsOfSearch = [NSMutableArray array];
+    for (Restaurant *restaurant in tempResults) {
+        //饭店名
+        NSString *name = restaurant.name;
+        //地址
+        NSString *address = restaurant.address;
+        //简介
+        NSString *memo = restaurant.descriptionMemo;
+        NSRange nameRange = [name rangeOfString:key];
+        NSRange addressRange = [address rangeOfString:key];
+        NSRange memoRange = [memo rangeOfString:key];
+        //在饭店名、地址、简介中存在关键字就放入到结果集中
+        if (nameRange.length != 0 || addressRange.length != 0 || memoRange.length != 0) {
+            [rsOfSearch addObject:restaurant]; 
+        }
     }
-
-    // 排序
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    
-    NSArray *rsAry = [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryPredicate:predicate sortDescriptors:sortDescriptors];
-
-    //如果没有搜获结果则全部显示
-    if (rsAry != nil && rsAry.count != 0) {
-        results = rsAry;
+    //如果结果集为空就全显示
+    if ([rsOfSearch count] != 0) {
+        results = rsOfSearch;
     } else {
-        results = [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryPredicate:nil sortDescriptors:sortDescriptors];
+        results = tempResults;
     }
 
     //重新加载(刷新)。  
@@ -192,9 +197,23 @@
     [cell.iconImageView setImage:img];
     cell.restaurantName.text = newRestaurant.name;
     cell.restaurantAddress.text = newRestaurant.address;
-    cell.distance.text = [NSString stringWithFormat:@"%@%@",@"距离: ", [self toString:newRestaurant.distance]];
+    cell.distance.text = [NSString stringWithFormat:@"%@%@",@"距离：", [self getDistance:newRestaurant.distance]];
     cell.averageCost.text = [NSString stringWithFormat:@"人均消费：%d元", newRestaurant.averageCost.intValue];
     
+}
+
+//距离换算 
+-(NSString *) getDistance:(NSNumber *) distance {
+    float newDistance;
+    NSString *distanceStr;
+    if (distance.intValue > 1000) {
+        newDistance = distance.floatValue / 1000;
+        distanceStr = [NSString stringWithFormat:@"%.1f%@", newDistance, @"公里"];
+    } else {
+        newDistance = distance.floatValue;
+        distanceStr = [NSString stringWithFormat:@"%.f%@", newDistance, @"米"];
+    }
+    return distanceStr;
 }
 
 #pragma mark -
