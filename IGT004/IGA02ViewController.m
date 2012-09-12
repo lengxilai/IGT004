@@ -19,7 +19,7 @@
 - (id)initWithResult:(NSArray*)rs
 {
     self = [super init];
-    self.title = @"列表";
+    self.title = @"舌尖上的大连";
     //取得屏幕尺寸
     CGRect screenSize = [[UIScreen mainScreen] bounds];
     //设置背景为设备屏幕大小

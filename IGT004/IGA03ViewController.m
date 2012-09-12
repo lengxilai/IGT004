@@ -19,7 +19,7 @@
 {
     self = [super init];
     if (self) {
-        self.title = @"详细";
+        self.title = @"舌尖上的大连";
         result = restaurant;
         //取得屏幕尺寸
         CGRect screenSize = [[UIScreen mainScreen] bounds];
@@ -279,7 +279,12 @@
     }
     return distanceStr;
 }
-
+//打电话
+-(void) callTel:(UITapGestureRecognizer *)recognizer {
+    NSString *tel = [NSString stringWithFormat:@"%@%@", @"tel://", result.tel];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:tel]];
+    
+}
 
 //NSNumbe to NSString
 -(NSString *) toString:(NSNumber *) number {
@@ -291,9 +296,5 @@
     IGA05ViewController *a01ViewController = [[IGA05ViewController alloc] initWithRestautant:result];
     [self.navigationController pushViewController:a01ViewController animated:YES];
 }
--(void) callTel:(UITapGestureRecognizer *)recognizer {
-    NSString *tel = result.tel;
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@" @"tel://", tel]]];
 
-}
 @end
