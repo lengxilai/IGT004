@@ -28,6 +28,19 @@
     backgroundView.backgroundColor = [UIColor colorWithHex:0xefefef alpha:1.0];
     //把背景view放入到self
     [self.view addSubview:backgroundView];
+    
+    //搜索框
+    m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
+    m_searchBar.delegate = self;
+    m_searchBar.barStyle = UIBarStyleDefault;//UIBarStyleBlackTranslucent;
+    m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchBar_bg.png"]];
+    backSearchBarimageView.alpha = 0.7;
+    [m_searchBar insertSubview:backSearchBarimageView atIndex:1];
+    [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
+    m_searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
+    [self.view addSubview:m_searchBar];
+    
 
     //内容设置
     dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, screenSize.size.width, screenSize.size.height) style:UITableViewStylePlain];
@@ -46,6 +59,11 @@
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:@"地图" target:self selector:@selector(goToA01) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     return self;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark -
@@ -102,10 +120,67 @@
     // Release any retained subviews of the main view.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+#pragma mark -
+#pragma mark searchbar delegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, 400)];
+    bgView.backgroundColor = [UIColor grayColor];
+    bgView.alpha = 0.7;
+    bgView.tag = 10001;
+    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelInput)];
+    [bgView addGestureRecognizer:singleTap];
+    
+    [self.view addSubview:bgView];
+    return YES;
 }
+
+//取消搜索
+-(void)cancelInput{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    results = [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryPredicate:nil sortDescriptors:sortDescriptors];
+    [[self.view viewWithTag:10001] removeFromSuperview];
+    [m_searchBar resignFirstResponder];
+    [dataListTableView reloadData];
+}
+
+/*键盘搜索按钮*/
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [[self.view viewWithTag:10001] removeFromSuperview];
+    [m_searchBar resignFirstResponder];
+    NSString *inputStr = [searchBar text];
+	[self doSearch:inputStr];
+}
+
+/*
+ *点搜索按钮 
+ */  
+-(void)doSearch:(NSString *)searchText{  
+    NSString *key = [NSString stringWithFormat:@"*%@*",searchText];
+    // 查询条件做成
+    NSPredicate *predicate = nil;
+    if (searchText.length>0) {
+        predicate = [NSPredicate predicateWithFormat:@" ( name like %@ ) ", key];
+    } else {
+        predicate = nil;
+    }
+
+    // 排序
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    
+    NSArray *rsAry = [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryPredicate:predicate sortDescriptors:sortDescriptors];
+
+    //如果没有搜获结果则全部显示
+    if (rsAry != nil && rsAry.count != 0) {
+        results = rsAry;
+    } else {
+        results = [IGCoreDataUtil queryForFetchedResult:@"Restaurant" queryPredicate:nil sortDescriptors:sortDescriptors];
+    }
+
+    //重新加载(刷新)。  
+    [dataListTableView reloadData];  
+}  
 
 #pragma mark -
 #pragma mark datasource做成
@@ -119,8 +194,6 @@
     cell.restaurantAddress.text = newRestaurant.address;
     cell.distance.text = [NSString stringWithFormat:@"%@%@",@"距离: ", [self toString:newRestaurant.distance]];
     cell.averageCost.text = [NSString stringWithFormat:@"人均消费：%d元", newRestaurant.averageCost.intValue];
-    
-    NSLog(@"111111%@", newRestaurant.iconName);
     
 }
 

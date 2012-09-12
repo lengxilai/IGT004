@@ -18,7 +18,7 @@ typedef enum{
     //A02中cell行高
     A02CellHight=82,
     // A02页面中tableview位置
-    A02TableViewX = 0,A02TableViewY = 0,A02TableViewW = 301,A02TableViewH = 390,
+    A02TableViewX = 0,A02TableViewY = 42,A02TableViewW = 301,A02TableViewH = 432,
     //标志图片显示位置
     A02IconImageViewX = 13,A02IconImageViewY = 7,A02IconImageViewW = 75,A02IconImageViewH = 70,
     //饭店名称显示位置
@@ -55,9 +55,9 @@ typedef enum{
     // 下半部分tableview显示位置
     A03BottomTableViewX = 0,A03BottomTableViewY = 90,A03BottomTableViewW = 320,A03BottomTableViewH = 310,
     // 地址显示位置
-    A03AddressX = 20,A03AddressY = 20,A03AddressW = 260,A03AddressH = 15,
+    A03AddressX = 0,A03AddressY = 5,A03AddressW = 320,A03AddressH = 37,
     // 电话显示位置
-    A03TelX = 20,A03TelY = 60,A03TelW = 260,A03TelH = 15,
+    A03TelX = 0,A03TelY = 45,A03TelW = 320,A03TelH = 37,
     // 简介显示位置
     A03MemoX = 20,A03MemoY = 90,A03MemoW = 260,A03MemoH = 15,
 
@@ -65,6 +65,13 @@ typedef enum{
     A03BarButtonLeftX=0,A03BarButtonLeftY=0,A03BarButtonLeftW=54,A03BarButtonLeftH=30,
     // 导航栏右边按钮
     A03BarButtonRightX=266,A03BarButtonRightY=0,A03BarButtonRightW=54,A03BarButtonRightH=30,
+    
+    //滚动图集scrollView位置
+    A03ScrollViewX=0,A03ScrollViewW=320,A03ScrollViewH=100,
+    
+    //滚动图集image位置
+    A03ScrollImageY=9,A03ScrollImageW=80,A03ScrollImageH=80,
+    
 }A03RectDef;
 
 typedef enum{

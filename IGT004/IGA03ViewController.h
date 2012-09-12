@@ -12,8 +12,10 @@
 #import "IGCommonDefine.h"
 #import "IGFileUtil.h"
 #import "IGUIButton.h"
+#import "IGPhotoImage.h"
+#import "IGA01ViewController.h"
 
-@interface IGA03ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource> {
+@interface IGA03ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource,UIScrollViewDelegate> {
     //背景view
     UIView *backgroundView;
     
@@ -32,9 +34,13 @@
     
     //下半部分UIView
     UIScrollView *bottomView;
-    //地址
+    //地址显示用
+    UIView *addressView;
+    UIView *addressImgView;
     UILabel *addressLabel;
     //电话
+    UIView *telView;
+    UIView *telImageView;
     UILabel *telLabel;
     //简介
     UILabel *memoLabel;
@@ -45,6 +51,7 @@
     
     
     UIScrollView *photoView;
+    Restaurant *result;
     
 }
 

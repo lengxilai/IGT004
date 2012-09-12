@@ -19,10 +19,6 @@
         self.navigationBar.barStyle = UIBarStyleBlackOpaque;
         [self.navigationBar setBackgroundColor:[UIColor clearColor]];
         [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navi_bag.png"] forBarMetrics:UIBarMetricsDefault];
-//        self.view.backgroundColor = [UIColor navigationBarImageColor];
-        
-        // 广告页追加 收费版去除广告
-        //[self.view addSubview:[IGAdBannerViewController shareIadView]];
     }
     return self;
 }

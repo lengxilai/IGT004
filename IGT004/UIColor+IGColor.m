@@ -25,6 +25,9 @@
 + (UIColor*)navigationBarImageColor {
     return [UIColor colorWithPatternImage:[UIImage imageNamed:@"navi_l_btn.png"]];
 }
-
+//more图片背景
++ (UIColor*)moreImageBackgroundImageColor {
+    return [UIColor colorWithPatternImage:[UIImage imageNamed:@"more.png"]];
+}
 //
 @end
