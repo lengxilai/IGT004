@@ -22,13 +22,6 @@
 }
 -(id)initWithRestautant:(Restaurant *)res{
     self = [super init];
-    
-    //self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
-    
-    
-    //初始化饭店位置
-    //    MKCoordinateRegion region = {{[[res latitude ] doubleValue], [[res longitude]doubleValue]}, {0.016, 0.016}};
-    //    m_mkMapView.region = region;
     //显示饭店
     m_geoArray = [[NSMutableArray alloc] init];
     IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
@@ -46,12 +39,9 @@
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
     restaurant = res;
-    NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
+    NSLog(@"latitude:%@,longitude:%@",restaurant.latitude,restaurant.longitude);
     [m_geoArray addObject:geoInfo];
-    
-    float zoomLevel = 0.02;  
-    MKCoordinateRegion region2 = MKCoordinateRegionMake(coordinate2D, MKCoordinateSpanMake(zoomLevel, zoomLevel));  
-    [m_mkMapView setRegion:[m_mkMapView regionThatFits:region2] animated:YES];  
+
     return self;
 }
 -(void)loadView{
@@ -60,8 +50,10 @@
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
-    m_mkMapView.showsUserLocation=NO;
+    MKCoordinateRegion region = {{[restaurant.latitude doubleValue], [restaurant.longitude doubleValue]}, {0.01, 0.01}};
+    m_mkMapView.region = region;
     [self.view addSubview: m_mkMapView];
+    
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
     m_searchBar.delegate = self;
@@ -105,7 +97,7 @@
     }
     
     // 页面读完了更新距离
-    [self showLocation];
+    //[self showLocation];
 }
 
 - (void)viewDidUnload
@@ -133,7 +125,6 @@
     MKPinAnnotationView *newAnnotation = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"annotation1"];
 	newAnnotation.pinColor = MKPinAnnotationColorGreen;
 	newAnnotation.animatesDrop = YES; 
-	//canShowCallout: to display the callout view by touch the pin
 	newAnnotation.canShowCallout=YES;
     
     return newAnnotation;
@@ -285,7 +276,7 @@
 }
 
 -(void)findAddress{
-    NSString *theString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=Current Location&daddr=%f,%f",restaurant.latitude, restaurant.longitude];
+    NSString *theString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=Current Location&daddr=%@,%@",restaurant.latitude, restaurant.longitude];
     theString =  [theString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
     NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
     NSURL *url = [[NSURL alloc] initWithString:theString];
