@@ -70,6 +70,7 @@
 		E232C34015FDF02000C45C08 /* tenyeardiaryicon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C33E15FDF02000C45C08 /* tenyeardiaryicon@2x.png */; };
 		E232C34315FDF02A00C45C08 /* tripcheckericon.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C34115FDF02A00C45C08 /* tripcheckericon.png */; };
 		E232C34415FDF02A00C45C08 /* tripcheckericon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E232C34215FDF02A00C45C08 /* tripcheckericon@2x.png */; };
+		E253D40516007677004E20AA /* IGA05ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E253D40416007677004E20AA /* IGA05ViewController.m */; };
 		E255A5A915F8698500651C5B /* location_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A515F8698500651C5B /* location_icon.png */; };
 		E255A5AA15F8698500651C5B /* location_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A615F8698500651C5B /* location_icon@2x.png */; };
 		E255A5AB15F8698500651C5B /* searchBar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5A715F8698500651C5B /* searchBar_bg.png */; };
@@ -190,6 +191,8 @@
 		E232C33E15FDF02000C45C08 /* tenyeardiaryicon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tenyeardiaryicon@2x.png"; sourceTree = "<group>"; };
 		E232C34115FDF02A00C45C08 /* tripcheckericon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tripcheckericon.png; sourceTree = "<group>"; };
 		E232C34215FDF02A00C45C08 /* tripcheckericon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tripcheckericon@2x.png"; sourceTree = "<group>"; };
+		E253D40316007677004E20AA /* IGA05ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA05ViewController.h; sourceTree = "<group>"; };
+		E253D40416007677004E20AA /* IGA05ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA05ViewController.m; sourceTree = "<group>"; };
 		E255A5A515F8698500651C5B /* location_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location_icon.png; sourceTree = "<group>"; };
 		E255A5A615F8698500651C5B /* location_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "location_icon@2x.png"; sourceTree = "<group>"; };
 		E255A5A715F8698500651C5B /* searchBar_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchBar_bg.png; sourceTree = "<group>"; };
@@ -293,6 +296,8 @@
 				DCF6328615F9C92B00162BD7 /* IGUINavigationController.m */,
 				E232C33A15FDE41C00C45C08 /* IGA04ViewController.h */,
 				E232C33B15FDE41C00C45C08 /* IGA04ViewController.m */,
+				E253D40316007677004E20AA /* IGA05ViewController.h */,
+				E253D40416007677004E20AA /* IGA05ViewController.m */,
 			);
 			path = IGT004;
 			sourceTree = "<group>";
@@ -564,6 +569,7 @@
 				DCF6328E15F9D11E00162BD7 /* IGUIButton.m in Sources */,
 				DC54EA4815FDEB3C00B314BC /* IGPhotoImage.m in Sources */,
 				E232C33C15FDE41C00C45C08 /* IGA04ViewController.m in Sources */,
+				E253D40516007677004E20AA /* IGA05ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
