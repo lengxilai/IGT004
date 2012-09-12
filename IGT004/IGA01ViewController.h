@@ -25,7 +25,6 @@
     //结果集管理器
     NSFetchedResultsController *fetchedResultsController;
     NSArray *results;
-    int from;
 }
 -(id)initWithRestautant:(Restaurant *)res;
 

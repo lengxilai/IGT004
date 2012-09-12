@@ -49,6 +49,7 @@
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
     restaurant = res;
+    NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
     [m_geoArray addObject:geoInfo];
     
     float zoomLevel = 0.02;  
@@ -138,8 +139,6 @@
 	newAnnotation.animatesDrop = YES; 
 	//canShowCallout: to display the callout view by touch the pin
 	newAnnotation.canShowCallout=YES;
-    
-    
     
     return newAnnotation;
     
@@ -292,7 +291,7 @@
 -(void)findAddress{
     NSString *theString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=Current Location&daddr=%f,%f",restaurant.latitude, restaurant.longitude];
     theString =  [theString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-    
+    NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
     NSURL *url = [[NSURL alloc] initWithString:theString];
     [[UIApplication sharedApplication] openURL:url];
 }

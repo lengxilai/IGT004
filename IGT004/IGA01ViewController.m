@@ -20,14 +20,12 @@
     
     self = [super init];
     if (self) {
-        from = 1;
         [self getRestaurantList];
     }
     return self;
 }
 -(id)initWithRestautant:(Restaurant *)res{
     self = [super init];
-    from = 2;
     //self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     
     
@@ -110,8 +108,7 @@
     }
     
     // 页面读完了更新距离
-    if(from == 1)
-        [self showLocation];
+    [self showLocation];
 }
 
 - (void)viewDidUnload
