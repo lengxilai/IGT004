@@ -91,7 +91,7 @@
     [self.view addSubview:searchLocationView];
     
     // 页面读完了更新距离
-    [self showLocation];
+    //[self showLocation];
     //[IGDistanceUpdate updateDistanceForResults:results];
 }
 
