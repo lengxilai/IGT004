@@ -26,6 +26,10 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    // 将初始数据放到docment文件夹
+    [IGFileUtil copyFileToDoc];
+    
     // 数据库文件初始化
     [IGCoreDataUtil setStaticManagedObjectContext:self.managedObjectContext];
     IGA01ViewController *masterViewController = [[IGA01ViewController alloc] initWithNibName:@"IGMasterViewController" bundle:nil];

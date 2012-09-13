@@ -54,7 +54,9 @@
 -(NSString*)getSavePath:(NSInteger)framId{
     NSFileManager *fm = [NSFileManager defaultManager];
     NSString *path =[IGFileUtil getPathByRestaurantId:[NSString stringWithFormat:@"%d",framId]];
-    [fm createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    if(![[NSFileManager defaultManager] fileExistsAtPath:path]){
+        [fm createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
     return path;
 }
 
