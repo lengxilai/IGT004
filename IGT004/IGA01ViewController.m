@@ -261,9 +261,15 @@
 }
 //点击搜索
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    NSString *searchText = [searchBar text];
-    //吴嘉宾调用
+    [[self.view viewWithTag:20001] removeFromSuperview];
+    [m_searchBar resignFirstResponder];
+    NSString *inputStr = [searchBar text];
+    IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] initWithResult:results];
+	[a02ViewController doSearch:inputStr];
+    m_searchBar.text = @"";
+    [self.navigationController pushViewController:a02ViewController animated:YES];
 }
+
 #pragma mark -3
 #pragma mark 其他计算
 -(double)getdistanceFromLocationWithLongitude:(double)newLongitude withLongitud:(double)newLongitud {
@@ -273,7 +279,7 @@
 }
 //取消搜索
 -(void)cancelInput{
-    [[self.view viewWithTag:10001] removeFromSuperview];
+    [[self.view viewWithTag:20001] removeFromSuperview];
     [m_searchBar resignFirstResponder];
 }
 -(void)showLocation{
@@ -302,6 +308,7 @@
 
 //去列表页面
 -(void)goToA02 {
+    [self cancelInput];
     IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] initWithResult:results];
     [self.navigationController pushViewController:a02ViewController animated:YES];
 }

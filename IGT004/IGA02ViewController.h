@@ -32,4 +32,7 @@
     NSArray *tempResults;
 }
 - (id)initWithResult:(NSArray*)rs;
+
+//点搜索按钮 
+-(void)doSearch:(NSString *)searchText;
 @end
