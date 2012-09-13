@@ -94,7 +94,7 @@
             textLable.text = @"推荐给朋友";
         }else if(indexPath.row == 3){
             titleLabel.text = @"评价:";
-            textLable.text = @"打个分呗。";
+            textLable.text = @"打个分呗=.=";
         }
     }
     else if (indexPath.section == 1)
@@ -143,9 +143,9 @@
         appTravelTitle.text = NSLocalizedString(@"差旅备忘", @"差旅备忘");
         appTravelMemo.text = NSLocalizedString(@"帮您检查出差旅行的行李列表，\n从此解放您的大脑！", @"帮您检查出差旅行的行李列表，\n从此解放您的大脑！");
     }else if(row == 1){
-        moreAppImageView.image = [UIImage imageNamed:@"tenyeardiaryicon.png"];
-        appTravelTitle.text = NSLocalizedString(@"十年微日记", @"十年微日记");
-        appTravelMemo.text = NSLocalizedString(@"将10年中的每一天写在一页，\n每一页记录了10年中的同一天！", @"将10年中的每一天写在一页，\n每一页记录了10年中的同一天！");
+        moreAppImageView.image = [UIImage imageNamed:@"TomatoApp.png"];
+        appTravelTitle.text = NSLocalizedString(@"番茄工作法", @"番茄");
+        appTravelMemo.text = NSLocalizedString(@"用了番茄工作法，\n拖延症什么的都滚开吧！", @"用了番茄工作法，\n拖延症什么的都滚开吧");
     }
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -194,7 +194,7 @@
             [self go2DownloadApp:TRIP_APP_ID];
         }
         else if(indexPath.row == 1){
-            [self go2DownloadApp:DAIRY_APP_ID];
+            [self go2DownloadApp:TOMATO_APP_ID];
         }
     }
 }
@@ -264,7 +264,7 @@
 {
     MFMailComposeViewController *mailView = [self createMailFrom];
     // 设置邮件主题
-    NSString *titileName = NSLocalizedString(@"关于蕃茄工作法", @"关于蕃茄工作法");  
+    NSString *titileName = NSLocalizedString(@"关于舌尖上的大连", @"关于舌尖上的大连");  
     [mailView setSubject:titileName];
     NSArray *toRecipients = [NSArray arrayWithObject: @"iguorhelp@163.com"];  
     
@@ -301,7 +301,7 @@
 // 如果不支持MFmail的情况下直接调用系统邮件
 -(void)launchMailAppOnDevice
 {
-	NSString *recipients = [NSString stringWithFormat:@"mailto:?subject=%@",NSLocalizedString(@"关于蕃茄工作法", @"关于蕃茄工作法")];
+	NSString *recipients = [NSString stringWithFormat:@"mailto:?subject=%@",NSLocalizedString(@"关于舌尖上的大连", @"关于舌尖上的大连")];
 	NSString *body = [NSString stringWithFormat:@"&body="];
 	NSString *email = [NSString stringWithFormat:@"%@%@", recipients, body];
 	email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
