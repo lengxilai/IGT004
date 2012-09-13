@@ -161,6 +161,7 @@
 
         //导航设定
         UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+        leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
         //图集scrollView
