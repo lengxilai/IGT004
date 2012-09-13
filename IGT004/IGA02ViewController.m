@@ -114,6 +114,7 @@
     Restaurant *restaurant = (Restaurant *)[results objectAtIndex:indexPath.row];
     IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:restaurant];
     [self.navigationController pushViewController:a03ViewController animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES]; 
 }
 
 #pragma mark -
