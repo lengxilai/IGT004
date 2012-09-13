@@ -84,6 +84,8 @@
 		E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
 		E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */; };
 		E27830B415F5DBB300AEBEB3 /* IGMapAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */; };
+		E2B964011601C23D00C9F1AD /* TomatoApp.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B963FF1601C23D00C9F1AD /* TomatoApp.png */; };
+		E2B964021601C23D00C9F1AD /* TomatoApp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E2B964001601C23D00C9F1AD /* TomatoApp@2x.png */; };
 		E2CA53B115F87FA200654E82 /* IGLocationUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA53B015F87FA200654E82 /* IGLocationUtil.m */; };
 		E2CA879515F6062E002BF408 /* IGA01ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E2CA879415F6062E002BF408 /* IGA01ViewController.m */; };
 		E2CA87DA15F640DC002BF408 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2CA87D915F640DC002BF408 /* CoreLocation.framework */; };
@@ -212,6 +214,8 @@
 		E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGBasicAnnotation.m; sourceTree = "<group>"; };
 		E27830B215F5DBB300AEBEB3 /* IGMapAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGMapAnnotationView.h; sourceTree = "<group>"; };
 		E27830B315F5DBB300AEBEB3 /* IGMapAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGMapAnnotationView.m; sourceTree = "<group>"; };
+		E2B963FF1601C23D00C9F1AD /* TomatoApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TomatoApp.png; sourceTree = "<group>"; };
+		E2B964001601C23D00C9F1AD /* TomatoApp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TomatoApp@2x.png"; sourceTree = "<group>"; };
 		E2CA53AF15F87FA200654E82 /* IGLocationUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGLocationUtil.h; sourceTree = "<group>"; };
 		E2CA53B015F87FA200654E82 /* IGLocationUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGLocationUtil.m; sourceTree = "<group>"; };
 		E2CA879315F6062E002BF408 /* IGA01ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA01ViewController.h; sourceTree = "<group>"; };
@@ -365,6 +369,8 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E2B963FF1601C23D00C9F1AD /* TomatoApp.png */,
+				E2B964001601C23D00C9F1AD /* TomatoApp@2x.png */,
 				18ED995D1600ABD7000A0204 /* info.png */,
 				18ED995E1600ABD7000A0204 /* info@2x.png */,
 				DCB370D515FF4AED00682292 /* more.png */,
@@ -525,6 +531,8 @@
 				DCB370D815FF4AF000682292 /* more@2x.png in Resources */,
 				18ED995F1600ABD7000A0204 /* info.png in Resources */,
 				18ED99601600ABD7000A0204 /* info@2x.png in Resources */,
+				E2B964011601C23D00C9F1AD /* TomatoApp.png in Resources */,
+				E2B964021601C23D00C9F1AD /* TomatoApp@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
