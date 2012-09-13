@@ -19,7 +19,7 @@
     restaurant.name = [dir objectForKey:@"name"];
     restaurant.address = [dir objectForKey:@"address"];
     restaurant.tel = [dir objectForKey:@"tel"];
-    restaurant.averageCost = [NSNumber  numberWithInt:[[dir objectForKey:@"averageCost"] intValue]];
+    restaurant.averageCost = [NSNumber  numberWithInt:[[dir objectForKey:@"averagecost"] intValue]];
     restaurant.latitude = [dir objectForKey:@"latitude"];
     restaurant.longitude = [dir objectForKey:@"longitude"];
     restaurant.iconName = [dir objectForKey:@"iconName"];
