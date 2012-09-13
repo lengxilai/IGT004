@@ -43,7 +43,7 @@
     
 
     //内容设置
-    dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, screenSize.size.width, screenSize.size.height+441) style:UITableViewStylePlain];
+    dataListTableView = [[UITableView alloc] initWithFrame:CGRectMake(A02TableViewX, A02TableViewY, screenSize.size.width, screenSize.size.height-115) style:UITableViewStylePlain];
     
     dataListTableView.rowHeight = A02CellHight;
     dataListTableView.backgroundColor = [UIColor clearColor];

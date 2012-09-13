@@ -50,7 +50,7 @@
         distanceLabel.backgroundColor = [UIColor clearColor];
         distanceLabel.adjustsFontSizeToFitWidth = YES;
         distanceLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
-        distanceLabel.text = [NSString stringWithFormat:@"%@%@", @"距离:", [self getDistance:restaurant.distance]];
+        distanceLabel.text = [NSString stringWithFormat:@"%@%@", @"距离: ", [self getDistance:restaurant.distance]];
         [topUIView addSubview:distanceLabel];
         //人均消费
         averageCostLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03AVGExpandX, A03AVGExpandY, A03AVGExpandW, A03AVGExpandH)];
@@ -81,12 +81,18 @@
         addressTitelLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
         addressTitelLabel.backgroundColor = [UIColor clearColor];
         [addressView addSubview:addressTitelLabel];
-        addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 0, 200, 7)];
+        NSString *tempAddress = restaurant.address;
+        int addressLength = [self getLengthByFont:tempAddress forFont:@"Arial" forSize:14];
+        CGFloat addressHight = 0;
+        if (addressLength<=200) {
+            addressHight = 10;
+        }
+        addressLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, addressHight, 200, 7)];
         addressLabel.font = [UIFont fontWithName:@"Arial" size:14];
         addressLabel.text = restaurant.address;
         addressLabel.numberOfLines = 0;
         [addressLabel sizeToFit];
-//        addressLabel.adjustsFontSizeToFitWidth = YES;
+        addressLabel.adjustsFontSizeToFitWidth = YES;
         addressView.userInteractionEnabled=YES;
         addressLabel.backgroundColor = [UIColor clearColor];
         
@@ -151,13 +157,21 @@
         memoTitleLabel.backgroundColor = [UIColor clearColor];
         memoTitleLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
         [bottomView addSubview:memoTitleLabel];
-        memoLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, A03MemoH)];
-        memoLabel.text = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
-        memoLabel.numberOfLines = 0;
-        [memoLabel sizeToFit];
-        memoLabel.font = [UIFont fontWithName:@"Arial" size:14];
-        memoLabel.backgroundColor = [UIColor clearColor];
-        [bottomView addSubview:memoLabel];
+        
+        NSString *tempMemo = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
+        int memoLength = [self getLengthByFont:tempMemo forFont:@"Arial" forSize:14];
+        int memoHight = memoLength / A03MemoY + 1;
+        if (memoHight == 1) {
+            memoHight = memoHight + 1;
+        }
+        
+        memoTextView = [[UITextView alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, A03MemoH*memoHight)];
+        memoTextView.text = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
+        [memoTextView setEditable:NO];
+
+        memoTextView.font = [UIFont fontWithName:@"Arial" size:14];
+        memoTextView.backgroundColor = [UIColor clearColor];
+        [bottomView addSubview:memoTextView];
 
         //导航设定
         UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
@@ -168,7 +182,7 @@
         photoView = [self setPhotoView:restaurant];
         
         [bottomView addSubview:photoView];
-        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoLabel]+340);
+        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoTextView]+340);
         [self.view addSubview:bottomView];
     }
     return self;
@@ -194,6 +208,7 @@
 // 点击返回按钮
 - (void)goBack
 {
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -206,7 +221,7 @@
 //设定滚动图集的图片和位置
 -(UIScrollView*) setPhotoView:(Restaurant*) restaurant {
     // 滚动图集的Y轴大小＝简介高度＋电话＋地址＋常量
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, [self getUILabelHeight:memoLabel]+160, A03ScrollViewW, A03ScrollViewH)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, [self getUILabelHeight:memoTextView]+160, A03ScrollViewW, A03ScrollViewH)];
     scrollView.backgroundColor = [UIColor grayColor];
     
     //取出饭店id下的所有图片
@@ -243,12 +258,9 @@
 // 点击照片后，显示大照片
 -(void)photoClicked:(UIGestureRecognizer *)gestureRecognizer
 {
-    NSLog(@"%@", @"na ni na ni na ni");
-    
-    
-
     IGPhotoImage *touchedImage = (IGPhotoImage*)gestureRecognizer.view;
-    [touchedImage setDoubleTap:self.view];
+    touchedImage.parentview = self.view;
+    [touchedImage handleDoubleTap:nil];
     
 //    [[IGPhotoImage alloc] setDoubleTap:touchedImage];
 //
@@ -265,7 +277,6 @@
 //    [touchedImage setFrame:newRect];
 //    
 //    [self.view addSubview:touchedImage];
-    NSLog(@"%@", @"ok");
 }
 //距离换算 
 -(NSString *) getDistance:(NSNumber *) distance {
@@ -296,6 +307,13 @@
 -(void) gotoA05:(UITapGestureRecognizer *)recognizer {
     IGA05ViewController *a01ViewController = [[IGA05ViewController alloc] initWithRestautant:result];
     [self.navigationController pushViewController:a01ViewController animated:YES];
+}
+
+//根据字体和字体大小取得其长度
+-(int)getLengthByFont:(NSString *)inputStr forFont:(NSString*) font forSize:(int) fontSize{
+    int nameLength = [inputStr length];
+    CGSize size = [inputStr sizeWithFont:[UIFont fontWithName:font size:fontSize] constrainedToSize:CGSizeMake(12*nameLength, MAXFLOAT)];
+    return size.width;
 }
 
 @end

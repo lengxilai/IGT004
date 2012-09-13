@@ -15,6 +15,7 @@
 #import "IGPhotoImage.h"
 #import "IGA01ViewController.h"
 #import "IGA05ViewController.h"
+
 @interface IGA03ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UITextFieldDelegate,UITableViewDataSource,UIScrollViewDelegate> {
     //背景view
     UIView *backgroundView;
@@ -46,7 +47,7 @@
     UILabel *telLabel;
     //简介
     UILabel *memoTitleLabel;
-    UILabel *memoLabel;
+    UITextView *memoTextView;
     //横线2
     UIView *line2View;
     //横线3
