@@ -55,6 +55,7 @@
         
         UIView *bottomView = [[UIView alloc] initWithFrame:CGRectMake(A02BottomLineX, A02BottomLineY, A02BottomLineW, A02BottomLineH)];
         bottomView.backgroundColor = [UIColor bottomLineBackgroundImageColor];
+        
         [self.contentView addSubview:bottomView];
         
     }
