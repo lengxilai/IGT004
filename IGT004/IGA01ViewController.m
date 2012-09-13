@@ -51,14 +51,14 @@
     
     [m_geoArray addObject:geoInfo];
        
-    float zoomLevel = 0.01;  
+    float zoomLevel = 0.03;  
     MKCoordinateRegion region2 = MKCoordinateRegionMake(coordinate2D, MKCoordinateSpanMake(zoomLevel, zoomLevel));  
     [m_mkMapView setRegion:[m_mkMapView regionThatFits:region2] animated:YES];  
     return self;
 }
 -(void)loadView{
     [self getRestaurantList];
-    self.navigationItem.title = @"舌尖上的大连";
+    self.navigationItem.title = @"舌尖上的大连";http://www.cairot.com/
     
     self.view = [[UIView alloc] initWithFrame: CGRectMake(0, 20, 320, 480)];
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
@@ -202,9 +202,9 @@
     
     MKCoordinateRegion region;
     
-    span.latitudeDelta=0.010;
+    span.latitudeDelta=0.030;
     
-    span.longitudeDelta=0.010;
+    span.longitudeDelta=0.030;
     
     region.span=span;
     
@@ -285,8 +285,8 @@
     [locationManager startUpdatingLocation];//启动位置管理器
     MKCoordinateSpan theSpan;
     //地图的范围 越小越精确
-    theSpan.latitudeDelta=0.010;
-    theSpan.longitudeDelta=0.010;
+    theSpan.latitudeDelta=0.030;
+    theSpan.longitudeDelta=0.030;
     MKCoordinateRegion theRegion;
     theRegion.center=[[locationManager location] coordinate];
     theRegion.span=theSpan;
