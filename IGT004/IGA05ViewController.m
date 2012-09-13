@@ -74,13 +74,13 @@
     leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     //定位按钮
-    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_iconH.png"]]; 
-    UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
-    searchLocationView.tag = A01SearchLocationTag;
-    [searchLocationView addSubview:searchMyselfView];
-    UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
-    [searchLocationView addGestureRecognizer:searchMyselfViewTap];
-    [self.view addSubview:searchLocationView];
+//    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_iconH.png"]]; 
+//    UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
+//    searchLocationView.tag = A01SearchLocationTag;
+//    [searchLocationView addSubview:searchMyselfView];
+//    UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
+//    [searchLocationView addGestureRecognizer:searchMyselfViewTap];
+//    [self.view addSubview:searchLocationView];
     
     // 页面读完了更新距离
     //[self showLocation];
