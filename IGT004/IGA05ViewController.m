@@ -54,24 +54,12 @@
     m_mkMapView.region = region;
     [self.view addSubview: m_mkMapView];
     
-    //搜索框
-    m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
-    m_searchBar.delegate = self;
-    m_searchBar.barStyle = UIBarStyleBlackTranslucent;
-    m_searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-    UIImageView *backSearchBarimageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"searchBar_bg.png"]];
-    backSearchBarimageView.alpha = 0.7;
-    [m_searchBar insertSubview:backSearchBarimageView atIndex:1];
-    [[m_searchBar.subviews objectAtIndex:0]removeFromSuperview]; 
-    m_searchBar.placeholder = @"赶紧找找大连街最好歹的！";  
-    [self.view addSubview:m_searchBar];
-    
     //导航条
     UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"路线" target:self selector:@selector(findAddress) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
-    rightButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
+    rightButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 7);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
-    leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     //定位按钮
 //    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_iconH.png"]]; 
@@ -193,53 +181,17 @@
 }
 
 #pragma mark -
-#pragma mark data
--(void)getRestaurantList{
-    m_geoArray = [[NSMutableArray alloc] init];
-    
-    //    id<PLResultSet> result;
-    //	result = [g_plDatabase executeQuery: @"Select ID, Name, Description, ImageName, Latitude, Longitude from GeoInfo"];
-    //	
-    NSSortDescriptor *sd = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
-    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sd,nil];
-    results = [IGCoreDataUtil queryForArray:@"Restaurant" queryCondition:nil sortDescriptors:sortDescriptors];
-    
-    for (Restaurant *r in results) {
-        IGGEOInfo *geoInfo = [[IGGEOInfo alloc] init];
-        
-        geoInfo.m_id = [[r id] doubleValue];
-        geoInfo.m_name = [r address];
-        
-        
-        geoInfo.m_description = [r name];
-        
-        CLLocationDegrees latitude = [[r latitude] doubleValue];
-        CLLocationDegrees longitude = [[r longitude] doubleValue];
-        
-        CLLocationCoordinate2D coordinate2D = {latitude, longitude};
-        geoInfo.m_coordinate2D = coordinate2D;
-        geoInfo.res = r;
-        [m_geoArray addObject: geoInfo];
-    }
-    
-}
-#pragma mark -
 #pragma mark searchbar delegate
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{
     UIView *backgroundView = [[UIView alloc]initWithFrame:CGRectMake(0, 40, 320, 400)];
     backgroundView.backgroundColor = [UIColor grayColor];
     backgroundView.alpha = 0.7;
-    backgroundView.tag = A01BackgroundViewTag;
+    backgroundView.tag = 30001;
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(cancelInput)];
     [backgroundView addGestureRecognizer:singleTap];
     
     [self.view addSubview:backgroundView];
     return YES;
-}
-//点击搜索
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    NSString *searchText = [searchBar text];
-    //吴嘉宾调用
 }
 #pragma mark -3
 #pragma mark 其他计算
@@ -247,11 +199,6 @@
     CLLocation *location = [[CLLocation alloc]initWithLatitude:m_locationLatitude longitude:m_locationLongitude];
     CLLocation *newLocation = [[CLLocation alloc]initWithLatitude:newLongitude longitude:newLongitud];
     return [location distanceFromLocation:newLocation]/1000;
-}
-//取消搜索
--(void)cancelInput{
-    [[self.view viewWithTag:10001] removeFromSuperview];
-    [m_searchBar resignFirstResponder];
 }
 -(void)showLocation{
     

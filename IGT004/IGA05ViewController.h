@@ -22,10 +22,8 @@
     NSMutableArray *m_geoArray;
     double m_locationLatitude;
     double m_locationLongitude;
-    UISearchBar *m_searchBar;
     //结果集管理器
     NSFetchedResultsController *fetchedResultsController;
-    NSArray *results;
     int from;
     Restaurant *restaurant;
 }

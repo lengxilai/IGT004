@@ -240,6 +240,7 @@
 }
 //去a04地图页面
 -(void)goToA04 {
+    [self cancelInput];
     IGA04ViewController *a04ViewController = [[IGA04ViewController alloc] init];
     [self.navigationController pushViewController:a04ViewController animated:YES];
 
