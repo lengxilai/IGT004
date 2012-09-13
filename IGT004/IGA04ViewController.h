@@ -11,6 +11,7 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import "UIColor+IGColor.h"
 #import "IGCommonDefine.h"
+#import "IGUIButton.h"
 @interface IGA04ViewController : UITableViewController{
     int mailType;
 }

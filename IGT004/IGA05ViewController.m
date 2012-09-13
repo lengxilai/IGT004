@@ -68,17 +68,19 @@
     
     //导航条
     UIButton *rightButton = [IGUIButton getNavigationButton:@"navi_r_btn.png" title:(NSString*) @"路线" target:self selector:@selector(findAddress) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+    rightButton.contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 10);
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+    leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     //定位按钮
-    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_iconH.png"]]; 
-    UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
-    searchLocationView.tag = A01SearchLocationTag;
-    [searchLocationView addSubview:searchMyselfView];
-    UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
-    [searchLocationView addGestureRecognizer:searchMyselfViewTap];
-    [self.view addSubview:searchLocationView];
+//    UIImageView *searchMyselfView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"location_iconH.png"]]; 
+//    UIView *searchLocationView = [[UIView alloc] initWithFrame:CGRectMake(0, 50, 40, 40)];
+//    searchLocationView.tag = A01SearchLocationTag;
+//    [searchLocationView addSubview:searchMyselfView];
+//    UITapGestureRecognizer *searchMyselfViewTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showLocation)];
+//    [searchLocationView addGestureRecognizer:searchMyselfViewTap];
+//    [self.view addSubview:searchLocationView];
     
     // 页面读完了更新距离
     //[self showLocation];
