@@ -57,8 +57,13 @@
     tempResults = rs;
     [self.view addSubview:dataListTableView];
     
+    //导航左按钮
     UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:@"地图" target:self selector:@selector(goToA01) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
+    leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    //导航右按钮
+    UIButton *rightButton = [IGUIButton getNavigationButton:@"info.png" title:@"" target:self selector:@selector(goToA04) frame:CGRectMake(A03BarButtonRightX, A03BarButtonRightY, 34, 33)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightButton];
     return self;
 }
 
@@ -233,5 +238,10 @@
 -(void)goToA01 {
     [self.navigationController popViewControllerAnimated:YES];
 }
+//去a04地图页面
+-(void)goToA04 {
+    IGA04ViewController *a04ViewController = [[IGA04ViewController alloc] init];
+    [self.navigationController pushViewController:a04ViewController animated:YES];
 
+}
 @end

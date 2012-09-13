@@ -15,6 +15,7 @@
 #import "Restaurant.h"
 #import "IGFileUtil.h"
 #import "IGUIButton.h"
+#import "IGA04ViewController.h"
 
 
 @interface IGA02ViewController : UIViewController<UITableViewDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate,UITableViewDataSource> {
