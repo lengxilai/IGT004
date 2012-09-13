@@ -20,7 +20,7 @@
     if (self) {
         [self.view setBackgroundColor:[UIColor colorWithHex:0xefefef alpha:1.0]];
         UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
-        leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+        leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
     }
     return self;
