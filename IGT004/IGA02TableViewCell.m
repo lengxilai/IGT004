@@ -29,8 +29,10 @@
         restaurantName.textColor = [UIColor colorWithHex:0x000000 alpha:1.0];
         //饭店地址显示
         restaurantAddress = [[UILabel alloc] initWithFrame:CGRectMake(A02RestaurantAddressX, A02RestaurantAddressY, A02RestaurantAddressW, A02RestaurantAddressH)];
-        restaurantAddress.adjustsFontSizeToFitWidth = YES;
+//        restaurantAddress.adjustsFontSizeToFitWidth = YES;
         restaurantAddress.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
+        restaurantAddress.font = [UIFont fontWithName:@"Arial" size:13];
+        restaurantAddress.lineBreakMode =  UILineBreakModeWordWrap|UILineBreakModeTailTruncation;
         //直线距离显示
         distance = [[UILabel alloc] initWithFrame:CGRectMake(A02DistanceX, A02DistanceY, A02DistanceW, A02DistanceH)];
         distance.adjustsFontSizeToFitWidth = YES;
