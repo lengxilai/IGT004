@@ -84,6 +84,7 @@
         NSString *tempAddress = restaurant.address;
         int addressLength = [self getLengthByFont:tempAddress forFont:@"Arial" forSize:14];
         CGFloat addressHight = 0;
+        NSLog(@"addressHight:%@,%d,%d",tempAddress,[tempAddress length], addressLength);
         if (addressLength<=200) {
             addressHight = 10;
         }
@@ -312,7 +313,7 @@
 //根据字体和字体大小取得其长度
 -(int)getLengthByFont:(NSString *)inputStr forFont:(NSString*) font forSize:(int) fontSize{
     int nameLength = [inputStr length];
-    CGSize size = [inputStr sizeWithFont:[UIFont fontWithName:font size:fontSize] constrainedToSize:CGSizeMake(12*nameLength, MAXFLOAT)];
+    CGSize size = [inputStr sizeWithFont:[UIFont fontWithName:font size:fontSize] constrainedToSize:CGSizeMake(14*nameLength, MAXFLOAT)];
     return size.width;
 }
 
