@@ -140,6 +140,7 @@
     MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"annotationView"];
     annotationView.userInteractionEnabled = YES;
     annotationView.alpha = 0.9;
+    annotationView.image = [UIImage imageNamed:@"hotel_full_annotation_shadow.png"];
     annotationView.canShowCallout = NO;
     //annotationView.image = [UIImage imageNamed:@"logo.jpg"];
     //    [annotationView addSubview:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]]];
@@ -157,7 +158,8 @@
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
     //吴嘉宾调用
-    if ([[[view subviews] objectAtIndex:0] isKindOfClass:[MKAnnotationView class]]==NO) { 
+    if ([[[view subviews] objectAtIndex:0] isKindOfClass:[IGMapAnnotationView class]]==NO) { 
+        NSLog(@"%@",[[[view subviews] objectAtIndex:0] class]);
         return;
     }
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
@@ -336,8 +338,8 @@
     [self.navigationController pushViewController:a02ViewController animated:YES];
 }
 -(void)showAlertWithPlacemark:(CLPlacemark *)placemark{
-    NSString *currentCity=[[placemark.addressDictionary objectForKey:@"City"] substringToIndex:3];
-    if(![currentCity isEqual:@"Dal" ]){
+    NSString *currentCity=[[placemark.addressDictionary objectForKey:@"City"] substringToIndex:2];
+    if(![currentCity isEqual:@"Da" ] && ![currentCity isEqual:@"大连"] && ![currentCity isEqual:@"大連"]){
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"" message:@"亲！你好像不在大连啊！要不你用列表来看吧？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"OK", nil ];
         [av show];
     }
