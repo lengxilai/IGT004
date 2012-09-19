@@ -58,6 +58,7 @@
 		DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */; };
 		DCB370D715FF4AF000682292 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB370D515FF4AED00682292 /* more.png */; };
 		DCB370D815FF4AF000682292 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB370D615FF4AEE00682292 /* more@2x.png */; };
+		DCB4FFC61609BEE800EB4234 /* closeImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB4FFC51609BEE700EB4234 /* closeImage@2x.png */; };
 		DCF6328215F9C69D00162BD7 /* navi_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328015F9C69D00162BD7 /* navi_bag.png */; };
 		DCF6328315F9C69D00162BD7 /* navi_bag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328115F9C69D00162BD7 /* navi_bag@2x.png */; };
 		DCF6328715F9C92B00162BD7 /* IGUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6328615F9C92B00162BD7 /* IGUINavigationController.m */; };
@@ -184,6 +185,7 @@
 		DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGCoreDataUtil.m; sourceTree = "<group>"; };
 		DCB370D515FF4AED00682292 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		DCB370D615FF4AEE00682292 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
+		DCB4FFC51609BEE700EB4234 /* closeImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeImage@2x.png"; sourceTree = "<group>"; };
 		DCF6328015F9C69D00162BD7 /* navi_bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_bag.png; sourceTree = "<group>"; };
 		DCF6328115F9C69D00162BD7 /* navi_bag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_bag@2x.png"; sourceTree = "<group>"; };
 		DCF6328515F9C92A00162BD7 /* IGUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGUINavigationController.h; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				DCB370D515FF4AED00682292 /* more.png */,
 				DCB370D615FF4AEE00682292 /* more@2x.png */,
 				DC54EA4915FDF35800B314BC /* closeImage.png */,
+				DCB4FFC51609BEE700EB4234 /* closeImage@2x.png */,
 				E232C34115FDF02A00C45C08 /* tripcheckericon.png */,
 				E232C34215FDF02A00C45C08 /* tripcheckericon@2x.png */,
 				E232C33D15FDF02000C45C08 /* tenyeardiaryicon.png */,
@@ -557,6 +560,7 @@
 				D784BB1D16023787000ECC1C /* images in Resources */,
 				E27614561609AB3900AAEB99 /* hotel_full_annotation_shadow.png in Resources */,
 				E27614571609AB3900AAEB99 /* hotel_full_annotation_shadow@2x.png in Resources */,
+				DCB4FFC61609BEE800EB4234 /* closeImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
