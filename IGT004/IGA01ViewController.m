@@ -38,7 +38,7 @@
     geoInfo.m_id = [[res id] doubleValue];
     geoInfo.m_name = [res name];
     
-    NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
+    //NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
     
     geoInfo.m_description = [res abbrName];
     
@@ -126,7 +126,7 @@
 #pragma mark map 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation: (id <MKAnnotation>)annotation
 {
-    NSLog(@"%s %d, annotation = %@", __FUNCTION__, __LINE__, annotation);
+    //NSLog(@"%s %d, annotation = %@", __FUNCTION__, __LINE__, annotation);
     
     if ([annotation isKindOfClass: [MKUserLocation class]]) // showsUserLocation
     {
@@ -159,14 +159,14 @@
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
     //吴嘉宾调用
     if ([[[view subviews] objectAtIndex:0] isKindOfClass:[IGMapAnnotationView class]]==NO) { 
-        NSLog(@"%@",[[[view subviews] objectAtIndex:0] class]);
+        //NSLog(@"%@",[[[view subviews] objectAtIndex:0] class]);
         return;
     }
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];
     if(annotationMapView){
         Restaurant *res = [annotationMapView restaurant];
 
-        NSLog(@"ddd");
+        //NSLog(@"ddd");
         IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
         [self.navigationController pushViewController:a03ViewController animated:YES];
     }
@@ -176,14 +176,14 @@
 // Use the current positions of the annotation views as the destinations of the animation.
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
-    NSLog(@"%s %d, views = %@", __FUNCTION__, __LINE__, views);
+    //NSLog(@"%s %d, views = %@", __FUNCTION__, __LINE__, views);
     
 }
 
 // mapView:annotationView:calloutAccessoryControlTapped: is called when the user taps on left & right callout accessory UIControls.
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"%s %d, view = %@, control = %@", __FUNCTION__, __LINE__, view, control);
+    //NSLog(@"%s %d, view = %@, control = %@", __FUNCTION__, __LINE__, view, control);
     
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
@@ -234,7 +234,7 @@
         geoInfo.m_id = [[r id] doubleValue];
         geoInfo.m_name = [r name];
         
-        NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
+        //NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
         
         geoInfo.m_description = [r abbrName];
         
@@ -327,7 +327,7 @@
          for(CLPlacemark *placemark in placemarks)
          {
              NSString *currentCity=[[placemark.addressDictionary objectForKey:@"City"] substringToIndex:2];
-             NSLog(@"str%@",currentCity);
+            // NSLog(@"str%@",currentCity);
          }
      }];
 }
