@@ -24,7 +24,7 @@ typedef enum{
     //饭店名称显示位置
     A02RestaurantNameX = 100,A02RestaurantNameY = 10,A02RestaurantNameW = 180,A02RestaurantNameH = 20,
     //饭店地址显示位置
-    A02RestaurantAddressX = 100,A02RestaurantAddressY = 38,A02RestaurantAddressW = 200,A02RestaurantAddressH = 17,
+    A02RestaurantAddressX = 100,A02RestaurantAddressY = 38,A02RestaurantAddressW = 185,A02RestaurantAddressH = 17,
     //直线距离显示位置
     A02DistanceX = 100,A02DistanceY = 60,A02DistanceW = 80,A02DistanceH = 15,
     //人均消费显示位置

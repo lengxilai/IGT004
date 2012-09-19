@@ -160,14 +160,17 @@
         [bottomView addSubview:memoTitleLabel];
         
         NSString *tempMemo = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
-        int memoLength = [self getLengthByFont:tempMemo forFont:@"Arial" forSize:14];
-        int memoHight = memoLength / A03MemoY + 1;
+        int memoLength = [tempMemo length];
+        int memoHight = memoLength / 17 + 1;
         if (memoHight == 1) {
             memoHight = memoHight + 1;
         }
-        
-        memoTextView = [[UITextView alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, A03MemoH*memoHight)];
+        memo_hight = A03MemoH*memoHight;
+        NSLog(@"memoHight:%d", memoHight);
+        NSLog(@"memoLength:%d", memoLength);
+        memoTextView = [[UITextView alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, memo_hight)];
         memoTextView.text = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
+        [memoTextView setScrollEnabled:NO];
         [memoTextView setEditable:NO];
 
         memoTextView.font = [UIFont fontWithName:@"Arial" size:14];
@@ -183,7 +186,7 @@
         NSArray *fileList = [IGFileUtil getPhotosByRestaurantId:[self toString:restaurant.id]];
         if (fileList != nil && fileList.count != 0) {
             //图集scrollView
-            photoView = [self setPhotoView:restaurant];
+            photoView = [self setPhotoView:restaurant   ];
             [bottomView addSubview:photoView];
         }
         
@@ -226,7 +229,7 @@
 //设定滚动图集的图片和位置
 -(UIScrollView*) setPhotoView:(Restaurant*) restaurant {
     // 滚动图集的Y轴大小＝简介高度＋电话＋地址＋常量
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, [self getUILabelHeight:memoTextView]+160, A03ScrollViewW, A03ScrollViewH)];
+    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, memo_hight+130, A03ScrollViewW, A03ScrollViewH)];
     scrollView.backgroundColor = [UIColor colorWithHex:0xd0d0d0 alpha:1.0];
     
     //取出饭店id下的所有图片

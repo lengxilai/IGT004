@@ -53,6 +53,8 @@
     //横线3
     UIView *line3View;
     
+    //简介高度
+    int memo_hight;
     
     UIScrollView *photoView;
     Restaurant *result;
