@@ -8,6 +8,7 @@
 
 #import "IGAppDelegate.h"
 #import "IGA01ViewController.h"
+#import "IGA04ViewController.h"
 #import "IGMasterViewController.h"
 #import "IGJsonUtil.h"
 #import "IGDistanceUpdate.h"
@@ -28,7 +29,7 @@
     // Override point for customization after application launch.
     // 数据库文件初始化
     [IGCoreDataUtil setStaticManagedObjectContext:self.managedObjectContext];
-    IGA01ViewController *masterViewController = [[IGA01ViewController alloc] initWithNibName:@"IGMasterViewController" bundle:nil];
+    IGA01ViewController *masterViewController = [[IGA01ViewController alloc] init];
     self.navigationController = [[IGUINavigationController alloc] initWithRootViewController:masterViewController];
    // masterViewController.managedObjectContext = self.managedObjectContext;
     
