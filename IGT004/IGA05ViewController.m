@@ -28,7 +28,7 @@
     geoInfo.m_id = [[res id] doubleValue];
     geoInfo.m_name = [res address];
     
-    NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
+    //NSLog(@"Adding %@ to m_geoArray", geoInfo.m_name);
     
     geoInfo.m_description = [res name];
     
@@ -39,7 +39,7 @@
     geoInfo.m_coordinate2D = coordinate2D;
     geoInfo.res = res;
     restaurant = res;
-    NSLog(@"latitude:%@,longitude:%@",restaurant.latitude,restaurant.longitude);
+   // NSLog(@"latitude:%@,longitude:%@",restaurant.latitude,restaurant.longitude);
     [m_geoArray addObject:geoInfo];
 
     return self;
@@ -105,7 +105,7 @@
 #pragma mark map 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation: (id <MKAnnotation>)annotation
 {
-    NSLog(@"%s %d, annotation = %@", __FUNCTION__, __LINE__, annotation);
+    //NSLog(@"%s %d, annotation = %@", __FUNCTION__, __LINE__, annotation);
     
     if ([annotation isKindOfClass: [MKUserLocation class]]) // showsUserLocation
     {
@@ -130,7 +130,7 @@
     if(annotationMapView){
         Restaurant *res = [annotationMapView restaurant];
         
-        NSLog(@"ddd");
+        //NSLog(@"ddd");
         IGA03ViewController *a03ViewController = [[IGA03ViewController alloc] initByRestaurant:res];
         [self.navigationController pushViewController:a03ViewController animated:YES];
     }
@@ -140,14 +140,14 @@
 // Use the current positions of the annotation views as the destinations of the animation.
 - (void)mapView:(MKMapView *)mapView didAddAnnotationViews:(NSArray *)views
 {
-    NSLog(@"%s %d, views = %@", __FUNCTION__, __LINE__, views);
+    //NSLog(@"%s %d, views = %@", __FUNCTION__, __LINE__, views);
     
 }
 
 // mapView:annotationView:calloutAccessoryControlTapped: is called when the user taps on left & right callout accessory UIControls.
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
-    NSLog(@"%s %d, view = %@, control = %@", __FUNCTION__, __LINE__, view, control);
+    //NSLog(@"%s %d, view = %@, control = %@", __FUNCTION__, __LINE__, view, control);
     
 }
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
@@ -227,7 +227,7 @@
 -(void)findAddress{
     NSString *theString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=Current Location&daddr=%@,%@",restaurant.latitude, restaurant.longitude];
     theString =  [theString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-    NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
+    //NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
     NSURL *url = [[NSURL alloc] initWithString:theString];
     [[UIApplication sharedApplication] openURL:url];
 }
