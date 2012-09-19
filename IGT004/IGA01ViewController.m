@@ -140,6 +140,7 @@
     MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"annotationView"];
     annotationView.userInteractionEnabled = YES;
     annotationView.alpha = 0.9;
+    annotationView.image = [UIImage imageNamed:@"hotel_full_annotation_shadow.png"];
     annotationView.canShowCallout = NO;
     //annotationView.image = [UIImage imageNamed:@"logo.jpg"];
     //    [annotationView addSubview:[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.jpg"]]];
@@ -157,7 +158,8 @@
 }
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view NS_AVAILABLE(NA, 4_0){
     //吴嘉宾调用
-    if ([[[view subviews] objectAtIndex:0] isKindOfClass:[MKAnnotationView class]]==NO) { 
+    if ([[[view subviews] objectAtIndex:0] isKindOfClass:[IGMapAnnotationView class]]==NO) { 
+        NSLog(@"%@",[[[view subviews] objectAtIndex:0] class]);
         return;
     }
     IGMapAnnotationView *annotationMapView = (IGMapAnnotationView*)[[view subviews] objectAtIndex:0];

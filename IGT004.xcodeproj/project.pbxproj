@@ -82,6 +82,8 @@
 		E255A5B215F869EF00651C5B /* maplabel_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5AE15F869EF00651C5B /* maplabel_arrow.png */; };
 		E255A5B315F869EF00651C5B /* maplabel_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5AF15F869EF00651C5B /* maplabel_arrow@2x.png */; };
 		E255A5B415F869EF00651C5B /* maplabel.png in Resources */ = {isa = PBXBuildFile; fileRef = E255A5B015F869EF00651C5B /* maplabel.png */; };
+		E27614561609AB3900AAEB99 /* hotel_full_annotation_shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = E27614541609AB3900AAEB99 /* hotel_full_annotation_shadow.png */; };
+		E27614571609AB3900AAEB99 /* hotel_full_annotation_shadow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E27614551609AB3900AAEB99 /* hotel_full_annotation_shadow@2x.png */; };
 		E278309E15F5CA8900AEBEB3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E278309D15F5CA8900AEBEB3 /* MapKit.framework */; };
 		E27830AE15F5D20900AEBEB3 /* IGGEOInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */; };
 		E27830B115F5D6F700AEBEB3 /* IGBasicAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = E27830B015F5D6F700AEBEB3 /* IGBasicAnnotation.m */; };
@@ -211,6 +213,8 @@
 		E255A5AF15F869EF00651C5B /* maplabel_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maplabel_arrow@2x.png"; sourceTree = "<group>"; };
 		E255A5B015F869EF00651C5B /* maplabel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maplabel.png; sourceTree = "<group>"; };
 		E255A5B115F869EF00651C5B /* maplabelhotel_full@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maplabelhotel_full@2x.png"; sourceTree = "<group>"; };
+		E27614541609AB3900AAEB99 /* hotel_full_annotation_shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hotel_full_annotation_shadow.png; sourceTree = "<group>"; };
+		E27614551609AB3900AAEB99 /* hotel_full_annotation_shadow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hotel_full_annotation_shadow@2x.png"; sourceTree = "<group>"; };
 		E278309D15F5CA8900AEBEB3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E27830AC15F5D20900AEBEB3 /* IGGEOInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGGEOInfo.h; sourceTree = "<group>"; };
 		E27830AD15F5D20900AEBEB3 /* IGGEOInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGGEOInfo.m; sourceTree = "<group>"; };
@@ -383,6 +387,8 @@
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E27614541609AB3900AAEB99 /* hotel_full_annotation_shadow.png */,
+				E27614551609AB3900AAEB99 /* hotel_full_annotation_shadow@2x.png */,
 				E2B963FF1601C23D00C9F1AD /* TomatoApp.png */,
 				E2B964001601C23D00C9F1AD /* TomatoApp@2x.png */,
 				18ED995D1600ABD7000A0204 /* info.png */,
@@ -549,6 +555,8 @@
 				E2B964021601C23D00C9F1AD /* TomatoApp@2x.png in Resources */,
 				D784BB1B160228A0000ECC1C /* IGT004.sqlite in Resources */,
 				D784BB1D16023787000ECC1C /* images in Resources */,
+				E27614561609AB3900AAEB99 /* hotel_full_annotation_shadow.png in Resources */,
+				E27614571609AB3900AAEB99 /* hotel_full_annotation_shadow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

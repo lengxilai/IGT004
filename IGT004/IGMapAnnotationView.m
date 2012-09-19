@@ -19,16 +19,16 @@
         UIImage *backImage=[[UIImage imageNamed:@"maplabel.png"] stretchableImageWithLeftCapWidth:5 topCapHeight:32];
         
         UIImageView *backImageView=[[UIImageView alloc] initWithImage:backImage];
-        [backImageView setFrame:CGRectMake(-15, -13, backWith + 10, 25)];
+        [backImageView setFrame:CGRectMake(0, -8, backWith + 10, 25)];
         [annotationView addSubview:backImageView];
         UIImage *triangleImage = [UIImage imageNamed:@"maplabel_arrow.png"];
         UIImageView *triangleImageView=[[UIImageView alloc] initWithImage:triangleImage];
-        [triangleImageView setFrame:CGRectMake(10, 10, 10, 10)];
+        [triangleImageView setFrame:CGRectMake(15, 15, 10, 10)];
         [annotationView addSubview:triangleImageView];
         
         //大小需要计算
-        [annotationView setFrame:CGRectMake(-15, -20, backWith + 5, 25)];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(-10, -10, backWith, 18)]; 
+        [annotationView setFrame:CGRectMake(0, -20, backWith + 5, 25)];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, -5, backWith, 18)]; 
         label.text = [annotation title];  
         //清空背景颜色  
         label.backgroundColor = [UIColor clearColor];  
