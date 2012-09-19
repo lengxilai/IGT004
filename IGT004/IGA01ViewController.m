@@ -338,8 +338,8 @@
     [self.navigationController pushViewController:a02ViewController animated:YES];
 }
 -(void)showAlertWithPlacemark:(CLPlacemark *)placemark{
-    NSString *currentCity=[[placemark.addressDictionary objectForKey:@"City"] substringToIndex:3];
-    if(![currentCity isEqual:@"Dal" ]){
+    NSString *currentCity=[[placemark.addressDictionary objectForKey:@"City"] substringToIndex:2];
+    if(![currentCity isEqual:@"Dal" ] && ![currentCity isEqual:@"大连"] && ![currentCity isEqual:@"大連"]){
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"" message:@"亲！你好像不在大连啊！要不你用列表来看吧？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"OK", nil ];
         [av show];
     }
