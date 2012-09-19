@@ -84,6 +84,7 @@
         NSString *tempAddress = restaurant.address;
         int addressLength = [self getLengthByFont:tempAddress forFont:@"Arial" forSize:14];
         CGFloat addressHight = 0;
+        NSLog(@"addressHight:%@,%d,%d",tempAddress,[tempAddress length], addressLength);
         if (addressLength<=200) {
             addressHight = 10;
         }
@@ -178,10 +179,14 @@
         leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
-        //图集scrollView
-        photoView = [self setPhotoView:restaurant];
+        //取出饭店id下的所有图片
+        NSArray *fileList = [IGFileUtil getPhotosByRestaurantId:[self toString:restaurant.id]];
+        if (fileList != nil && fileList.count != 0) {
+            //图集scrollView
+            photoView = [self setPhotoView:restaurant];
+            [bottomView addSubview:photoView];
+        }
         
-        [bottomView addSubview:photoView];
         bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoTextView]+340);
         [self.view addSubview:bottomView];
     }
@@ -222,7 +227,7 @@
 -(UIScrollView*) setPhotoView:(Restaurant*) restaurant {
     // 滚动图集的Y轴大小＝简介高度＋电话＋地址＋常量
     UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(A03ScrollViewX, [self getUILabelHeight:memoTextView]+160, A03ScrollViewW, A03ScrollViewH)];
-    scrollView.backgroundColor = [UIColor grayColor];
+    scrollView.backgroundColor = [UIColor colorWithHex:0xd0d0d0 alpha:1.0];
     
     //取出饭店id下的所有图片
     NSArray *fileList = [IGFileUtil getPhotosByRestaurantId:[self toString:restaurant.id]];
@@ -312,7 +317,7 @@
 //根据字体和字体大小取得其长度
 -(int)getLengthByFont:(NSString *)inputStr forFont:(NSString*) font forSize:(int) fontSize{
     int nameLength = [inputStr length];
-    CGSize size = [inputStr sizeWithFont:[UIFont fontWithName:font size:fontSize] constrainedToSize:CGSizeMake(12*nameLength, MAXFLOAT)];
+    CGSize size = [inputStr sizeWithFont:[UIFont fontWithName:font size:fontSize] constrainedToSize:CGSizeMake(14*nameLength, MAXFLOAT)];
     return size.width;
 }
 

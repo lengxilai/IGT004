@@ -18,5 +18,6 @@
 +(NSString *) getIconImageByRestaurantId:(NSString *) restaurantId forIconName:(NSString *) iconName;
 //根据饭店id获得图集
 +(NSArray *) getPhotosByRestaurantId:(NSString *) restaurantId;
-
+//复制初始数据文件到document路径
++(void)copyFileToDoc; 
 @end

@@ -44,6 +44,8 @@
 		D77F232115F8D9610056735C /* MultiTaskDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F231C15F8D9610056735C /* MultiTaskDownloader.m */; };
 		D77F232215F8D9610056735C /* MultiThreadDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F231E15F8D9610056735C /* MultiThreadDownloader.m */; };
 		D77F232315F8D9610056735C /* OperationThread.m in Sources */ = {isa = PBXBuildFile; fileRef = D77F232015F8D9610056735C /* OperationThread.m */; };
+		D784BB1B160228A0000ECC1C /* IGT004.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D784BB1A160228A0000ECC1C /* IGT004.sqlite */; };
+		D784BB1D16023787000ECC1C /* images in Resources */ = {isa = PBXBuildFile; fileRef = D784BB1C16023786000ECC1C /* images */; };
 		DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC162D5515F8924D004FBA2A /* IGA03ViewController.m */; };
 		DC162D7515F8BF06004FBA2A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC162D7415F8BF06004FBA2A /* line.png */; };
 		DC54EA4815FDEB3C00B314BC /* IGPhotoImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC54EA4715FDEB3C00B314BC /* IGPhotoImage.m */; };
@@ -158,6 +160,8 @@
 		D77F231E15F8D9610056735C /* MultiThreadDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiThreadDownloader.m; sourceTree = "<group>"; };
 		D77F231F15F8D9610056735C /* OperationThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationThread.h; sourceTree = "<group>"; };
 		D77F232015F8D9610056735C /* OperationThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationThread.m; sourceTree = "<group>"; };
+		D784BB1A160228A0000ECC1C /* IGT004.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = IGT004.sqlite; sourceTree = "<group>"; };
+		D784BB1C16023786000ECC1C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		DC162D5415F8924C004FBA2A /* IGA03ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA03ViewController.h; sourceTree = "<group>"; };
 		DC162D5515F8924D004FBA2A /* IGA03ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA03ViewController.m; sourceTree = "<group>"; };
 		DC162D7415F8BF06004FBA2A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
@@ -276,6 +280,7 @@
 		D75F5B6815F4F586000143D7 /* IGT004 */ = {
 			isa = PBXGroup;
 			children = (
+				D784BB181602284C000ECC1C /* Initialdata */,
 				D77F231A15F8D88B0056735C /* Download */,
 				1864A3E315F8A7BB00503C05 /* Icon.png */,
 				1864A3E415F8A7BB00503C05 /* Icon@2x.png */,
@@ -364,6 +369,15 @@
 				D77F232015F8D9610056735C /* OperationThread.m */,
 			);
 			name = Download;
+			sourceTree = "<group>";
+		};
+		D784BB181602284C000ECC1C /* Initialdata */ = {
+			isa = PBXGroup;
+			children = (
+				D784BB1C16023786000ECC1C /* images */,
+				D784BB1A160228A0000ECC1C /* IGT004.sqlite */,
+			);
+			name = Initialdata;
 			sourceTree = "<group>";
 		};
 		DC7416BE15F60CD7009D8C65 /* Images */ = {
@@ -533,6 +547,8 @@
 				18ED99601600ABD7000A0204 /* info@2x.png in Resources */,
 				E2B964011601C23D00C9F1AD /* TomatoApp.png in Resources */,
 				E2B964021601C23D00C9F1AD /* TomatoApp@2x.png in Resources */,
+				D784BB1B160228A0000ECC1C /* IGT004.sqlite in Resources */,
+				D784BB1D16023787000ECC1C /* images in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
