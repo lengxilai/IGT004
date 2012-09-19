@@ -84,7 +84,6 @@
         NSString *tempAddress = restaurant.address;
         int addressLength = [self getLengthByFont:tempAddress forFont:@"Arial" forSize:14];
         CGFloat addressHight = 0;
-        NSLog(@"addressHight:%@,%d,%d",tempAddress,[tempAddress length], addressLength);
         if (addressLength<=200) {
             addressHight = 10;
         }
@@ -166,8 +165,6 @@
             memoHight = memoHight + 1;
         }
         memo_hight = A03MemoH*memoHight;
-        NSLog(@"memoHight:%d", memoHight);
-        NSLog(@"memoLength:%d", memoLength);
         memoTextView = [[UITextView alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, memo_hight)];
         memoTextView.text = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
         [memoTextView setScrollEnabled:NO];
