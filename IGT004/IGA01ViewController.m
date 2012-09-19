@@ -51,7 +51,7 @@
     
     [m_geoArray addObject:geoInfo];
        
-    float zoomLevel = 0.03;  
+    float zoomLevel = 0.02;  
     MKCoordinateRegion region2 = MKCoordinateRegionMake(coordinate2D, MKCoordinateSpanMake(zoomLevel, zoomLevel));  
     [m_mkMapView setRegion:[m_mkMapView regionThatFits:region2] animated:YES];  
     return self;
@@ -202,9 +202,9 @@
     
     MKCoordinateRegion region;
     
-    span.latitudeDelta=0.030;
+    span.latitudeDelta=0.020;
     
-    span.longitudeDelta=0.030;
+    span.longitudeDelta=0.020;
     
     region.span=span;
     
@@ -291,8 +291,8 @@
     [locationManager startUpdatingLocation];//启动位置管理器
     MKCoordinateSpan theSpan;
     //地图的范围 越小越精确
-    theSpan.latitudeDelta=0.030;
-    theSpan.longitudeDelta=0.030;
+    theSpan.latitudeDelta=0.020;
+    theSpan.longitudeDelta=0.020;
     MKCoordinateRegion theRegion;
     theRegion.center=[[locationManager location] coordinate];
     theRegion.span=theSpan;
@@ -304,12 +304,47 @@
     UIView *searchLocationView = [self.view viewWithTag:A01SearchLocationTag];
     UIImageView *searchMyselfView = [[searchLocationView subviews] objectAtIndex:0];
     [searchMyselfView setImage:[UIImage imageNamed:@"location_icon.png"] ];
+    
+    CLGeocoder *geocoder=[[CLGeocoder alloc]init];
+    [geocoder reverseGeocodeLocation:[locationManager location] completionHandler:^(NSArray *placemarks,NSError *error)
+     {
+         for(CLPlacemark *placemark in placemarks)
+         {
+             [self showAlertWithPlacemark:placemark];
+         }
+     }];
+    
 }
-
+- (void)locationManager:(CLLocationManager *)manager 
+    didUpdateToLocation:(CLLocation *)newLocation 
+           fromLocation:(CLLocation *)oldLocation {
+    //获取所在地城市名
+    CLGeocoder *geocoder=[[CLGeocoder alloc]init];
+    [geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks,NSError *error)
+     {
+         for(CLPlacemark *placemark in placemarks)
+         {
+             NSString *currentCity=[[placemark.addressDictionary objectForKey:@"City"] substringToIndex:2];
+             NSLog(@"str%@",currentCity);
+         }
+     }];
+}
 //去列表页面
 -(void)goToA02 {
     [self cancelInput];
     IGA02ViewController *a02ViewController = [[IGA02ViewController alloc] initWithResult:results];
     [self.navigationController pushViewController:a02ViewController animated:YES];
+}
+-(void)showAlertWithPlacemark:(CLPlacemark *)placemark{
+    NSString *currentCity=[[placemark.addressDictionary objectForKey:@"City"] substringToIndex:6];
+    if(currentCity != @"Dalian"){
+        UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"" message:@"亲！你好像不在大连啊！要不你用列表来看吧？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"OK", nil ];
+        [av show];
+    }
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 1){
+        [self goToA02];
+    }
 }
 @end

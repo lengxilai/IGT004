@@ -16,7 +16,7 @@
 #import "Restaurant.h"
 #import "IGUIButton.h"
 #import "IGA02ViewController.h"
-@interface IGA01ViewController : UIViewController <MKMapViewDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate>  {
+@interface IGA01ViewController : UIViewController <MKMapViewDelegate,NSFetchedResultsControllerDelegate,UISearchBarDelegate,UIAlertViewDelegate>  {
     MKMapView *m_mkMapView;
     NSMutableArray *m_geoArray;
     double m_locationLatitude;
