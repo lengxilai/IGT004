@@ -2,7 +2,7 @@
 //  Restaurant.m
 //  IGT004
 //
-//  Created by Ming Liu on 12-9-6.
+//  Created by 鹏 李 on 12-9-20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -23,6 +23,7 @@
 @dynamic longitude;
 @dynamic name;
 @dynamic tel;
+@dynamic ver;
 @dynamic images;
 
 @end

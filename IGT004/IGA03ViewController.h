@@ -55,6 +55,8 @@
     
     //简介高度
     int memo_hight;
+    //是否显示图集
+    BOOL isDisplayImages;
     
     UIScrollView *photoView;
     Restaurant *result;

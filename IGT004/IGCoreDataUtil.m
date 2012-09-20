@@ -54,6 +54,8 @@ static NSManagedObjectContext *staticManagedObjectContext;
 
 }
 
+
+
 +(NSArray*) queryForArray:(NSString *) entityName 
             queryCondition:(NSString *) queryCondition 
             sortDescriptors:(NSArray *)  sortDescriptors {
@@ -150,6 +152,29 @@ static NSManagedObjectContext *staticManagedObjectContext;
     return fetchResult;
 }
 
-
+// 查询对象表，返回结果arrayList
++(NSArray *)queryForArrayList:(NSString *)entityName queryPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray*) sortDescriptors
+{
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    // 查询对象设置
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityName 
+                                              inManagedObjectContext:staticManagedObjectContext];
+    [request setEntity:entity];
+    
+    // 查询条件设置
+    if(predicate != nil){
+        [request setPredicate:predicate];
+    }
+    
+    // 排序设置
+    if(sortDescriptors != nil){
+        [request setSortDescriptors:sortDescriptors];
+    }
+    NSError *error = nil;
+    NSArray *results=[staticManagedObjectContext executeFetchRequest:request error:&error];
+    return results;
+}
 
 @end

@@ -8,7 +8,7 @@
 
 #import "IGJsonUtil.h"
 
-#define DATA_URL @"http://www.iguor.com/IGT004/data.php?fromid=%d"
+#define DATA_URL @"http://www.iguor.com/IGT004/data.php?ver=%d"
 
 @implementation IGJsonUtil
 
@@ -57,7 +57,7 @@
          
         
         // 数据库登陆
-        [IGRestaurantUtil addRestaurant:[array objectAtIndex:i]];
+        [IGRestaurantUtil updateRestaurant:[array objectAtIndex:i]];
     }
 }
 

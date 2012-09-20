@@ -28,4 +28,7 @@
 +(NSArray*)queryForFetchedResult:(NSString *)entityName 
                   queryPredicate:(NSPredicate *)predicate 
                  sortDescriptors:(NSArray*) sortDescriptors;
+
+// 查询对象表，返回结果arrayList
++(NSArray *)queryForArrayList:(NSString *)entityName queryPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray*) sortDescriptors;
 @end
