@@ -65,6 +65,7 @@
     m_mkMapView = [[MKMapView alloc] initWithFrame: CGRectMake(0, 0, 320, 460)];
     m_mkMapView.delegate = self;
     m_mkMapView.showsUserLocation=YES;
+    
     [self.view addSubview: m_mkMapView];
     //搜索框
     m_searchBar=[[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 41)];  ;
@@ -198,6 +199,7 @@
     NSString *lat=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.latitude];
     
     NSString *lng=[[NSString alloc] initWithFormat:@"%f",userLocation.coordinate.longitude];
+    MKUserLocation *userLocationOld = [IGLocationUtil getUserLocation];
     [IGLocationUtil setUserLocation:[userLocation location]];
     m_locationLatitude=[lat doubleValue];
     m_locationLongitude=[lng doubleValue];
@@ -213,8 +215,8 @@
     
     region.center=[userLocation coordinate];
     
-    
-    //[m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
+    if(![userLocationOld location])
+        [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
 }
 
 #pragma mark -
