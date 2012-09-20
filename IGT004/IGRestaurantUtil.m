@@ -10,9 +10,26 @@
 
 @implementation IGRestaurantUtil
 
+// 更新一个饭店信息
++(void)updateRestaurant:(NSDictionary *)dir{
+    
+    NSString *framId = [dir objectForKey:@"id"];
+    // 判断该id的数据是否已经存在
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@" (id == %@ )",framId];
+    NSArray* restaurantArray = [IGCoreDataUtil queryForArrayList:@"Restaurant" queryPredicate:predicate sortDescriptors:nil];
+    if ([restaurantArray count] > 0) {
+        // 删除后，重新创建
+        Restaurant *restaurant = [restaurantArray objectAtIndex:0];
+        [[IGCoreDataUtil getStaticManagedObjectContext] deleteObject:restaurant];
+    }
+    [IGRestaurantUtil addRestaurant:dir];
+    [self saveDB];
+}
+
 
 // 添加一个饭店信息
 +(void)addRestaurant:(NSDictionary *)dir {
+    
     // 创建一个饭店信息
     Restaurant *restaurant = [NSEntityDescription insertNewObjectForEntityForName:@"Restaurant" inManagedObjectContext:[IGCoreDataUtil getStaticManagedObjectContext]];
     restaurant.id =  [NSNumber  numberWithInt:[[dir objectForKey:@"id"] intValue]];
@@ -25,6 +42,7 @@
     restaurant.iconName = [dir objectForKey:@"iconName"];
     restaurant.descriptionMemo = [dir objectForKey:@"descriptionMemo"];
     restaurant.abbrName = [dir objectForKey:@"abbrname"];
+    restaurant.ver = [NSNumber  numberWithFloat:[[dir objectForKey:@"ver"] floatValue]];
     
     // 取得组图数
     NSInteger imagecount = [[dir objectForKey:@"imagecount"] intValue];
@@ -36,8 +54,6 @@
         image.descriptionMemo = restaurant.descriptionMemo;
         [restaurant addImagesObject:image];
     }
-    
-    [self saveDB];
   }
 
 // 保存数据库
@@ -50,12 +66,13 @@
 }
 
 // 取得最大的RestaurantId
+// 9.20改为得最大版本号
 +(NSInteger)getMaxRestaurantId{
     NSArray *returnValue = 
-    [IGCoreDataUtil queryForFetchedResultByExpression:@"Restaurant" method:@"max:" selectColumn:@"id" keyName:@"maxOfCount" queryPredicate:nil];;
+    [IGCoreDataUtil queryForFetchedResultByExpression:@"Restaurant" method:@"max:" selectColumn:@"ver" keyName:@"maxOfCount" queryPredicate:nil];;
     if([returnValue count] == 0){
         return 0;
     }
-    return [[[returnValue lastObject] objectForKey:@"maxOfCount"] intValue] + 1;
+    return [[[returnValue lastObject] objectForKey:@"maxOfCount"] intValue];
 }
 @end

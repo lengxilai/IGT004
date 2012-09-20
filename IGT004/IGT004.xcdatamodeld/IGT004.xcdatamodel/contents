@@ -16,10 +16,11 @@
         <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ver" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="No Action" ordered="YES" destinationEntity="Image" syncable="YES"/>
     </entity>
     <elements>
         <element name="Image" positionX="160" positionY="192" width="128" height="105"/>
-        <element name="Restaurant" positionX="160" positionY="192" width="128" height="225"/>
+        <element name="Restaurant" positionX="160" positionY="192" width="128" height="240"/>
     </elements>
 </model>

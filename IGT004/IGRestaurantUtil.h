@@ -16,6 +16,10 @@
 
 // 添加饭店信息
 +(void)addRestaurant:(NSDictionary *)array;
+
+// 更新饭店信息
++(void)updateRestaurant:(NSDictionary *)array;
+
 // 保存数据
 +(void)saveDB;
 

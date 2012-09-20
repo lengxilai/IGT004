@@ -2,7 +2,7 @@
 //  Restaurant.h
 //  IGT004
 //
-//  Created by Ming Liu on 12-9-6.
+//  Created by 鹏 李 on 12-9-20.
 //  Copyright (c) 2012年 __MyCompanyName__. All rights reserved.
 //
 
@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSString * longitude;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * tel;
+@property (nonatomic, retain) NSNumber * ver;
 @property (nonatomic, retain) NSOrderedSet *images;
 @end
 
