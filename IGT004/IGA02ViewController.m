@@ -18,6 +18,7 @@
 #pragma mark 初始化方法
 - (id)initWithResult:(NSArray*)rs
 {
+    
     self = [super init];
     self.title = @"舌尖上的大连";
     //取得屏幕尺寸
@@ -53,8 +54,8 @@
     dataListTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // 设定数据
-    results = rs;
-    tempResults = rs;
+    results = [self sortRestaurantByDistance: rs];
+    tempResults = [self sortRestaurantByDistance: rs];
     [self.view addSubview:dataListTableView];
     
     //导航左按钮
@@ -246,4 +247,17 @@
     [self.navigationController pushViewController:a04ViewController animated:YES];
 
 }
+
+//餐馆根据距离排序
+-(NSArray*) sortRestaurantByDistance:(NSArray*) restaurantAry {
+    NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    NSArray *sortedArray;
+    sortedArray = [restaurantAry sortedArrayUsingDescriptors:sortDescriptors];
+    return sortedArray;
+
+}
+
+
 @end
