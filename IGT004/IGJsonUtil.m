@@ -33,7 +33,7 @@
     NSURLRequest *theRequest=[NSURLRequest 
                               requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:DATA_URL,[IGRestaurantUtil getMaxRestaurantId]]]
                               cachePolicy:NSURLRequestUseProtocolCachePolicy
-                              timeoutInterval:60.0];
+                              timeoutInterval:1000.0];
     NSLog(@"%@",[NSString stringWithFormat:DATA_URL,[IGRestaurantUtil getMaxRestaurantId]]);
     theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
 }

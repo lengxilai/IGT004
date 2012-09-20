@@ -18,11 +18,37 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@" (id == %@ )",framId];
     NSArray* restaurantArray = [IGCoreDataUtil queryForArrayList:@"Restaurant" queryPredicate:predicate sortDescriptors:nil];
     if ([restaurantArray count] > 0) {
-        // 删除后，重新创建
         Restaurant *restaurant = [restaurantArray objectAtIndex:0];
-        [[IGCoreDataUtil getStaticManagedObjectContext] deleteObject:restaurant];
+        restaurant.id =  [NSNumber  numberWithInt:[[dir objectForKey:@"id"] intValue]];
+        restaurant.name = [dir objectForKey:@"name"];
+        restaurant.address = [dir objectForKey:@"address"];
+        restaurant.tel = [dir objectForKey:@"tel"];
+        restaurant.averageCost = [NSNumber  numberWithInt:[[dir objectForKey:@"averagecost"] intValue]];
+        restaurant.latitude = [dir objectForKey:@"latitude"];
+        restaurant.longitude = [dir objectForKey:@"longitude"];
+        restaurant.iconName = [dir objectForKey:@"iconName"];
+        restaurant.descriptionMemo = [dir objectForKey:@"descriptionMemo"];
+        restaurant.abbrName = [dir objectForKey:@"abbrname"];
+        restaurant.ver = [NSNumber  numberWithFloat:[[dir objectForKey:@"ver"] floatValue]];
+        
+//        // 删除所有旧数据
+//        while ([restaurant.images count] > 0) {
+//            [restaurant removeObjectFromImagesAtIndex:1];
+//        }
+        
+        // 取得组图数
+        NSInteger imagecount = [[dir objectForKey:@"imagecount"] intValue];
+        
+        for (int i=1; i<=imagecount; i++) {
+            Image *image = [[Image alloc] initWithEntity:[NSEntityDescription entityForName:@"Image" inManagedObjectContext:[IGCoreDataUtil getStaticManagedObjectContext]] insertIntoManagedObjectContext:[IGCoreDataUtil getStaticManagedObjectContext]];
+            image.imageName = [NSString stringWithFormat:@"%d.jpg",i];
+            // 每个图片都存一遍？
+            image.descriptionMemo = restaurant.descriptionMemo;
+            [restaurant addImagesObject:image];
+        }
+    }else {
+        [IGRestaurantUtil addRestaurant:dir];
     }
-    [IGRestaurantUtil addRestaurant:dir];
     [self saveDB];
 }
 
