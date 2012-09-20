@@ -215,7 +215,7 @@
     
     region.center=[userLocation coordinate];
     
-    if(![userLocationOld location])
+    if(!userLocationOld)
         //[m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
         [self showLocation];
 }
