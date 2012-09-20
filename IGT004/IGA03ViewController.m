@@ -160,7 +160,7 @@
         
         NSString *tempMemo = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
         int memoLength = [tempMemo length];
-        int memoHight = memoLength / 17 + 1;
+        int memoHight = memoLength / 16 + 1;
         if (memoHight == 1) {
             memoHight = memoHight + 1;
         }
