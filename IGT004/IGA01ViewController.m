@@ -111,7 +111,7 @@
     }
     
     // 页面读完了更新距离
-    [self showLocation];
+    //[self showLocation];
 }
 
 - (void)viewDidUnload
@@ -216,7 +216,8 @@
     region.center=[userLocation coordinate];
     
     if(![userLocationOld location])
-        [m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
+        //[m_mkMapView setRegion:[m_mkMapView regionThatFits:region] animated:NO];
+        [self showLocation];
 }
 
 #pragma mark -
