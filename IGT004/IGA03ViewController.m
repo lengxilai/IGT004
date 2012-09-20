@@ -179,11 +179,11 @@
         leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
         self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         
+        isDisplayImages = NO;
+        photoView = [self setPhotoView:restaurant   ];
         //取出饭店id下的所有图片
-        NSArray *fileList = [IGFileUtil getPhotosByRestaurantId:[self toString:restaurant.id]];
-        if (fileList != nil && fileList.count != 0) {
+        if (isDisplayImages) {
             //图集scrollView
-            photoView = [self setPhotoView:restaurant   ];
             [bottomView addSubview:photoView];
         }
         
@@ -235,19 +235,22 @@
     NSMutableArray *photosArray = [NSMutableArray arrayWithArray:fileList];
     //除去标志图片
     [photosArray removeObject:restaurant.iconName];
-    //算出ScrollView的宽度（减去标志图片）
-    NSInteger maxWidth = (photosArray.count)*90;
-    scrollView.contentSize = CGSizeMake(maxWidth, A03ScrollViewH);
-    
     //循环向ScrollView中添加图片
+    int temp_i = 0;
     for (int i=0;i<photosArray.count;i++) {
         NSString *photoName = [photosArray objectAtIndex:i];
         UIImage *photoImg = [[UIImage alloc] initWithContentsOfFile: [IGFileUtil getIconImageByRestaurantId:[self toString:restaurant.id] forIconName:photoName]];
+        //取得图片的字节数
+        int imgSize = [self getFileSize:[IGFileUtil getIconImageByRestaurantId:[self toString:restaurant.id] forIconName:photoName]];
+        //如果图片字节是0就不显示
+        if (imgSize == 0) {
+            continue;
+        }
         //每个图片的位置
-        UIImageView *photoImgView = [[IGPhotoImage alloc] initWithFrame:CGRectMake(i*90+5, A03ScrollImageY, A03ScrollImageW, A03ScrollImageH)];
+        UIImageView *photoImgView = [[IGPhotoImage alloc] initWithFrame:CGRectMake(temp_i*90+5, A03ScrollImageY, A03ScrollImageW, A03ScrollImageH)];
         [photoImgView setImage:photoImg];
 
-        [photoImgView setTag: (7000 + i)];
+        [photoImgView setTag: (7000 + temp_i)];
         UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoClicked:)];
         [photoImgView addGestureRecognizer:singleTap];
         //什么意思？
@@ -255,7 +258,15 @@
         [photoImgView setMultipleTouchEnabled:YES];
         
         [scrollView addSubview:photoImgView];
+        //是否显示图集区域
+        if (!isDisplayImages) {
+            isDisplayImages = YES;
+        }
+        temp_i++;
     }
+    //算出ScrollView的宽度（减去标志图片）
+    NSInteger maxWidth = temp_i*90;
+    scrollView.contentSize = CGSizeMake(maxWidth, A03ScrollViewH);
     [scrollView setDelegate:self];
     return scrollView;
 }
@@ -266,22 +277,6 @@
     IGPhotoImage *touchedImage = (IGPhotoImage*)gestureRecognizer.view;
     touchedImage.parentview = self.view;
     [touchedImage handleDoubleTap:nil];
-    
-//    [[IGPhotoImage alloc] setDoubleTap:touchedImage];
-//
-//    UIScrollView *touchedImageController = [[UIScrollView alloc] initWithFrame:CGRectMake(30, 30, 200, 200)];
-//    [touchedImage setFrame:CGRectMake(0, 0, 200, 200)];
-//    touchedImageController.backgroundColor = [UIColor redColor];
-//    [touchedImageController addSubview:touchedImage];
-//    [self.view addSubview:touchedImageController];
-//    [touchedImageController showPhoto:touchedImage.image];
-//    UIImageView *touchedImage = [[UIImageView alloc] init];
-//    touchedImage = (UIImageView *)gestureRecognizer.view;
-//    CGRect newRect = CGRectInset([touchedImage frame], 0, 0);    
-//
-//    [touchedImage setFrame:newRect];
-//    
-//    [self.view addSubview:touchedImage];
 }
 //距离换算 
 -(NSString *) getDistance:(NSNumber *) distance {
@@ -321,4 +316,12 @@
     return size.width;
 }
 
+// 取得文件长度
+-(int)getFileSize:(NSString *)filePath {
+    //获取数据 
+    NSData *reader = [NSData dataWithContentsOfFile:filePath];
+    
+    //获取字节的个数
+    return [reader length];
+}
 @end
