@@ -16,7 +16,7 @@
         <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tel" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="ver" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="ver" optional="YES" attributeType="Integer 32" defaultValueString="0.0" syncable="YES"/>
         <relationship name="images" optional="YES" toMany="YES" deletionRule="No Action" ordered="YES" destinationEntity="Image" syncable="YES"/>
     </entity>
     <elements>

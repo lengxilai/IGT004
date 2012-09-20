@@ -29,12 +29,12 @@
         restaurant.iconName = [dir objectForKey:@"iconName"];
         restaurant.descriptionMemo = [dir objectForKey:@"descriptionMemo"];
         restaurant.abbrName = [dir objectForKey:@"abbrname"];
-        restaurant.ver = [NSNumber  numberWithFloat:[[dir objectForKey:@"ver"] floatValue]];
+        restaurant.ver = [NSNumber  numberWithInt:[[dir objectForKey:@"ver"] intValue]];
         
-//        // 删除所有旧数据
-//        while ([restaurant.images count] > 0) {
-//            [restaurant removeObjectFromImagesAtIndex:1];
-//        }
+        // 删除所有旧数据
+        if ([restaurant.images count] > 0) {
+            [restaurant removeImages:restaurant.images];
+        }
         
         // 取得组图数
         NSInteger imagecount = [[dir objectForKey:@"imagecount"] intValue];
@@ -68,7 +68,7 @@
     restaurant.iconName = [dir objectForKey:@"iconName"];
     restaurant.descriptionMemo = [dir objectForKey:@"descriptionMemo"];
     restaurant.abbrName = [dir objectForKey:@"abbrname"];
-    restaurant.ver = [NSNumber  numberWithFloat:[[dir objectForKey:@"ver"] floatValue]];
+    restaurant.ver = [NSNumber  numberWithInt:[[dir objectForKey:@"ver"] intValue]];
     
     // 取得组图数
     NSInteger imagecount = [[dir objectForKey:@"imagecount"] intValue];
