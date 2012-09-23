@@ -7,6 +7,7 @@
 //
 
 #import "IGJsonUtil.h"
+#import "IGAsiFleDownloadUtil.h"
 
 #define DATA_URL @"http://www.iguor.com/IGT004/data.php?ver=%d"
 
@@ -50,7 +51,9 @@
         NSString *iconName = [[array objectAtIndex:i] objectForKey:@"iconName"];
         NSInteger imagecount = [[[array objectAtIndex:i] objectForKey:@"imagecount"] intValue];
         
-        IGFileDownloadUtil *util = [[IGFileDownloadUtil alloc] init];
+        //IGFileDownloadUtil *util = [[IGFileDownloadUtil alloc] init];
+        IGAsiFleDownloadUtil *util = [[IGAsiFleDownloadUtil alloc] init];
+        
         [util addIconImage:framId iconName:iconName];
         [util addImages:framId count:imagecount];
         [util startDownload];
@@ -80,4 +83,5 @@
     // 全部处理完成后
     state = json_over;
 }
+
 @end

@@ -10,6 +10,7 @@
 #import "SBJson.h"
 #import "IGRestaurantUtil.h"
 #import "IGFileDownloadUtil.h"
+#import "ASIHTTPRequest.h"
 
 typedef enum {
     json_start,

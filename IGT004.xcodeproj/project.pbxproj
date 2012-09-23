@@ -72,6 +72,7 @@
 		D784BB1B160228A0000ECC1C /* IGT004.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = D784BB1A160228A0000ECC1C /* IGT004.sqlite */; };
 		D784BB1D16023787000ECC1C /* images in Resources */ = {isa = PBXBuildFile; fileRef = D784BB1C16023786000ECC1C /* images */; };
 		D78BA4FD160B1F11006D42ED /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = D78BA4FC160B1F11006D42ED /* Restaurant.m */; };
+		D78BA507160B2636006D42ED /* IGAsiFleDownloadUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D78BA506160B2635006D42ED /* IGAsiFleDownloadUtil.m */; };
 		DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC162D5515F8924D004FBA2A /* IGA03ViewController.m */; };
 		DC162D7515F8BF06004FBA2A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC162D7415F8BF06004FBA2A /* line.png */; };
 		DC54EA4815FDEB3C00B314BC /* IGPhotoImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC54EA4715FDEB3C00B314BC /* IGPhotoImage.m */; };
@@ -244,6 +245,8 @@
 		D784BB1C16023786000ECC1C /* images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = images; sourceTree = "<group>"; };
 		D78BA4FB160B1F11006D42ED /* Restaurant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Restaurant.h; sourceTree = "<group>"; };
 		D78BA4FC160B1F11006D42ED /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
+		D78BA505160B2634006D42ED /* IGAsiFleDownloadUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGAsiFleDownloadUtil.h; sourceTree = "<group>"; };
+		D78BA506160B2635006D42ED /* IGAsiFleDownloadUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGAsiFleDownloadUtil.m; sourceTree = "<group>"; };
 		DC162D5415F8924C004FBA2A /* IGA03ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA03ViewController.h; sourceTree = "<group>"; };
 		DC162D5515F8924D004FBA2A /* IGA03ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGA03ViewController.m; sourceTree = "<group>"; };
 		DC162D7415F8BF06004FBA2A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
@@ -616,6 +619,8 @@
 				D77F22FF15F8D4DA0056735C /* IGFileDownloadUtil.m */,
 				DC54EA4615FDEB3C00B314BC /* IGPhotoImage.h */,
 				DC54EA4715FDEB3C00B314BC /* IGPhotoImage.m */,
+				D78BA505160B2634006D42ED /* IGAsiFleDownloadUtil.h */,
+				D78BA506160B2635006D42ED /* IGAsiFleDownloadUtil.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -796,6 +801,7 @@
 				184C60F9160B0AF0000EF82D /* ASIS3ServiceRequest.m in Sources */,
 				184C610B160B0D0E000EF82D /* Reachability.m in Sources */,
 				D78BA4FD160B1F11006D42ED /* Restaurant.m in Sources */,
+				D78BA507160B2636006D42ED /* IGAsiFleDownloadUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
