@@ -8,7 +8,6 @@
 
 #import "IGA01ViewController.h"
 #import "IGDistanceUpdate.h"
-#import "ASIHTTPRequest.h"
 #import <SystemConfiguration/SystemConfiguration.h>
 @interface IGA01ViewController ()
 

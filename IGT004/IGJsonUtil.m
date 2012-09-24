@@ -7,7 +7,6 @@
 //
 
 #import "IGJsonUtil.h"
-#import "IGAsiFleDownloadUtil.h"
 
 #define DATA_URL @"http://www.iguor.com/IGT004/data.php?ver=%d"
 
@@ -45,23 +44,21 @@
     // 处理中
     state = json_ing;
     
+    IGFileDownloadUtil *util = [[IGFileDownloadUtil alloc] init];
+    
     for (int i = 0; i < [array count]; i++) {
         // 图片取得
         NSInteger framId = [[[array objectAtIndex:i] objectForKey:@"id"] intValue];
         NSString *iconName = [[array objectAtIndex:i] objectForKey:@"iconName"];
         NSInteger imagecount = [[[array objectAtIndex:i] objectForKey:@"imagecount"] intValue];
-        
-        //IGFileDownloadUtil *util = [[IGFileDownloadUtil alloc] init];
-        IGAsiFleDownloadUtil *util = [[IGAsiFleDownloadUtil alloc] init];
-        
         [util addIconImage:framId iconName:iconName];
         [util addImages:framId count:imagecount];
-        [util startDownload];
-         
         
         // 数据库登陆
         [IGRestaurantUtil updateRestaurant:[array objectAtIndex:i]];
     }
+    
+    [util startDownload:0];
 }
 
 #pragma mark NSURLConnectionDelegate methods

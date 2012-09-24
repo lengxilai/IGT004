@@ -7,14 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MultiTaskDownloader.h"
+#import "IGFileDownloader.h"
 
-@interface IGFileDownloadUtil : NSObject<MultiTaskDownloaderDelegate>{
+@interface IGFileDownloadUtil : NSObject{
     
-   MultiTaskDownloader *taskDownloader;
+    MKNetworkOperation *downloader;
+    NSMutableArray *urlListArray;
+    NSMutableArray *savePathListArray;
+    IGFileDownloader *fileDownLoader;
 }
 
-@property(retain,nonatomic) MultiTaskDownloader *taskDownloader;
+
+@property(retain,nonatomic) NSMutableArray *urlListArray;
+@property(retain,nonatomic) NSMutableArray *savePathListArray;
+@property(retain,nonatomic) MKNetworkOperation *downloader;
 
 -(id)init;
 // 下载图标
@@ -22,6 +28,6 @@
 // 追加组图
 -(void)addImages:(NSInteger)framId count:(NSInteger)count;
 // 开始下载
--(void)startDownload;
+-(void)startDownload:(NSInteger)index;
 
 @end

@@ -14,17 +14,17 @@
 
 @implementation IGFileDownloadUtil
 
-@synthesize taskDownloader;
+@synthesize downloader,urlListArray,savePathListArray;
+
 
 -(id)init{
     
     self = [super init];
     
     if(self){
-        
-        self.taskDownloader = [[MultiTaskDownloader alloc] init];
-        taskDownloader.delegate = self;
-        taskDownloader.concurrentTaskCount = 10;
+        fileDownLoader = [[IGFileDownloader alloc] initWithHostName:nil customHeaderFields:nil];
+        self.urlListArray = [[NSMutableArray alloc] init];
+        self.savePathListArray = [[NSMutableArray alloc] init];
     }
     return self;
     
@@ -32,22 +32,35 @@
 
 // 下载图标
 -(void)addIconImage:(NSInteger)framId iconName:(NSString *)iconName{
-    [taskDownloader addTaskUrl:[NSString stringWithFormat:ICON_URL,framId,iconName]];
-    [taskDownloader addSavePath:[self getSavePath:framId]];
+    [self.urlListArray addObject:[NSString stringWithFormat:ICON_URL,framId,iconName]];
+    [self.savePathListArray addObject:[self getSavePath:framId]];
 }
 
 // 下载组图
 -(void)addImages:(NSInteger)framId count:(NSInteger)count{
     for (int i=1; i<=count; i++) {
-        [taskDownloader addTaskUrl:[NSString stringWithFormat:IMAGES_URL,framId,i]];
-        [taskDownloader addSavePath:[self getSavePath:framId]];
+        [self.urlListArray addObject:[NSString stringWithFormat:IMAGES_URL,framId,i]];
+        [self.savePathListArray addObject:[self getSavePath:framId]];
     }
 }
 
 //  开始下载
-- (void)startDownload
+-(void)startDownload:(NSInteger)index
 {
-    [taskDownloader start];
+    if([self.urlListArray count]==index){
+        return;
+    }
+    self.downloader = [fileDownLoader downloadFileFrom:[urlListArray objectAtIndex:index] 
+                                                toFile:[savePathListArray objectAtIndex:index]]; 
+    
+    [self.downloader onDownloadProgressChanged:^(double progress) {
+    }];
+    [self.downloader onCompletion:^(MKNetworkOperation* completedRequest) {
+        NSLog(@"download sussess"); 
+        [self startDownload:index+1];
+    }onError:^(NSError* error) {
+         NSLog(@"download  error");                             
+    }];
 }
 
 // 生成保存地址
@@ -59,17 +72,4 @@
     }
     return path;
 }
-
-#pragma mark - 
--(void)taskDidReceivedMessage:(NSString *)message taskLoader:(MultiTaskDownloader *)taskLoader threadLoader:(MultiThreadDownloader *)threadLoader{
-}
-
--(void)taskProgressDidUpdated:(CGFloat)progress taskLoader:(MultiTaskDownloader *)taskLoader threadLoader:(MultiThreadDownloader *)threadLoader{
-}
-
--(void)taskDidFinished:(MultiTaskDownloader *)taskLoader threadLoader:(MultiThreadDownloader *)threadLoader{
-    
-    NSLog(@"%@",threadLoader.savePath);
-}
-
 @end
