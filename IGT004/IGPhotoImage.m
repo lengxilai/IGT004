@@ -81,7 +81,7 @@ if (imageBackView==nil) {
     [imageBackView addSubview:btn];  
     [parentview bringSubviewToFront:imageBackView];  
     
-    [self fadeIn];  
+    //[self fadeIn];  
     
     
 }  
@@ -121,7 +121,8 @@ imageBackView.alpha = 0;
  */  
 -(void)closeImage:(id)sender  
 {  
-[self fadeOut];  
+//[self fadeOut];  
+[imageBackView removeFromSuperview];  
 imageBackView=nil;  
 [maskView removeFromSuperview];  
 maskView=nil;  
