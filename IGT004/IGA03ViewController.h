@@ -24,6 +24,8 @@
     UIView *topUIView;
     //标志图片
     UIImageView *iconImageView;
+    //标志图片背景
+    UIImageView *iconImageViewbk;
     //饭店名称
     UILabel *restaurantNameLabel;
     //距离
@@ -47,7 +49,8 @@
     UILabel *telLabel;
     //简介
     UILabel *memoTitleLabel;
-    UITextView *memoTextView;
+    //UITextView *memoTextView;
+    UILabel *memoLabel;
     //横线2
     UIView *line2View;
     //横线3

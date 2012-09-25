@@ -12,15 +12,7 @@
 @implementation IGPhotoImage
 
 @synthesize parentview;  
-@synthesize imageBackground,imageBackView,maskView;  
-
-@interface IGPhotoImage (private)  
-- (void)fadeIn;  
-- (void)fadeOut;  
-- (void)closeImage:(id)sender;  
-@end
-
-
+@synthesize imageBackground,imageBackView,maskView; 
 
 /* 
  * setDoubleTap 初始化图片 
@@ -59,8 +51,8 @@ if (imageBackView==nil) {
     {     
         frameRect = CGRectMake(0, 0, parentview.frame.size.width, parentview.frame.size.height+20);  
     }  
-    imageBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self getDisplaySize:self.image].width+20, [self getDisplaySize:self.image].height+60)];  
-    imageBackView.backgroundColor = [UIColor grayColor];  
+    imageBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self getDisplaySize:self.image].width+20, [self getDisplaySize:self.image].height+20)];  
+    imageBackView.backgroundColor = [UIColor whiteColor];  
 
     imageBackView.layer.cornerRadius = 10.0; //根据需要调整  
     
@@ -74,13 +66,11 @@ if (imageBackView==nil) {
     maskView.alpha=0.7;  
     
     UIImage *imagepic = self.image;  
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30, [self getDisplaySize:self.image].width, [self getDisplaySize:self.image].height)];  
+    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, [self getDisplaySize:self.image].width, [self getDisplaySize:self.image].height)];  
     [view setImage:imagepic];  
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];  
     
-    UIImage *closeimg = [UIImage imageNamed:@"closeImage.png"];  
-    btn.frame = CGRectMake([self getDisplaySize:self.image].width-17,2, closeimg.size.width,closeimg.size.height);  
-    [btn setBackgroundImage:closeimg forState:UIControlStateNormal];  
+    btn.frame = CGRectMake(0,0, 320,480);  
     [btn addTarget:self action:@selector(closeImage:) forControlEvents:UIControlEventTouchUpInside];  
     
     [imageBackView addSubview:view];  
@@ -91,7 +81,7 @@ if (imageBackView==nil) {
     [imageBackView addSubview:btn];  
     [parentview bringSubviewToFront:imageBackView];  
     
-    [self fadeIn];  
+    //[self fadeIn];  
     
     
 }  
@@ -131,7 +121,8 @@ imageBackView.alpha = 0;
  */  
 -(void)closeImage:(id)sender  
 {  
-[self fadeOut];  
+//[self fadeOut];  
+[imageBackView removeFromSuperview];  
 imageBackView=nil;  
 [maskView removeFromSuperview];  
 maskView=nil;  
@@ -157,7 +148,7 @@ if (image.size.width>screenSize.size.width || image.size.height > screenSize.siz
             ratio = ratio * 320 / (size.width * ratio);
         }
     }
-    CGSize displaySize = CGSizeMake(ratio * size.width, ratio * size.height);
+    CGSize displaySize = CGSizeMake(ratio * size.width-10, ratio * size.height-10);
     return displaySize;
 } else {
     return CGSizeMake(image.size.width, image.size.height);

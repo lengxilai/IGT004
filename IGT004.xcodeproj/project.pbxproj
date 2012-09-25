@@ -64,7 +64,6 @@
 		DC162D5615F8924E004FBA2A /* IGA03ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC162D5515F8924D004FBA2A /* IGA03ViewController.m */; };
 		DC162D7515F8BF06004FBA2A /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = DC162D7415F8BF06004FBA2A /* line.png */; };
 		DC54EA4815FDEB3C00B314BC /* IGPhotoImage.m in Sources */ = {isa = PBXBuildFile; fileRef = DC54EA4715FDEB3C00B314BC /* IGPhotoImage.m */; };
-		DC54EA4A15FDF35800B314BC /* closeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DC54EA4915FDF35800B314BC /* closeImage.png */; };
 		DC5C66A415F7AB34003EACCB /* IGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5C66A315F7AB34003EACCB /* IGFileUtil.m */; };
 		DC7416A215F5DE20009D8C65 /* IGA02ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416A115F5DE20009D8C65 /* IGA02ViewController.m */; };
 		DC7416B615F5F7F1009D8C65 /* UIColor+IGColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416B515F5F7F1009D8C65 /* UIColor+IGColor.m */; };
@@ -73,7 +72,6 @@
 		DC7416CE15F71F22009D8C65 /* IGCoreDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */; };
 		DCB370D715FF4AF000682292 /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB370D515FF4AED00682292 /* more.png */; };
 		DCB370D815FF4AF000682292 /* more@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB370D615FF4AEE00682292 /* more@2x.png */; };
-		DCB4FFC61609BEE800EB4234 /* closeImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCB4FFC51609BEE700EB4234 /* closeImage@2x.png */; };
 		DCF6328215F9C69D00162BD7 /* navi_bag.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328015F9C69D00162BD7 /* navi_bag.png */; };
 		DCF6328315F9C69D00162BD7 /* navi_bag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DCF6328115F9C69D00162BD7 /* navi_bag@2x.png */; };
 		DCF6328715F9C92B00162BD7 /* IGUINavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCF6328615F9C92B00162BD7 /* IGUINavigationController.m */; };
@@ -211,7 +209,6 @@
 		DC162D7415F8BF06004FBA2A /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		DC54EA4615FDEB3C00B314BC /* IGPhotoImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGPhotoImage.h; sourceTree = "<group>"; };
 		DC54EA4715FDEB3C00B314BC /* IGPhotoImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGPhotoImage.m; sourceTree = "<group>"; };
-		DC54EA4915FDF35800B314BC /* closeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeImage.png; sourceTree = "<group>"; };
 		DC5C66A215F7AB33003EACCB /* IGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGFileUtil.h; sourceTree = "<group>"; };
 		DC5C66A315F7AB34003EACCB /* IGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGFileUtil.m; sourceTree = "<group>"; };
 		DC7416A015F5DE20009D8C65 /* IGA02ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGA02ViewController.h; sourceTree = "<group>"; };
@@ -226,7 +223,6 @@
 		DC7416CD15F71F22009D8C65 /* IGCoreDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGCoreDataUtil.m; sourceTree = "<group>"; };
 		DCB370D515FF4AED00682292 /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
 		DCB370D615FF4AEE00682292 /* more@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@2x.png"; sourceTree = "<group>"; };
-		DCB4FFC51609BEE700EB4234 /* closeImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "closeImage@2x.png"; sourceTree = "<group>"; };
 		DCF6328015F9C69D00162BD7 /* navi_bag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navi_bag.png; sourceTree = "<group>"; };
 		DCF6328115F9C69D00162BD7 /* navi_bag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_bag@2x.png"; sourceTree = "<group>"; };
 		DCF6328515F9C92A00162BD7 /* IGUINavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGUINavigationController.h; sourceTree = "<group>"; };
@@ -495,8 +491,6 @@
 				18ED995E1600ABD7000A0204 /* info@2x.png */,
 				DCB370D515FF4AED00682292 /* more.png */,
 				DCB370D615FF4AEE00682292 /* more@2x.png */,
-				DC54EA4915FDF35800B314BC /* closeImage.png */,
-				DCB4FFC51609BEE700EB4234 /* closeImage@2x.png */,
 				E232C34115FDF02A00C45C08 /* tripcheckericon.png */,
 				E232C34215FDF02A00C45C08 /* tripcheckericon@2x.png */,
 				E232C33D15FDF02000C45C08 /* tenyeardiaryicon.png */,
@@ -641,7 +635,6 @@
 				DCF6328B15F9CCDF00162BD7 /* nav_l_btn@2x.png in Resources */,
 				DCF6329915F9EBD000162BD7 /* navi_r_btn.png in Resources */,
 				DCF6329A15F9EBD000162BD7 /* navi_r_btn@2x.png in Resources */,
-				DC54EA4A15FDF35800B314BC /* closeImage.png in Resources */,
 				E232C31F15FDC9C500C45C08 /* location_iconH.png in Resources */,
 				E232C32015FDC9C500C45C08 /* location_iconH@2x.png in Resources */,
 				E232C33F15FDF02000C45C08 /* tenyeardiaryicon.png in Resources */,
@@ -658,7 +651,6 @@
 				D784BB1D16023787000ECC1C /* images in Resources */,
 				E27614561609AB3900AAEB99 /* hotel_full_annotation_shadow.png in Resources */,
 				E27614571609AB3900AAEB99 /* hotel_full_annotation_shadow@2x.png in Resources */,
-				DCB4FFC61609BEE800EB4234 /* closeImage@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,6 +803,7 @@
 				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
 				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -826,6 +819,7 @@
 				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
 				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

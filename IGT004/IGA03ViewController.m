@@ -34,7 +34,10 @@
         topUIView = [[UIView alloc] initWithFrame:CGRectMake(A03TopViewX, A03TopViewY, A03TopViewW, A03TopViewH)];
         //标志图片
         UIImage *iconImg = [[UIImage alloc] initWithContentsOfFile: [IGFileUtil getIconImageByRestaurantId:[self toString:restaurant.id] forIconName:restaurant.iconName]];
+        iconImageViewbk =[[UIImageView alloc] initWithFrame:CGRectMake(A03IconImageViewX-2, A03IconImageViewY-2, A03IconImageViewW+4, A03IconImageViewH+4)];
+        iconImageViewbk.backgroundColor = [UIColor whiteColor];
         iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(A03IconImageViewX, A03IconImageViewY, A03IconImageViewW, A03IconImageViewH)];
+        [topUIView addSubview:iconImageViewbk];
         [iconImageView setImage:iconImg];
         [topUIView addSubview:iconImageView];
         //饭店名称
@@ -157,23 +160,16 @@
         memoTitleLabel.backgroundColor = [UIColor clearColor];
         memoTitleLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
         [bottomView addSubview:memoTitleLabel];
-        
         NSString *tempMemo = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
-        int memoLength = [tempMemo length];
-        int memoHight = memoLength / 16 + 1;
-        if (memoHight == 1) {
-            memoHight = memoHight + 1;
-        }
-        memo_hight = A03MemoH*memoHight;
-        memoTextView = [[UITextView alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, memo_hight)];
-        memoTextView.text = [NSString stringWithFormat:@"%@%@", @"      ", restaurant.descriptionMemo];
-        [memoTextView setScrollEnabled:NO];
-        [memoTextView setEditable:NO];
-
-        memoTextView.font = [UIFont fontWithName:@"Arial" size:14];
-        memoTextView.backgroundColor = [UIColor clearColor];
-        [bottomView addSubview:memoTextView];
-
+        int memoHight = [self getUITextViewHeight:tempMemo];
+        memo_hight = memoHight;
+        memoLabel = [[UILabel alloc] initWithFrame:CGRectMake(A03MemoX, A03MemoY, A03MemoW, memo_hight)];
+        memoLabel.font = [UIFont fontWithName:@"Arial" size:14];
+        memoLabel.numberOfLines = 0;
+        memoLabel.text = tempMemo;
+        memoLabel.backgroundColor = [UIColor clearColor];
+        [bottomView addSubview:memoLabel];
+        
         //导航设定
         UIButton *leftButton = [IGUIButton getNavigationButton:@"nav_l_btn.png" title:(NSString*)@"返回" target:self selector:@selector(goBack) frame:CGRectMake(A03BarButtonLeftX, A03BarButtonLeftY, A03BarButtonLeftW, A03BarButtonLeftH)];
         leftButton.contentEdgeInsets = UIEdgeInsetsMake(0, 7, 0, 0);
@@ -187,7 +183,7 @@
             [bottomView addSubview:photoView];
         }
         
-        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoTextView]+340);
+        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoLabel]+340);
         [self.view addSubview:bottomView];
     }
     return self;
@@ -220,6 +216,12 @@
 //获取UILabel的高度
 -(double) getUILabelHeight:(UILabel *) label {
     CGSize size = [label.text sizeWithFont:label.font constrainedToSize:CGSizeMake(label.frame.size.width, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+    return size.height;
+}
+
+//获取UITextView的高度
+-(double) getUITextViewHeight:(NSString *) text {
+    CGSize size = [text sizeWithFont:[UIFont fontWithName:@"Arial" size:14] constrainedToSize:CGSizeMake(270, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
     return size.height;
 }
 
