@@ -225,9 +225,12 @@
 }
 
 -(void)findAddress{
-    NSString *theString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=Current Location&daddr=%@,%@",restaurant.latitude, restaurant.longitude];
+    CLLocation *location = [IGLocationUtil getUserLocation];
+    
+    NSString *theString = [NSString stringWithFormat:@"http://maps.google.com/maps?saddr=%.4f,%.4f&daddr=%@,%@",location.coordinate.latitude,location.coordinate.longitude, restaurant.latitude, restaurant.longitude];
+
     theString =  [theString stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-    //NSLog(@"latitude:%f,longitude:%f",restaurant.latitude,restaurant.longitude);
+
     NSURL *url = [[NSURL alloc] initWithString:theString];
     [[UIApplication sharedApplication] openURL:url];
 }
