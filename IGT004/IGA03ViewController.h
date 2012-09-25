@@ -47,7 +47,8 @@
     UILabel *telLabel;
     //简介
     UILabel *memoTitleLabel;
-    UITextView *memoTextView;
+    //UITextView *memoTextView;
+    UILabel *memoLabel;
     //横线2
     UIView *line2View;
     //横线3

@@ -78,9 +78,7 @@ if (imageBackView==nil) {
     [view setImage:imagepic];  
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];  
     
-    UIImage *closeimg = [UIImage imageNamed:@"closeImage.png"];  
-    btn.frame = CGRectMake([self getDisplaySize:self.image].width-17,2, closeimg.size.width,closeimg.size.height);  
-    [btn setBackgroundImage:closeimg forState:UIControlStateNormal];  
+    btn.frame = CGRectMake(0,0, 320,480);  
     [btn addTarget:self action:@selector(closeImage:) forControlEvents:UIControlEventTouchUpInside];  
     
     [imageBackView addSubview:view];  
