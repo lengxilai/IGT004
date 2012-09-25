@@ -12,15 +12,7 @@
 @implementation IGPhotoImage
 
 @synthesize parentview;  
-@synthesize imageBackground,imageBackView,maskView;  
-
-@interface IGPhotoImage (private)  
-- (void)fadeIn;  
-- (void)fadeOut;  
-- (void)closeImage:(id)sender;  
-@end
-
-
+@synthesize imageBackground,imageBackView,maskView; 
 
 /* 
  * setDoubleTap 初始化图片 

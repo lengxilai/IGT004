@@ -811,6 +811,7 @@
 				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
 				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -826,6 +827,7 @@
 				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
 				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

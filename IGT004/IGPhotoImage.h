@@ -28,6 +28,9 @@
 - (void)handleDoubleTap:(UITapGestureRecognizer *)recognizer;  
 
 //必须设置的  
-- (void)setDoubleTap:(UIView*)imageView; 
+- (void)setDoubleTap:(UIView*)imageView;
 
+- (void)fadeIn;
+- (void)fadeOut;
+- (void)closeImage:(id)sender;
 @end
