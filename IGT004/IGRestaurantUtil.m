@@ -32,9 +32,9 @@
         restaurant.ver = [NSNumber  numberWithInt:[[dir objectForKey:@"ver"] intValue]];
         
         // 删除所有旧数据
-        if ([restaurant.images count] > 0) {
-            [restaurant removeImages:restaurant.images];
-        }
+//        if ([restaurant.images count] > 0) {
+//            [restaurant removeImages:restaurant.images];
+//        }
         
         // 取得组图数
         NSInteger imagecount = [[dir objectForKey:@"imagecount"] intValue];
