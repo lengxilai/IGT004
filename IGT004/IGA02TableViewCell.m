@@ -22,6 +22,9 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         //标志图片显示
+        iconImageViewbk = [[UIImageView alloc] initWithFrame:CGRectMake(A02IconImageViewX-2, A02IconImageViewY-2, A02IconImageViewW+4, A02IconImageViewH+4)];
+        iconImageViewbk.backgroundColor = [UIColor whiteColor];
+        [self.contentView addSubview:iconImageViewbk];
         iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(A02IconImageViewX, A02IconImageViewY, A02IconImageViewW, A02IconImageViewH)];
         //饭店名称显示
         restaurantName = [[UILabel alloc] initWithFrame:CGRectMake(A02RestaurantNameX, A02RestaurantNameY, A02RestaurantNameW, A02RestaurantNameH)];

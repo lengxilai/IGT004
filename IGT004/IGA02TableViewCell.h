@@ -14,6 +14,8 @@
 @interface IGA02TableViewCell : UITableViewCell {
     //饭店标志图标
     UIImageView *iconImageView;
+    //饭店标志图标背景
+    UIImageView *iconImageViewbk;
     //饭店名称
     UILabel *restaurantName;
     //饭店地址

@@ -34,7 +34,10 @@
         topUIView = [[UIView alloc] initWithFrame:CGRectMake(A03TopViewX, A03TopViewY, A03TopViewW, A03TopViewH)];
         //标志图片
         UIImage *iconImg = [[UIImage alloc] initWithContentsOfFile: [IGFileUtil getIconImageByRestaurantId:[self toString:restaurant.id] forIconName:restaurant.iconName]];
+        iconImageViewbk =[[UIImageView alloc] initWithFrame:CGRectMake(A03IconImageViewX-2, A03IconImageViewY-2, A03IconImageViewW+4, A03IconImageViewH+4)];
+        iconImageViewbk.backgroundColor = [UIColor whiteColor];
         iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(A03IconImageViewX, A03IconImageViewY, A03IconImageViewW, A03IconImageViewH)];
+        [topUIView addSubview:iconImageViewbk];
         [iconImageView setImage:iconImg];
         [topUIView addSubview:iconImageView];
         //饭店名称

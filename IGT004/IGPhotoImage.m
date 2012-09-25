@@ -51,8 +51,8 @@ if (imageBackView==nil) {
     {     
         frameRect = CGRectMake(0, 0, parentview.frame.size.width, parentview.frame.size.height+20);  
     }  
-    imageBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self getDisplaySize:self.image].width+20, [self getDisplaySize:self.image].height+60)];  
-    imageBackView.backgroundColor = [UIColor grayColor];  
+    imageBackView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [self getDisplaySize:self.image].width+20, [self getDisplaySize:self.image].height+20)];  
+    imageBackView.backgroundColor = [UIColor whiteColor];  
 
     imageBackView.layer.cornerRadius = 10.0; //根据需要调整  
     
@@ -66,7 +66,7 @@ if (imageBackView==nil) {
     maskView.alpha=0.7;  
     
     UIImage *imagepic = self.image;  
-    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 30, [self getDisplaySize:self.image].width, [self getDisplaySize:self.image].height)];  
+    UIImageView *view = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, [self getDisplaySize:self.image].width, [self getDisplaySize:self.image].height)];  
     [view setImage:imagepic];  
     UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];  
     
@@ -148,7 +148,7 @@ if (image.size.width>screenSize.size.width || image.size.height > screenSize.siz
             ratio = ratio * 320 / (size.width * ratio);
         }
     }
-    CGSize displaySize = CGSizeMake(ratio * size.width, ratio * size.height);
+    CGSize displaySize = CGSizeMake(ratio * size.width-10, ratio * size.height-10);
     return displaySize;
 } else {
     return CGSizeMake(image.size.width, image.size.height);

@@ -24,6 +24,8 @@
     UIView *topUIView;
     //标志图片
     UIImageView *iconImageView;
+    //标志图片背景
+    UIImageView *iconImageViewbk;
     //饭店名称
     UILabel *restaurantNameLabel;
     //距离
