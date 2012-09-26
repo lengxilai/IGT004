@@ -11,6 +11,7 @@
 #import "IGCoreDataUtil.h"
 #import "Restaurant.h"
 #import "Image.h"
+#import "Downloader.h"
 
 @interface IGRestaurantUtil : NSObject
 
@@ -26,4 +27,12 @@
 // 取得Restaurant中最大ID
 +(NSInteger)getMaxRestaurantId;
 
+// 添加一个下载信息
++(void)addDownloader:(NSString *) f t:(NSString *)t;
+
+// 删除一个下载信息
++(void)delDownloader:(Downloader *) d;
+
+// 取得所有下载信息
++(NSArray *)getAllDownloader;
 @end

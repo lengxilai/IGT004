@@ -101,4 +101,24 @@
     }
     return [[[returnValue lastObject] objectForKey:@"maxOfCount"] intValue];
 }
+
+// 添加一个下载信息
++(void)addDownloader:(NSString *) f t:(NSString *)t{
+    Downloader *d = [NSEntityDescription insertNewObjectForEntityForName:@"Downloader" inManagedObjectContext:[IGCoreDataUtil getStaticManagedObjectContext]];
+    d.f =  f;
+    d.t =  t;
+    [self saveDB];
+}
+
+// 删除一个下载信息
++(void)delDownloader:(Downloader *) d{
+    [[IGCoreDataUtil getStaticManagedObjectContext] deleteObject:d];
+    [self saveDB];
+}
+
+// 取得所有下载信息
++(NSArray *)getAllDownloader{
+    NSArray* dArray = [IGCoreDataUtil queryForArrayList:@"Downloader" queryPredicate:nil sortDescriptors:nil];
+    return dArray;
+}
 @end

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1171" systemVersion="11E53" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Downloader" representedClassName="Downloader" syncable="YES">
+        <attribute name="f" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="t" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Image" representedClassName="Image" syncable="YES">
         <attribute name="descriptionMemo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,5 +26,6 @@
     <elements>
         <element name="Image" positionX="160" positionY="192" width="128" height="105"/>
         <element name="Restaurant" positionX="160" positionY="192" width="128" height="240"/>
+        <element name="Downloader" positionX="160" positionY="192" width="128" height="75"/>
     </elements>
 </model>

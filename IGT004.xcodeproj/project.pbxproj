@@ -41,6 +41,7 @@
 		D75F5B7C15F4F586000143D7 /* IGDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */; };
 		D75F5B7F15F4F586000143D7 /* IGMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B7D15F4F586000143D7 /* IGMasterViewController.xib */; };
 		D75F5B8215F4F586000143D7 /* IGDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D75F5B8015F4F586000143D7 /* IGDetailViewController.xib */; };
+		D763459516133DB6009CAE38 /* Downloader.m in Sources */ = {isa = PBXBuildFile; fileRef = D763459416133DB6009CAE38 /* Downloader.m */; };
 		D77BB36B15F7923200CB4FF3 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35315F7923200CB4FF3 /* NSObject+SBJson.m */; };
 		D77BB36C15F7923200CB4FF3 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35615F7923200CB4FF3 /* SBJsonParser.m */; };
 		D77BB36D15F7923200CB4FF3 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = D77BB35815F7923200CB4FF3 /* SBJsonStreamParser.m */; };
@@ -165,6 +166,8 @@
 		D75F5B7B15F4F586000143D7 /* IGDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IGDetailViewController.m; sourceTree = "<group>"; };
 		D75F5B7E15F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGMasterViewController.xib; sourceTree = "<group>"; };
 		D75F5B8115F4F586000143D7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/IGDetailViewController.xib; sourceTree = "<group>"; };
+		D763459316133DB6009CAE38 /* Downloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Downloader.h; sourceTree = "<group>"; };
+		D763459416133DB6009CAE38 /* Downloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Downloader.m; sourceTree = "<group>"; };
 		D77BB35215F7923200CB4FF3 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		D77BB35315F7923200CB4FF3 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		D77BB35415F7923200CB4FF3 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -564,6 +567,8 @@
 				D77BB39C15F7B55500CB4FF3 /* Image.h */,
 				D77BB39D15F7B55500CB4FF3 /* Image.m */,
 				D75F5B7415F4F586000143D7 /* IGT004.xcdatamodeld */,
+				D763459316133DB6009CAE38 /* Downloader.h */,
+				D763459416133DB6009CAE38 /* Downloader.m */,
 				D78BA4FB160B1F11006D42ED /* Restaurant.h */,
 				D78BA4FC160B1F11006D42ED /* Restaurant.m */,
 			);
@@ -722,6 +727,7 @@
 				D7071E2C1610A22500124AEA /* MKNetworkOperation.m in Sources */,
 				D7071E2D1610A22500124AEA /* Reachability.m in Sources */,
 				D7071E3D1610A6FF00124AEA /* IGFileDownloader.m in Sources */,
+				D763459516133DB6009CAE38 /* Downloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
