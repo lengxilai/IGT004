@@ -187,6 +187,10 @@
     if ([rsOfSearch count] != 0) {
         results = rsOfSearch;
     } else {
+        //创建对话框
+        UIAlertView * alertA= [[UIAlertView alloc] initWithTitle:@"没有找到合适的店铺！看看输入文字是否有误。" message:@"" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+        //将这个UIAlerView 显示出来
+        [alertA show];
         results = tempResults;
     }
 
