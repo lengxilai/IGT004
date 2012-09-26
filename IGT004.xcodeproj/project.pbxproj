@@ -803,6 +803,7 @@
 		D75F5B8615F4F586000143D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Liu Ming (X2BX3TKD7M)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/IGT004\"",
@@ -811,6 +812,7 @@
 				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
 				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F5AF087-3327-4BE8-8A44-FBFE59EFED3B";
 				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -819,6 +821,7 @@
 		D75F5B8715F4F586000143D7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Liu Ming (X2BX3TKD7M)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/IGT004\"",
@@ -827,6 +830,7 @@
 				GCC_PREFIX_HEADER = "IGT004/IGT004-Prefix.pch";
 				INFOPLIST_FILE = "IGT004/IGT004-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4F5AF087-3327-4BE8-8A44-FBFE59EFED3B";
 				SDKROOT = iphoneos6.0;
 				WRAPPER_EXTENSION = app;
 			};
