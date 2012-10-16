@@ -34,7 +34,7 @@
 -(void)addIconImage:(NSInteger)framId iconName:(NSString *)iconName{
     //[self.urlListArray addObject:];
     //[self.savePathListArray addObject:[self getSavePath:framId]];
-    [IGRestaurantUtil addDownloader:[NSString stringWithFormat:ICON_URL,framId,iconName] t:[self getSavePath:framId]];
+    [IGRestaurantUtil addDownloader:[NSString stringWithFormat:ICON_URL,framId,iconName] t:[[self getSavePath:framId] stringByAppendingPathComponent:iconName]];
 }
 
 // 下载组图
@@ -42,7 +42,7 @@
     for (int i=1; i<=count; i++) {
         //[self.urlListArray addObject:[NSString stringWithFormat:IMAGES_URL,framId,i]];
         //[self.savePathListArray addObject:[self getSavePath:framId]];
-        [IGRestaurantUtil addDownloader:[NSString stringWithFormat:IMAGES_URL,framId,i] t:[self getSavePath:framId]];
+        [IGRestaurantUtil addDownloader:[NSString stringWithFormat:IMAGES_URL,framId,i] t:[[self getSavePath:framId] stringByAppendingPathComponent:[NSString stringWithFormat:@"%d.jpg",i]]];
     }
 }
 
@@ -56,6 +56,10 @@
     Downloader *d = [dArrayList objectAtIndex:index];
     // 下载数据
     self.downloader = [fileDownLoader downloadFileFrom:d.f toFile:d.t]; 
+    
+    NSLog(@"%@",[IGFileUtil getDocumentPath]);
+    
+    
     // 下载百分比变化
     [self.downloader onDownloadProgressChanged:^(double progress) {
         
