@@ -59,7 +59,7 @@ typedef enum{
     // 电话显示位置
     A03TelX = 0,A03TelY = 45,A03TelW = 320,A03TelH = 37,
     // 简介title显示位置
-    A03MemoTitleX = 20,A03MemoTitleY = 100,A03MemoTitleW = 40,A03MemoTitleH = 14,
+    A03MemoTitleX = 20,A03MemoTitleY = 95,A03MemoTitleW = 40,A03MemoTitleH = 16,
     // 简介显示位置
     A03MemoX = 20,A03MemoY = 120,A03MemoW = 270,A03MemoH = 20,
     
