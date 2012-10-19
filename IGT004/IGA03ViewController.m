@@ -123,12 +123,12 @@
         telView = [[UIView alloc] initWithFrame:CGRectMake(A03TelX, A03TelY, A03TelW, A03TelH)];
         telView.userInteractionEnabled = YES;
 //        telView.backgroundColor = [UIColor grayColor];
-        telTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 12, 40, 14)];
+        telTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, 40, 16)];
         telTitleLabel.textColor = [UIColor colorWithHex:0x666666 alpha:1.0];
         telTitleLabel.backgroundColor = [UIColor clearColor];
         telTitleLabel.text = @"电话:";
         [telView addSubview:telTitleLabel];
-        telLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 13, 240, 14)];
+        telLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 13, 240, 16)];
         telLabel.text = restaurant.tel;
         telLabel.font = [UIFont fontWithName:@"Arial" size:14];
         telLabel.adjustsFontSizeToFitWidth = YES;
@@ -183,7 +183,7 @@
             [bottomView addSubview:photoView];
         }
         
-        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoLabel]+340);
+        bottomView.contentSize = CGSizeMake(320, [self getUILabelHeight:memoLabel]+240);
         [self.view addSubview:bottomView];
     }
     return self;
