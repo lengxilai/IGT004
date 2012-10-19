@@ -58,6 +58,7 @@
         [IGRestaurantUtil updateRestaurant:[array objectAtIndex:i]];
     }
     
+    util.dArrayList = [IGRestaurantUtil getAllDownloader];
     [util startDownload:0];
 }
 

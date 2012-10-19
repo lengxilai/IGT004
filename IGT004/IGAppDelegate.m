@@ -14,6 +14,7 @@
 #import "IGDistanceUpdate.h"
 #import "IGUINavigationController.h"
 
+
 @implementation IGAppDelegate
 
 @synthesize window = _window;
@@ -31,20 +32,23 @@
     // 将初始数据放到docment文件夹
     [IGFileUtil copyFileToDoc];
     
+    // 注册网络监听
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name: kReachabilityChangedNotification
+                                               object: nil];
+    Reachability * hostReach = [Reachability reachabilityWithHostname:@"www.iguor.com"];
+    [hostReach startNotifier];  
+    //开始监听
+    [self updateInterfaceWithReachability: hostReach];
+    
     // 数据库文件初始化
     [IGCoreDataUtil setStaticManagedObjectContext:self.managedObjectContext];
     IGA01ViewController *masterViewController = [[IGA01ViewController alloc] init];
     self.navigationController = [[IGUINavigationController alloc] initWithRootViewController:masterViewController];
    // masterViewController.managedObjectContext = self.managedObjectContext;
     
-   
-    // 取得最新数据
-    IGJsonUtil *json = [[IGJsonUtil alloc] init];
-    [json getNewData];
     
-    while (json.state == json_ing) {
-        // 读取数据中时候，显示个等待之类的
-    }
     
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
@@ -174,4 +178,26 @@
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+
+#pragma mark 网络检测代码
+// 连接改变
+
+- (void) reachabilityChanged: (NSNotification* )note
+{
+    Reachability* curReach = [note object];
+    [self updateInterfaceWithReachability: curReach];
+}
+
+//处理连接改变后的情况
+
+- (void) updateInterfaceWithReachability: (Reachability*) curReach
+{
+    //对连接改变做出响应的处理动作。
+    NetworkStatus status = [curReach currentReachabilityStatus];
+    if (status != NotReachable) {
+        // 取得最新数据
+        IGJsonUtil *json = [[IGJsonUtil alloc] init];
+        [json getNewData];
+    }
+}
 @end

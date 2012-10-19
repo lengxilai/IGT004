@@ -8,18 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "IGFileDownloader.h"
+#import "Downloader.h"
+#import "IGRestaurantUtil.h"
 
 @interface IGFileDownloadUtil : NSObject{
     
     MKNetworkOperation *downloader;
-    NSMutableArray *urlListArray;
-    NSMutableArray *savePathListArray;
+    //NSMutableArray *urlListArray;
+    //NSMutableArray *savePathListArray;
     IGFileDownloader *fileDownLoader;
+    NSArray * dArrayList;
 }
 
+@property(retain,nonatomic) NSArray *dArrayList;
 
-@property(retain,nonatomic) NSMutableArray *urlListArray;
-@property(retain,nonatomic) NSMutableArray *savePathListArray;
+//@property(retain,nonatomic) NSMutableArray *urlListArray;
+//@property(retain,nonatomic) NSMutableArray *savePathListArray;
 @property(retain,nonatomic) MKNetworkOperation *downloader;
 
 -(id)init;
